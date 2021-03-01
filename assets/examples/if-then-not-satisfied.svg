@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="terminal" baseProfile="full" viewBox="0 0 800 374" width="800" version="1.1">
+    <defs>
+        <termtosvg:template_settings xmlns:termtosvg="https://github.com/nbedos/termtosvg">
+            <termtosvg:screen_geometry columns="100" rows="40"/>
+            <termtosvg:animation type="css"/>
+        </termtosvg:template_settings>
+        <style type="text/css" id="generated-style"><![CDATA[#screen {
+                font-family: 'DejaVu Sans Mono', monospace;
+                font-style: normal;
+                font-size: 14px;
+            }
+
+        text {
+            dominant-baseline: text-before-edge;
+            white-space: pre;
+        }
+    
+            :root {
+                --animation-duration: 1000ms;
+            }
+
+            @keyframes roll {
+                0.000%{transform:translateY(0px)}
+100.000%{transform:translateY(0px)}
+            }
+
+            #screen_view {
+                animation-duration: 1000ms;
+                animation-iteration-count:infinite;
+                animation-name:roll;
+                animation-timing-function: steps(1,end);
+                animation-fill-mode: forwards;
+            }
+        ]]></style>
+        <style type="text/css" id="user-style">
+            /* The colors defined below are the default 16 colors used for rendering text of the terminal. Adjust
+               them as needed.
+               PowerShell colors based on https://en.wikipedia.org/wiki/ANSI_escape_code#Colors */
+            .foreground {fill: #cccccc;}
+            .background {fill: #323232;}
+            .color0 {fill: #0c0c0c;}
+            .color1 {fill: #c50f1f;}
+            .color2 {fill: #13a10e;}
+            .color3 {fill: #c19c00;}
+            .color4 {fill: #608aff;}
+            .color5 {fill: #c02ec5;}
+            .color6 {fill: #3a96dd;}
+            .color7 {fill: #cccccc;}
+            .color8 {fill: #767676;}
+            .color9 {fill: #e76d48;}
+            .color10 {fill: #16c60c;}
+            .color11 {fill: #f9f1a5;}
+            .color12 {fill: #3b78ff;}
+            .color13 {fill: #c02ec5;}
+            .color14 {fill: #61d6d6;}
+            .color15 {fill: #f2f2f2;}
+        </style>
+    </defs>
+    <svg id="screen" width="800" height="374" viewBox="0 0 800 374" preserveAspectRatio="xMidYMin slice">
+    <rect class="background" height="100%" width="100%" x="0" y="0"/><defs><g id="g1"><text x="0" textLength="80" class="foreground">   ,--.   </text><text x="80" textLength="32" font-weight="bold" class="color9">The </text><text x="112" textLength="8" class="color7">.</text><text x="120" textLength="24" class="color2">foo</text><text x="144" textLength="288" font-weight="bold" class="color9"> value is missing required property </text><text x="432" textLength="64" font-style="italic" class="color4">lastName</text></g><g id="g2"><text x="0" textLength="80" class="foreground">  /   |   </text></g><g id="g3"><text x="0" textLength="88" class="foreground">  `|  |    </text><text x="88" textLength="40" font-weight="bold" class="color8"> 1 | </text><text x="128" textLength="8" font-weight="bold" class="foreground">{</text></g><g id="g4"><text x="0" textLength="80" class="foreground">   |  |   </text><text x="80" textLength="8" font-weight="bold" class="color9">&gt;</text><text x="88" textLength="40" font-weight="bold" class="color8"> 2 | </text><text x="128" textLength="16" font-weight="bold" class="foreground">  </text><text x="144" textLength="40" font-weight="bold" class="color10">"foo"</text><text x="184" textLength="8" font-weight="bold" class="color11">:</text><text x="192" textLength="16" font-weight="bold" class="foreground"> {</text></g><g id="g5"><text x="0" textLength="88" class="foreground">   `--'    </text><text x="88" textLength="40" font-weight="bold" class="color8">   | </text><text x="128" textLength="72" font-weight="bold" class="foreground">         </text><text x="200" textLength="8" font-weight="bold" class="color9">^</text></g><g id="g6"><text x="0" textLength="80" class="foreground">          </text><text x="80" textLength="8" font-weight="bold" class="color9">&gt;</text><text x="88" textLength="40" font-weight="bold" class="color8"> 3 | </text><text x="128" textLength="32" font-weight="bold" class="foreground">    </text><text x="160" textLength="88" font-weight="bold" class="color10">"firstName"</text><text x="248" textLength="8" font-weight="bold" class="color11">:</text><text x="256" textLength="8" font-weight="bold" class="foreground"> </text><text x="264" textLength="32" font-weight="bold" class="color14">true</text></g><g id="g7"><text x="0" textLength="88" class="foreground">           </text><text x="88" textLength="40" font-weight="bold" class="color8">   | </text><text x="128" textLength="168" font-weight="bold" class="color9">^^^^^^^^^^^^^^^^^^^^^</text></g><g id="g8"><text x="0" textLength="80" class="foreground">          </text><text x="80" textLength="8" font-weight="bold" class="color9">&gt;</text><text x="88" textLength="40" font-weight="bold" class="color8"> 4 | </text><text x="128" textLength="24" font-weight="bold" class="foreground">  }</text></g><g id="g9"><text x="0" textLength="88" class="foreground">           </text><text x="88" textLength="40" font-weight="bold" class="color8">   | </text><text x="128" textLength="32" font-weight="bold" class="color9">^^^^</text><text x="160" textLength="8" class="foreground"> </text><text x="168" textLength="168" font-weight="bold" class="color9">add missing property </text><text x="336" textLength="64" font-weight="bold" font-style="italic" class="color12">lastName</text></g><g id="g10"><text x="0" textLength="88" class="foreground">           </text><text x="88" textLength="40" font-weight="bold" class="color8"> 5 | </text><text x="128" textLength="8" font-weight="bold" class="foreground">}</text></g><g id="g11"><text x="0" textLength="80" class="foreground">  ,---.   </text><text x="80" textLength="128" font-weight="bold" class="color9">The conditional </text><text x="208" textLength="56" font-style="italic" class="color7">if/then</text><text x="264" textLength="32" font-weight="bold" class="color9"> on </text><text x="296" textLength="8" class="color7">.</text><text x="304" textLength="24" class="color2">foo</text><text x="328" textLength="400" font-weight="bold" class="color9"> value is not satisfied (showed in separate error)</text></g><g id="g12"><text x="0" textLength="80" class="foreground"> '.-.  \  </text><text x="80" textLength="32" font-weight="bold" class="color9">The </text><text x="112" textLength="16" font-style="italic" class="color7">if</text><text x="128" textLength="152" font-weight="bold" class="color9"> clause references:</text></g><g id="g13"><text x="0" textLength="80" class="foreground">  .-' .'  </text></g><g id="g14"><text x="0" textLength="88" class="foreground"> /   '-.   </text><text x="88" textLength="40" font-weight="bold" class="color8"> 1 | </text><text x="128" textLength="8" font-weight="bold" class="foreground">{</text></g><g id="g15"><text x="0" textLength="80" class="foreground"> '-----'  </text><text x="80" textLength="8" font-weight="bold" class="color9">&gt;</text><text x="88" textLength="40" font-weight="bold" class="color8"> 2 | </text><text x="128" textLength="16" font-weight="bold" class="foreground">  </text><text x="144" textLength="40" font-weight="bold" class="color10">"foo"</text><text x="184" textLength="8" font-weight="bold" class="color11">:</text><text x="192" textLength="16" font-weight="bold" class="foreground"> {</text></g><g id="g16"><text x="0" textLength="88" class="foreground">           </text><text x="88" textLength="40" font-weight="bold" class="color8">   | </text><text x="128" textLength="72" font-weight="bold" class="foreground">         </text><text x="200" textLength="8" font-weight="bold" class="color9">^</text></g><g id="g17"><text x="0" textLength="88" class="foreground">           </text><text x="88" textLength="40" font-weight="bold" class="color8">   | </text><text x="128" textLength="32" font-weight="bold" class="color9">^^^^</text><text x="160" textLength="8" class="foreground"> </text><text x="168" textLength="200" font-weight="bold" class="color9">Ensure the corresponding </text><text x="368" textLength="32" font-weight="bold" font-style="italic" class="color15">then</text><text x="400" textLength="160" font-weight="bold" class="color9"> clause is satisfied</text></g><g id="g18"><text x="0" textLength="8" class="background"> </text></g></defs><g id="screen_view"><g><use xlink:href="#g1" y="0"/><use xlink:href="#g2" y="17"/><use xlink:href="#g3" y="34"/><use xlink:href="#g4" y="51"/><use xlink:href="#g5" y="68"/><use xlink:href="#g6" y="85"/><use xlink:href="#g7" y="102"/><use xlink:href="#g8" y="119"/><use xlink:href="#g9" y="136"/><use xlink:href="#g10" y="153"/><use xlink:href="#g11" y="187"/><use xlink:href="#g12" y="204"/><use xlink:href="#g13" y="221"/><use xlink:href="#g14" y="238"/><use xlink:href="#g15" y="255"/><use xlink:href="#g16" y="272"/><use xlink:href="#g6" y="289"/><use xlink:href="#g7" y="306"/><use xlink:href="#g8" y="323"/><use xlink:href="#g17" y="340"/><use xlink:href="#g10" y="357"/><rect x="0" y="374" width="8" height="17" class="foreground"/><use xlink:href="#g18" y="374"/></g></g></svg>
+</svg>
