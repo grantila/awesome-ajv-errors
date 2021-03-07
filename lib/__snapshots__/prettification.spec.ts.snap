@@ -1,905 +1,905 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`prettifications additional-properties 1/6: Simple top-level 1`] = `
-"[31m[1mThe [22m[39m[37m[3mroot object[23m[39m[31m[1m should not have the property [22m[39m[34m[3mbar[23m[39m[31m[1m, it must be [22m[39m[34m[3mfoo[23m[39m
+"The root object should not have the property bar, it must be foo
 
-[0m [90m 1 | [39m{[0m
-[0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[33m,[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m  [32m\\"bar\\"[39m[33m:[39m [32m\\"42\\"[39m[0m
-[0m [90m   | [39m  [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mremove or rename [34m[3m\\"bar\\"[23m[31m[22m[39m[0m
-[0m [90m 4 | [39m}[0m"
+  1 | {
+  2 |   \\"foo\\": 42,
+> 3 |   \\"bar\\": \\"42\\"
+    |   ^^^^^ remove or rename \\"bar\\"
+  4 | }"
 `;
 
 exports[`prettifications additional-properties 3/6: Simple top-level with tricky name 1`] = `
-"[31m[1mThe [22m[39m[37m[3mroot object[23m[39m[31m[1m should not have the property [22m[39m[34m[3mfoo#bar/baz[23m[39m[31m[1m, it must be [22m[39m[34m[3mfoo#bar/bazz[23m[39m
+"The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo#bar/baz\\"[39m[33m:[39m {}[0m
-[0m [90m   | [39m  [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mremove or rename [34m[3m\\"foo#bar/baz\\"[23m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo#bar/baz\\": {}
+    |   ^^^^^^^^^^^^^ remove or rename \\"foo#bar/baz\\"
+  3 | }"
 `;
 
 exports[`prettifications additional-properties 4/6: Second-level one similar property 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m object should not have the property [22m[39m[34m[3mbaz[23m[39m[31m[1m, it must be [22m[39m[34m[3mbar[23m[39m
+"The .foo object should not have the property baz, it must be bar
 
-[0m [90m 1 | [39m{[0m
-[0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-[0m [90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m [32m\\"42\\"[39m[33m,[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m    [32m\\"baz\\"[39m[33m:[39m [32m\\"33\\"[39m[0m
-[0m [90m   | [39m    [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mremove or rename [34m[3m\\"baz\\"[23m[31m[22m[39m[0m
-[0m [90m 5 | [39m  }[0m
-[0m [90m 6 | [39m}[0m"
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"42\\",
+> 4 |     \\"baz\\": \\"33\\"
+    |     ^^^^^ remove or rename \\"baz\\"
+  5 |   }
+  6 | }"
 `;
 
 exports[`prettifications additional-properties 5/6: Second-level two similar properties 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m object should not have the property [22m[39m[34m[3mbaz[23m[39m[31m[1m, did you mean [22m[39m[34m[3mbar[23m[39m[31m[1m or [22m[39m[34m[3mbak[23m[39m[31m[1m?[22m[39m
+"The .foo object should not have the property baz, did you mean bar or bak?
 
-[0m [90m 1 | [39m{[0m
-[0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-[0m [90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m [32m\\"42\\"[39m[33m,[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m    [32m\\"baz\\"[39m[33m:[39m [32m\\"33\\"[39m[0m
-[0m [90m   | [39m    [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mremove or rename [34m[3m\\"baz\\"[23m[31m[22m[39m[0m
-[0m [90m 5 | [39m  }[0m
-[0m [90m 6 | [39m}[0m"
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"42\\",
+> 4 |     \\"baz\\": \\"33\\"
+    |     ^^^^^ remove or rename \\"baz\\"
+  5 |   }
+  6 | }"
 `;
 
 exports[`prettifications additional-properties 6/6: Second-level three similar properties 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m object should not have the property [22m[39m[34m[3mbaz[23m[39m[31m[1m, did you mean [22m[39m[31m[1many of:[22m[39m
-    ∙ [34m[3mbar[23m[39m
-    ∙ [34m[3mbak[23m[39m
-    ∙ [34m[3mbam[23m[39m
+"The .foo object should not have the property baz, did you mean any of:
+    ∙ bar
+    ∙ bak
+    ∙ bam
 
-[0m [90m 1 | [39m{[0m
-[0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-[0m [90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m [32m\\"42\\"[39m[33m,[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m    [32m\\"baz\\"[39m[33m:[39m [32m\\"33\\"[39m[0m
-[0m [90m   | [39m    [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mremove or rename [34m[3m\\"baz\\"[23m[31m[22m[39m[0m
-[0m [90m 5 | [39m  }[0m
-[0m [90m 6 | [39m}[0m"
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"42\\",
+> 4 |     \\"baz\\": \\"33\\"
+    |     ^^^^^ remove or rename \\"baz\\"
+  5 |   }
+  6 | }"
 `;
 
 exports[`prettifications any-of 1/5: One option (number to string) 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should [22m[39m[31m[1mbe [22m[39m[34m[3mstring[23m[39m
+"The type of the .foo value should be string
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mchange this value to [32m\\"42\\"[31m (as [34m[3mstring[23m[31m) perhaps?[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ change this value to \\"42\\" (as string) perhaps?
+  3 | }"
 `;
 
 exports[`prettifications any-of 2/5: One option (string to number) 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should [22m[39m[31m[1mbe [22m[39m[34m[3mnumber[23m[39m
+"The type of the .foo value should be number
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"42\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mchange this value to [35m42[31m (as [34m[3mnumber[23m[31m) perhaps?[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ change this value to 42 (as number) perhaps?
+  3 | }"
 `;
 
 exports[`prettifications any-of 3/5: Two options 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should [22m[39m[31m[1mbe [22m[39m[34m[3mstring[23m[39m[31m[1m or [22m[39m[34m[3mboolean[23m[39m
+"The type of the .foo value should be string or boolean
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mchange this value to [32m\\"42\\"[31m (as [34m[3mstring[23m[31m) perhaps?[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ change this value to \\"42\\" (as string) perhaps?
+  3 | }"
 `;
 
 exports[`prettifications any-of 4/5: Three options 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should [22m[39m[31m[1mbe [22m[39m[31m[1many of:[22m[39m
-    ∙ [34m[3mstring[23m[39m
-    ∙ [34m[3mboolean[23m[39m
-    ∙ [34m[3mnull[23m[39m
+"The type of the .foo value should be any of:
+    ∙ string
+    ∙ boolean
+    ∙ null
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mchange this value to [32m\\"42\\"[31m (as [34m[3mstring[23m[31m) perhaps?[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ change this value to \\"42\\" (as string) perhaps?
+  3 | }"
 `;
 
 exports[`prettifications any-of 5/5: Not 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should [22m[39m[31m[1mNOT be [22m[39m[34m[3mstring[23m[39m
+"The type of the .foo value should NOT be string
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"bar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mchange this type[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"bar\\"
+    |          ^^^^^ change this type
+  3 | }"
 `;
 
 exports[`prettifications array-size 1/4: 1 too few 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m array should be [22m[39m[37m[3mshould have at least [23m[39m[35m2[39m[37m[3m items[23m[39m
+"The .foo array should be should have at least 2 items
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [35m1[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m  ][0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1m[31m[1mEnsure the array has [1m[31m[35m1[31m[31m[1m more item[1m[31m[22m[39m[0m
-[0m [90m 5 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1
+    | ^^^^^
+> 4 |   ]
+    | ^^^^ Ensure the array has 1 more item
+  5 | }"
 `;
 
 exports[`prettifications array-size 2/4: 2 too few 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m array should be [22m[39m[37m[3mshould have at least [23m[39m[35m3[39m[37m[3m items[23m[39m
+"The .foo array should be should have at least 3 items
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [35m1[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m  ][0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1m[31m[1mEnsure the array has [1m[31m[35m2[31m[31m[1m more items[1m[31m[22m[39m[0m
-[0m [90m 5 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1
+    | ^^^^^
+> 4 |   ]
+    | ^^^^ Ensure the array has 2 more items
+  5 | }"
 `;
 
 exports[`prettifications array-size 3/4: 1 too many 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m array should be [22m[39m[37m[3mshould NOT have more than [23m[39m[35m2[39m[37m[3m items[23m[39m
+"The .foo array should be should NOT have more than 2 items
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [35m1[39m[33m,[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m    [35m2[39m[33m,[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 5 | [39m    [35m3[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 6 | [39m  ][0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1m[31m[1mRemove [1m[31m[35m1[31m[31m[1m item[1m[31m[22m[39m[0m
-[0m [90m 7 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1,
+    | ^^^^^^
+> 4 |     2,
+    | ^^^^^^
+> 5 |     3
+    | ^^^^^^
+> 6 |   ]
+    | ^^^^ Remove 1 item
+  7 | }"
 `;
 
 exports[`prettifications array-size 4/4: 2 too many 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m array should be [22m[39m[37m[3mshould NOT have more than [23m[39m[35m1[39m[37m[3m item[23m[39m
+"The .foo array should be should NOT have more than 1 item
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [35m1[39m[33m,[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m    [35m2[39m[33m,[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 5 | [39m    [35m3[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 6 | [39m  ][0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1m[31m[1mRemove [1m[31m[35m2[31m[31m[1m items[1m[31m[22m[39m[0m
-[0m [90m 7 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1,
+    | ^^^^^^
+> 4 |     2,
+    | ^^^^^^
+> 5 |     3
+    | ^^^^^^
+> 6 |   ]
+    | ^^^^ Remove 2 items
+  7 | }"
 `;
 
 exports[`prettifications comparison 1/12: Less than or equal to 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mless than or equal to[23m[39m[35m 17[39m
+"The .foo value should be less than or equal to 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mless than or equal to[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ Ensure this is less than or equal to 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 2/12: Strictly less than 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mstrictly less than[23m[39m[35m 17[39m
+"The .foo value should be strictly less than 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m17[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mstrictly less than[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is strictly less than 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 3/12: Greater than or equal to 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mgreater than or equal to[23m[39m[35m 42[39m
+"The .foo value should be greater than or equal to 42
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m17[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mgreater than or equal to[23m[31m[35m 42[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is greater than or equal to 42
+  3 | }"
 `;
 
 exports[`prettifications comparison 4/12: Strictly greater than 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mstrictly greater than[23m[39m[35m 17[39m
+"The .foo value should be strictly greater than 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m17[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mstrictly greater than[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is strictly greater than 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 5/12: Less than [] 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mgreater than or equal to[23m[39m[35m 17[39m
+"The .foo value should be greater than or equal to 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m2[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mgreater than or equal to[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is greater than or equal to 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 6/12: Less than [) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mgreater than or equal to[23m[39m[35m 17[39m
+"The .foo value should be greater than or equal to 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m2[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mgreater than or equal to[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is greater than or equal to 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 7/12: Less than (] 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mstrictly greater than[23m[39m[35m 17[39m
+"The .foo value should be strictly greater than 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m2[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mstrictly greater than[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is strictly greater than 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 8/12: Less than () 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mstrictly greater than[23m[39m[35m 17[39m
+"The .foo value should be strictly greater than 17
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m2[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mstrictly greater than[23m[31m[35m 17[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is strictly greater than 17
+  3 | }"
 `;
 
 exports[`prettifications comparison 9/12: Greater than [] 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mless than or equal to[23m[39m[35m 42[39m
+"The .foo value should be less than or equal to 42
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m314[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mless than or equal to[23m[31m[35m 42[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is less than or equal to 42
+  3 | }"
 `;
 
 exports[`prettifications comparison 10/12: Greater than [) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mstrictly less than[23m[39m[35m 42[39m
+"The .foo value should be strictly less than 42
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m314[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mstrictly less than[23m[31m[35m 42[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is strictly less than 42
+  3 | }"
 `;
 
 exports[`prettifications comparison 11/12: Greater than (] 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mless than or equal to[23m[39m[35m 42[39m
+"The .foo value should be less than or equal to 42
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m314[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mless than or equal to[23m[31m[35m 42[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is less than or equal to 42
+  3 | }"
 `;
 
 exports[`prettifications comparison 12/12: Greater than () 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[37m[3mstrictly less than[23m[39m[35m 42[39m
+"The .foo value should be strictly less than 42
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m314[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mstrictly less than[23m[31m[35m 42[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is strictly less than 42
+  3 | }"
 `;
 
 exports[`prettifications enum 1/16: One value of same type 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[35m42[39m[31m[1m, it must be [22m[39m[35m41[39m
+"The .foo value cannot be 42, it must be 41
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [35m41[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with 41
+  3 | }"
 `;
 
 exports[`prettifications enum 2/16: One value of different type (object to string) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[33m{...}[39m[31m[1m (as [22m[39m[34m[3mobject[23m[39m[31m[1m)[22m[39m[31m[1m, it must be [22m[39m[32m\\"42\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be {...} (as object), it must be \\"42\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m  }[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [32m\\"42\\"[31m[22m[39m[0m
-[0m [90m 5 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"bar\\": 42
+    | ^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ replace this with \\"42\\"
+  5 | }"
 `;
 
 exports[`prettifications enum 3/16: One value of different type (string, object) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"42\\"[39m[31m[1m, it must be [22m[39m[33m{...}[39m[31m[1m (as [22m[39m[34m[3mobject[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be \\"42\\", it must be {...} (as object)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"42\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ replace this with an allowed value
+  3 | }"
 `;
 
 exports[`prettifications enum 4/16: One value of different type (object to array) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[33m{...}[39m[31m[1m (as [22m[39m[34m[3mobject[23m[39m[31m[1m)[22m[39m[31m[1m, it must be [22m[39m[33m[...][39m[31m[1m (as [22m[39m[34m[3marray[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be {...} (as object), it must be [...] (as array)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m  }[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value[22m[39m[0m
-[0m [90m 5 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"bar\\": 42
+    | ^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ replace this with an allowed value
+  5 | }"
 `;
 
 exports[`prettifications enum 5/16: One value of different type (array to object) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[33m[...][39m[31m[1m (as [22m[39m[34m[3marray[23m[39m[31m[1m)[22m[39m[31m[1m, it must be [22m[39m[33m{...}[39m[31m[1m (as [22m[39m[34m[3mobject[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be [...] (as array), it must be {...} (as object)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [35m42[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m  ][0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value[22m[39m[0m
-[0m [90m 5 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     42
+    | ^^^^^^
+> 4 |   ]
+    | ^^^^ replace this with an allowed value
+  5 | }"
 `;
 
 exports[`prettifications enum 6/16: One value of different type (number to string) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[35m42[39m[31m[1m, it must be [22m[39m[32m\\"42\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be 42, it must be \\"42\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [32m\\"42\\"[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with \\"42\\"
+  3 | }"
 `;
 
 exports[`prettifications enum 7/16: One value of different type (string to number) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"42\\"[39m[31m[1m, it must be [22m[39m[35m42[39m[31m[1m (as [22m[39m[34m[3mnumber[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be \\"42\\", it must be 42 (as number)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"42\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [35m42[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ replace this with 42
+  3 | }"
 `;
 
 exports[`prettifications enum 8/16: One value of different type (boolean to string) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[33mfalse[39m[31m[1m, it must be [22m[39m[32m\\"false\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be false, it must be \\"false\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mfalse[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [32m\\"false\\"[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": false
+    |          ^^^^^ replace this with \\"false\\"
+  3 | }"
 `;
 
 exports[`prettifications enum 9/16: One value of different type (string to boolean) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"false\\"[39m[31m[1m, it must be [22m[39m[33mfalse[39m[31m[1m (as [22m[39m[34m[3mboolean[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be \\"false\\", it must be false (as boolean)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"false\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [33mfalse[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"false\\"
+    |          ^^^^^^^ replace this with false
+  3 | }"
 `;
 
 exports[`prettifications enum 10/16: One value of different type (null to string) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[33mnull[39m[31m[1m, it must be [22m[39m[32m\\"null\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be null, it must be \\"null\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mnull[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [32m\\"null\\"[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ replace this with \\"null\\"
+  3 | }"
 `;
 
 exports[`prettifications enum 11/16: One value of different type (string to null) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"null\\"[39m[31m[1m, it must be [22m[39m[33mnull[39m[31m[1m (as [22m[39m[34m[3mnull[23m[39m[31m[1m)[22m[39m
+"The .foo value cannot be \\"null\\", it must be null (as null)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"null\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [33mnull[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"null\\"
+    |          ^^^^^^ replace this with null
+  3 | }"
 `;
 
 exports[`prettifications enum 12/16: Two options (one of different type) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[35m42[39m[31m[1m, did you mean [22m[39m[32m\\"42\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m[31m[1m or [22m[39m[35m41[39m[31m[1m?[22m[39m
+"The .foo value cannot be 42, did you mean \\"42\\" (as string) or 41?
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value e.g. [32m\\"42\\"[31m[31m[1m (as [1m[31m[34m[3mstring[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with an allowed value e.g. \\"42\\" (as string)
+  3 | }"
 `;
 
 exports[`prettifications enum 13/16: Two options (one similar, one not) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[35m42[39m[31m[1m, did you mean [22m[39m[35m41[39m[31m[1m or [22m[39m[32m\\"bar\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m[31m[1m?[22m[39m
+"The .foo value cannot be 42, did you mean 41 or \\"bar\\" (as string)?
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value e.g. [35m41[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with an allowed value e.g. 41
+  3 | }"
 `;
 
 exports[`prettifications enum 14/16: Four options (one of different type) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"false\\"[39m[31m[1m, did you mean [22m[39m[31m[1many of:[22m[39m
-    ∙ [33mfalse[39m[31m[1m (as [22m[39m[34m[3mboolean[23m[39m[31m[1m)[22m[39m
-    ∙ [32m\\"falso\\"[39m
-    ∙ [32m\\"False\\"[39m
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
     ∙ other available values:
-    ∙       [32m\\"other\\"[39m
+    ∙       \\"other\\"
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"false\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value e.g. [33mfalse[31m[31m[1m (as [1m[31m[34m[3mboolean[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"false\\"
+    |          ^^^^^^^ replace this with an allowed value e.g. false (as boolean)
+  3 | }"
 `;
 
 exports[`prettifications enum 15/16: Many options (one of different type) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"false\\"[39m[31m[1m, did you mean [22m[39m[31m[1many of:[22m[39m
-    ∙ [33mfalse[39m[31m[1m (as [22m[39m[34m[3mboolean[23m[39m[31m[1m)[22m[39m
-    ∙ [32m\\"falso\\"[39m
-    ∙ [32m\\"False\\"[39m
-    ∙ [32m\\"these\\"[39m
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ \\"these\\"
     ∙ other available values:
-    ∙       [33m[...][39m[31m[1m (as [22m[39m[34m[3marray[23m[39m[31m[1m)[22m[39m
-    ∙       [33m{...}[39m[31m[1m (as [22m[39m[34m[3mobject[23m[39m[31m[1m)[22m[39m
-    ∙       [32m\\"be\\"[39m
-    ∙       [32m\\"listed\\"[39m
-    ∙       [32m\\"ones\\"[39m
-    ∙       [32m\\"separately\\"[39m
-    ∙       [32m\\"should\\"[39m
+    ∙       [...] (as array)
+    ∙       {...} (as object)
+    ∙       \\"be\\"
+    ∙       \\"listed\\"
+    ∙       \\"ones\\"
+    ∙       \\"separately\\"
+    ∙       \\"should\\"
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"false\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with an allowed value e.g. [33mfalse[31m[31m[1m (as [1m[31m[34m[3mboolean[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"false\\"
+    |          ^^^^^^^ replace this with an allowed value e.g. false (as boolean)
+  3 | }"
 `;
 
 exports[`prettifications enum 16/16: Const 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value cannot be [22m[39m[32m\\"bar\\"[39m[31m[1m, it must be [22m[39m[32m\\"baz\\"[39m
+"The .foo value cannot be \\"bar\\", it must be \\"baz\\"
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"bar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mreplace this with [32m\\"baz\\"[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"bar\\"
+    |          ^^^^^ replace this with \\"baz\\"
+  3 | }"
 `;
 
 exports[`prettifications format 2/24: date-time invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mdate-time[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc3339#section-5.6[34mRFC3339 Section 5.6[39m]8;; 📄
+"The .foo value is not valid date-time according to ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"2020-01-023T11:22:33Z\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6[34mRFC3339 Section 5.6[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"2020-01-023T11:22:33Z\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 4/24: time invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mtime[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc3339#section-5.6[34mRFC3339 Section 5.6[39m]8;; 📄
+"The .foo value is not valid time according to ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"11:22:334\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6[34mRFC3339 Section 5.6[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"11:22:334\\"
+    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 6/24: date invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mdate[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc3339#section-5.6[34mRFC3339 Section 5.6[39m]8;; 📄
+"The .foo value is not valid date according to ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"2020-01-023\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6[34mRFC3339 Section 5.6[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"2020-01-023\\"
+    |          ^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 8/24: email invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3memail[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc5322#section-3.4.1[34mRFC5322 Section 3.4.1[39m]8;; 📄
+"The .foo value is not valid email according to ]8;;https://tools.ietf.org/html/rfc5322#section-3.4.1RFC5322 Section 3.4.1]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"quite@invalid@email.com\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc5322#section-3.4.1[34mRFC5322 Section 3.4.1[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"quite@invalid@email.com\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc5322#section-3.4.1RFC5322 Section 3.4.1]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 10/24: hostname invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mhostname[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc1034#section-3.1[34mRFC1034 Section 3.1[39m]8;; 📄
+"The .foo value is not valid hostname according to ]8;;https://tools.ietf.org/html/rfc1034#section-3.1RFC1034 Section 3.1]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"invalid..host.com\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc1034#section-3.1[34mRFC1034 Section 3.1[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"invalid..host.com\\"
+    |          ^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc1034#section-3.1RFC1034 Section 3.1]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 12/24: ipv4 invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mipv4[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc2673#section-3.2[34mRFC2673 Section 3.2[39m]8;; 📄
+"The .foo value is not valid ipv4 according to ]8;;https://tools.ietf.org/html/rfc2673#section-3.2RFC2673 Section 3.2]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"1.2.345.6\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc2673#section-3.2[34mRFC2673 Section 3.2[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"1.2.345.6\\"
+    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc2673#section-3.2RFC2673 Section 3.2]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 14/24: ipv6 invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mipv6[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc2373#section-2.2[34mRFC2373 Section 2.2[39m]8;; 📄
+"The .foo value is not valid ipv6 according to ]8;;https://tools.ietf.org/html/rfc2373#section-2.2RFC2373 Section 2.2]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"2000:0000:10001::ABCD:EF01\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc2373#section-2.2[34mRFC2373 Section 2.2[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"2000:0000:10001::ABCD:EF01\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc2373#section-2.2RFC2373 Section 2.2]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 16/24: uri-reference invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3muri-reference[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc3986#section-4.1[34mRFC3986 Section 4.1[39m]8;; 📄
+"The .foo value is not valid uri-reference according to ]8;;https://tools.ietf.org/html/rfc3986#section-4.1RFC3986 Section 4.1]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"/ /the/file.txt\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc3986#section-4.1[34mRFC3986 Section 4.1[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"/ /the/file.txt\\"
+    |          ^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3986#section-4.1RFC3986 Section 4.1]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 18/24: uri-template invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3muri-template[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc6570[34mRFC6570[39m]8;; 📄
+"The .foo value is not valid uri-template according to ]8;;https://tools.ietf.org/html/rfc6570RFC6570]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"http://example.com/~{?}/\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc6570[34mRFC6570[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"http://example.com/~{?}/\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc6570RFC6570]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 20/24: json-pointer invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mjson-pointer[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/rfc6901[34mRFC6901[39m]8;; 📄
+"The .foo value is not valid json-pointer according to ]8;;https://tools.ietf.org/html/rfc6901RFC6901]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"\\\\\\\\foo/bar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/rfc6901[34mRFC6901[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"\\\\\\\\foo/bar\\"
+    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc6901RFC6901]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 22/24: relative-json-pointer invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mrelative-json-pointer[23m[39m[31m[1m according to [22m[39m]8;;https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01[34mRelative JSON Pointers[39m]8;; 📄
+"The .foo value is not valid relative-json-pointer according to ]8;;https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01Relative JSON Pointers]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"-/foo/bar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01[34mRelative JSON Pointers[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"-/foo/bar\\"
+    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01Relative JSON Pointers]8;;
+  3 | }"
 `;
 
 exports[`prettifications format 24/24: regex invalid 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not valid [22m[39m[34m[3mregex[23m[39m[31m[1m according to [22m[39m]8;;https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf[34mECMA 262[39m]8;; 📄
+"The .foo value is not valid regex according to ]8;;https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdfECMA 262]8;; 📄
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"*foo/bar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mensure this is valid ]8;;https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf[34mECMA 262[31m]8;;[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"*foo/bar\\"
+    |          ^^^^^^^^^^ ensure this is valid ]8;;https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdfECMA 262]8;;
+  3 | }"
 `;
 
 exports[`prettifications if-then-else 1/6: if-then on root object 1`] = `
-"   ,--.   [31m[1mThe [22m[39m[37m[3mroot object[23m[39m[31m[1m is missing required property [22m[39m[34m[3mlastName[23m[39m
+"   ,--.   The root object is missing required property lastName
   /   |   
-  \`|  |   [0m[31m[1m>[22m[39m[90m 1 | [39m{[0m
-   |  |   [0m [90m   | [39m[31m[1m^[22m[39m[0m
-   \`--'   [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"firstName\\"[39m[33m:[39m [36mtrue[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m}[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3mlastName[23m[31m[22m[39m[0m
+  \`|  |   > 1 | {
+   |  |       | ^
+   \`--'   > 2 |   \\"firstName\\": true
+              | ^^^^^^^^^^^^^^^^^^^
+          > 3 | }
+              | ^^ add missing property lastName
 
-  ,---.   [31m[1mThe conditional [22m[39m[37m[3mif/then[23m[39m[31m[1m on [22m[39m[37m[3mroot object[23m[39m[31m[1m is not satisfied (showed in separate error)[22m[39m
- '.-.  \\\\  [31m[1mThe [22m[39m[37m[3mif[23m[39m[31m[1m clause references:[22m[39m
+  ,---.   The conditional if/then on root object is not satisfied (showed in separate error)
+ '.-.  \\\\  The if clause references:
   .-' .'  
- /   '-.  [0m[31m[1m>[22m[39m[90m 1 | [39m{[0m
- '-----'  [0m [90m   | [39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"firstName\\"[39m[33m:[39m [36mtrue[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m}[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure the corresponding [37m[3mthen[23m[31m clause is satisfied[22m[39m[0m"
+ /   '-.  > 1 | {
+ '-----'      | ^
+          > 2 |   \\"firstName\\": true
+              | ^^^^^^^^^^^^^^^^^^^
+          > 3 | }
+              | ^^ Ensure the corresponding then clause is satisfied"
 `;
 
 exports[`prettifications if-then-else 2/6: if-else on root object 1`] = `
-"   ,--.   [31m[1mThe [22m[39m[37m[3mroot object[23m[39m[31m[1m is missing required property [22m[39m[34m[3malias[23m[39m
+"   ,--.   The root object is missing required property alias
   /   |   
-  \`|  |   [0m[31m[1m>[22m[39m[90m 1 | [39m{[0m
-   |  |   [0m [90m   | [39m[31m[1m^[22m[39m[0m
-   \`--'   [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"fullName\\"[39m[33m:[39m [36mfalse[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m}[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3malias[23m[31m[22m[39m[0m
+  \`|  |   > 1 | {
+   |  |       | ^
+   \`--'   > 2 |   \\"fullName\\": false
+              | ^^^^^^^^^^^^^^^^^^^
+          > 3 | }
+              | ^^ add missing property alias
 
-  ,---.   [31m[1mThe conditional [22m[39m[37m[3mif/else[23m[39m[31m[1m on [22m[39m[37m[3mroot object[23m[39m[31m[1m is not satisfied (showed in separate error)[22m[39m
- '.-.  \\\\  [31m[1mThe [22m[39m[37m[3mif[23m[39m[31m[1m clause references:[22m[39m
+  ,---.   The conditional if/else on root object is not satisfied (showed in separate error)
+ '.-.  \\\\  The if clause references:
   .-' .'  
- /   '-.  [0m[31m[1m>[22m[39m[90m 1 | [39m{[0m
- '-----'  [0m [90m   | [39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"fullName\\"[39m[33m:[39m [36mfalse[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m}[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure the corresponding [37m[3melse[23m[31m clause is satisfied[22m[39m[0m"
+ /   '-.  > 1 | {
+ '-----'      | ^
+          > 2 |   \\"fullName\\": false
+              | ^^^^^^^^^^^^^^^^^^^
+          > 3 | }
+              | ^^ Ensure the corresponding else clause is satisfied"
 `;
 
 exports[`prettifications if-then-else 3/6: if-then on first-level object 1`] = `
-"   ,--.   [31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is missing required property [22m[39m[34m[3mlastName[23m[39m
+"   ,--.   The .foo value is missing required property lastName
   /   |   
-  \`|  |   [0m [90m 1 | [39m{[0m
-   |  |   [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-   \`--'   [0m [90m   | [39m         [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"firstName\\"[39m[33m:[39m [36mtrue[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m  }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3mlastName[23m[31m[22m[39m[0m
-          [0m [90m 5 | [39m}[0m
+  \`|  |     1 | {
+   |  |   > 2 |   \\"foo\\": {
+   \`--'       |          ^
+          > 3 |     \\"firstName\\": true
+              | ^^^^^^^^^^^^^^^^^^^^^
+          > 4 |   }
+              | ^^^^ add missing property lastName
+            5 | }
 
-  ,---.   [31m[1mThe conditional [22m[39m[37m[3mif/then[23m[39m[31m[1m on [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not satisfied (showed in separate error)[22m[39m
- '.-.  \\\\  [31m[1mThe [22m[39m[37m[3mif[23m[39m[31m[1m clause references:[22m[39m
+  ,---.   The conditional if/then on .foo value is not satisfied (showed in separate error)
+ '.-.  \\\\  The if clause references:
   .-' .'  
- /   '-.  [0m [90m 1 | [39m{[0m
- '-----'  [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-          [0m [90m   | [39m         [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"firstName\\"[39m[33m:[39m [36mtrue[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m  }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure the corresponding [37m[3mthen[23m[31m clause is satisfied[22m[39m[0m
-          [0m [90m 5 | [39m}[0m"
+ /   '-.    1 | {
+ '-----'  > 2 |   \\"foo\\": {
+              |          ^
+          > 3 |     \\"firstName\\": true
+              | ^^^^^^^^^^^^^^^^^^^^^
+          > 4 |   }
+              | ^^^^ Ensure the corresponding then clause is satisfied
+            5 | }"
 `;
 
 exports[`prettifications if-then-else 4/6: if-else on first-level object 1`] = `
-"   ,--.   [31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is missing required property [22m[39m[34m[3malias[23m[39m
+"   ,--.   The .foo value is missing required property alias
   /   |   
-  \`|  |   [0m [90m 1 | [39m{[0m
-   |  |   [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-   \`--'   [0m [90m   | [39m         [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"fullName\\"[39m[33m:[39m [36mfalse[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m  }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3malias[23m[31m[22m[39m[0m
-          [0m [90m 5 | [39m}[0m
+  \`|  |     1 | {
+   |  |   > 2 |   \\"foo\\": {
+   \`--'       |          ^
+          > 3 |     \\"fullName\\": false
+              | ^^^^^^^^^^^^^^^^^^^^^
+          > 4 |   }
+              | ^^^^ add missing property alias
+            5 | }
 
-  ,---.   [31m[1mThe conditional [22m[39m[37m[3mif/else[23m[39m[31m[1m on [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is not satisfied (showed in separate error)[22m[39m
- '.-.  \\\\  [31m[1mThe [22m[39m[37m[3mif[23m[39m[31m[1m clause references:[22m[39m
+  ,---.   The conditional if/else on .foo value is not satisfied (showed in separate error)
+ '.-.  \\\\  The if clause references:
   .-' .'  
- /   '-.  [0m [90m 1 | [39m{[0m
- '-----'  [0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-          [0m [90m   | [39m         [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"fullName\\"[39m[33m:[39m [36mfalse[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m  }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure the corresponding [37m[3melse[23m[31m clause is satisfied[22m[39m[0m
-          [0m [90m 5 | [39m}[0m"
+ /   '-.    1 | {
+ '-----'  > 2 |   \\"foo\\": {
+              |          ^
+          > 3 |     \\"fullName\\": false
+              | ^^^^^^^^^^^^^^^^^^^^^
+          > 4 |   }
+              | ^^^^ Ensure the corresponding else clause is satisfied
+            5 | }"
 `;
 
 exports[`prettifications if-then-else 5/6: if-then on second-level object 1`] = `
-"   ,--.   [31m[1mThe value at [22m[39m[37m.[39m[32mfoo[39m[37m.[39m[32mbar[39m[31m[1m is missing required property [22m[39m[34m[3mlastName[23m[39m
+"   ,--.   The value at .foo.bar is missing required property lastName
   /   |   
-  \`|  |   [0m [90m 1 | [39m{[0m
-   |  |   [0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-   \`--'   [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m {[0m
-          [0m [90m   | [39m           [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m      [32m\\"firstName\\"[39m[33m:[39m [36mtrue[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 5 | [39m    }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3mlastName[23m[31m[22m[39m[0m
-          [0m [90m 6 | [39m  }[0m
-          [0m [90m 7 | [39m}[0m
+  \`|  |     1 | {
+   |  |     2 |   \\"foo\\": {
+   \`--'   > 3 |     \\"bar\\": {
+              |            ^
+          > 4 |       \\"firstName\\": true
+              | ^^^^^^^^^^^^^^^^^^^^^^^
+          > 5 |     }
+              | ^^^^^^ add missing property lastName
+            6 |   }
+            7 | }
 
-  ,---.   [31m[1mThe conditional [22m[39m[37m[3mif/then[23m[39m[31m[1m on value at [22m[39m[37m.[39m[32mfoo[39m[37m.[39m[32mbar[39m[31m[1m is not satisfied (showed in separate error)[22m[39m
- '.-.  \\\\  [31m[1mThe [22m[39m[37m[3mif[23m[39m[31m[1m clause references:[22m[39m
+  ,---.   The conditional if/then on value at .foo.bar is not satisfied (showed in separate error)
+ '.-.  \\\\  The if clause references:
   .-' .'  
- /   '-.  [0m [90m 1 | [39m{[0m
- '-----'  [0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m {[0m
-          [0m [90m   | [39m           [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m      [32m\\"firstName\\"[39m[33m:[39m [36mtrue[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 5 | [39m    }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure the corresponding [37m[3mthen[23m[31m clause is satisfied[22m[39m[0m
-          [0m [90m 6 | [39m  }[0m
-          [0m [90m 7 | [39m}[0m"
+ /   '-.    1 | {
+ '-----'    2 |   \\"foo\\": {
+          > 3 |     \\"bar\\": {
+              |            ^
+          > 4 |       \\"firstName\\": true
+              | ^^^^^^^^^^^^^^^^^^^^^^^
+          > 5 |     }
+              | ^^^^^^ Ensure the corresponding then clause is satisfied
+            6 |   }
+            7 | }"
 `;
 
 exports[`prettifications if-then-else 6/6: if-else on second-level object 1`] = `
-"   ,--.   [31m[1mThe value at [22m[39m[37m.[39m[32mfoo[39m[37m.[39m[32mbar[39m[31m[1m is missing required property [22m[39m[34m[3malias[23m[39m
+"   ,--.   The value at .foo.bar is missing required property alias
   /   |   
-  \`|  |   [0m [90m 1 | [39m{[0m
-   |  |   [0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-   \`--'   [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m {[0m
-          [0m [90m   | [39m           [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m      [32m\\"fullName\\"[39m[33m:[39m [36mfalse[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 5 | [39m    }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3malias[23m[31m[22m[39m[0m
-          [0m [90m 6 | [39m  }[0m
-          [0m [90m 7 | [39m}[0m
+  \`|  |     1 | {
+   |  |     2 |   \\"foo\\": {
+   \`--'   > 3 |     \\"bar\\": {
+              |            ^
+          > 4 |       \\"fullName\\": false
+              | ^^^^^^^^^^^^^^^^^^^^^^^
+          > 5 |     }
+              | ^^^^^^ add missing property alias
+            6 |   }
+            7 | }
 
-  ,---.   [31m[1mThe conditional [22m[39m[37m[3mif/else[23m[39m[31m[1m on value at [22m[39m[37m.[39m[32mfoo[39m[37m.[39m[32mbar[39m[31m[1m is not satisfied (showed in separate error)[22m[39m
- '.-.  \\\\  [31m[1mThe [22m[39m[37m[3mif[23m[39m[31m[1m clause references:[22m[39m
+  ,---.   The conditional if/else on value at .foo.bar is not satisfied (showed in separate error)
+ '.-.  \\\\  The if clause references:
   .-' .'  
- /   '-.  [0m [90m 1 | [39m{[0m
- '-----'  [0m [90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {[0m
-          [0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m:[39m {[0m
-          [0m [90m   | [39m           [31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 4 | [39m      [32m\\"fullName\\"[39m[33m:[39m [36mfalse[39m[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-          [0m[31m[1m>[22m[39m[90m 5 | [39m    }[0m
-          [0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure the corresponding [37m[3melse[23m[31m clause is satisfied[22m[39m[0m
-          [0m [90m 6 | [39m  }[0m
-          [0m [90m 7 | [39m}[0m"
+ /   '-.    1 | {
+ '-----'    2 |   \\"foo\\": {
+          > 3 |     \\"bar\\": {
+              |            ^
+          > 4 |       \\"fullName\\": false
+              | ^^^^^^^^^^^^^^^^^^^^^^^
+          > 5 |     }
+              | ^^^^^^ Ensure the corresponding else clause is satisfied
+            6 |   }
+            7 | }"
 `;
 
 exports[`prettifications multiple-of 1/1: Multiple of 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be a [22m[39m[31m[1mmultiple of [22m[39m[35m4[39m [31m[1m(e.g. [22m[39m[35m0[39m[37m, [39m[35m4[39m[37m, [39m[35m8[39m[37m, [39m[35m12[39m[37m, [39m[31m[1metc[22m[39m[31m[1m)[22m[39m
+"The .foo value should be a multiple of 4 (e.g. 0, 4, 8, 12, etc)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m17[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is a [31m[1mmultiple of [1m[31m[35m4[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is a multiple of 4
+  3 | }"
 `;
 
 exports[`prettifications pattern 1/1: Regex pattern 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m string must match [22m[39m[35m[3m^f[^ ]+z$[23m[39m
+"The .foo string must match ^f[^ ]+z$
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"bar baz\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this matches the regex pattern[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"bar baz\\"
+    |          ^^^^^^^^^ Ensure this matches the regex pattern
+  3 | }"
 `;
 
 exports[`prettifications required 1/2: Root-level required 1`] = `
-"[31m[1mThe [22m[39m[37m[3mroot object[23m[39m[31m[1m is missing required property [22m[39m[34m[3mfoo[23m[39m
+"The root object is missing required property foo
 
-[0m[31m[1m>[22m[39m[90m 1 | [39m{[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"bar\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m}[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3mfoo[23m[31m[22m[39m[0m"
+> 1 | {
+    | ^
+> 2 |   \\"bar\\": 42
+    | ^^^^^^^^^^^
+> 3 | }
+    | ^^ add missing property foo"
 `;
 
 exports[`prettifications required 2/2: Second-level required 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m value is missing required property [22m[39m[34m[3mbar[23m[39m
+"The .foo value is missing required property bar
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m {}[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1madd missing property [34m[3mbar[23m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": {}
+    |          ^^ add missing property bar
+  3 | }"
 `;
 
 exports[`prettifications string-size 1/4: maxLength 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m string should be [22m[39m[37m[3mat most[23m[39m [35m2[39m[37m[3m characters long[23m[39m
+"The .foo string should be at most 2 characters long
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"foobar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mat most[23m[31m [35m2[31m[37m[3m characters long[23m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at most 2 characters long
+  3 | }"
 `;
 
 exports[`prettifications string-size 2/4: minLength 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m string should be [22m[39m[37m[3mat least[23m[39m [35m17[39m[37m[3m characters long[23m[39m
+"The .foo string should be at least 17 characters long
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"foobar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mat least[23m[31m [35m17[31m[37m[3m characters long[23m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at least 17 characters long
+  3 | }"
 `;
 
 exports[`prettifications string-size 3/4: minLength and maxLength (too short) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m string should be [22m[39m[37m[3mat least[23m[39m [35m17[39m[37m[3m characters long[23m[39m
+"The .foo string should be at least 17 characters long
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"foobar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mat least[23m[31m [35m17[31m[37m[3m characters long[23m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at least 17 characters long
+  3 | }"
 `;
 
 exports[`prettifications string-size 4/4: minLength and maxLength (too long) 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m string should be [22m[39m[37m[3mat most[23m[39m [35m5[39m[37m[3m characters long[23m[39m
+"The .foo string should be at most 5 characters long
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"foobar\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mEnsure this is [37m[3mat most[23m[31m [35m5[31m[37m[3m characters long[23m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at most 5 characters long
+  3 | }"
 `;
 
 exports[`prettifications type 1/12: string to number 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mnumber[23m[39m[31m[1m, e.g. [22m[39m[35m42[39m[31m[1m (as [22m[39m[34m[3mnumber[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be number, e.g. 42 (as number)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"42\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [35m42[31m[31m[1m (as [1m[31m[34m[3mnumber[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ Replace this with e.g. 42 (as number)
+  3 | }"
 `;
 
 exports[`prettifications type 2/12: string to boolean 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mboolean[23m[39m[31m[1m, e.g. [22m[39m[33mtrue[39m[31m[1m (as [22m[39m[34m[3mboolean[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be boolean, e.g. true (as boolean)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"true\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [33mtrue[31m[31m[1m (as [1m[31m[34m[3mboolean[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"true\\"
+    |          ^^^^^^ Replace this with e.g. true (as boolean)
+  3 | }"
 `;
 
 exports[`prettifications type 3/12: string to null 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mnull[23m[39m[31m[1m, e.g. [22m[39m[33mnull[39m[31m[1m (as [22m[39m[34m[3mnull[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be null, e.g. null (as null)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [32m\\"null\\"[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [33mnull[31m[31m[1m (as [1m[31m[34m[3mnull[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": \\"null\\"
+    |          ^^^^^^ Replace this with e.g. null (as null)
+  3 | }"
 `;
 
 exports[`prettifications type 4/12: number to string 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mstring[23m[39m[31m[1m, e.g. [22m[39m[32m\\"42\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be string, e.g. \\"42\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m42[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [32m\\"42\\"[31m[31m[1m (as [1m[31m[34m[3mstring[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ Replace this with e.g. \\"42\\" (as string)
+  3 | }"
 `;
 
 exports[`prettifications type 5/12: number to boolean 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mboolean[23m[39m[31m[1m, e.g. [22m[39m[33mtrue[39m[31m[1m (as [22m[39m[34m[3mboolean[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be boolean, e.g. true (as boolean)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m1[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mReplace this with e.g. [33mtrue[31m[31m[1m (as [1m[31m[34m[3mboolean[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 1
+    |          ^ Replace this with e.g. true (as boolean)
+  3 | }"
 `;
 
 exports[`prettifications type 6/12: number to null 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mnull[23m[39m[31m[1m, e.g. [22m[39m[33mnull[39m[31m[1m (as [22m[39m[34m[3mnull[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be null, e.g. null (as null)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m0[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mReplace this with e.g. [33mnull[31m[31m[1m (as [1m[31m[34m[3mnull[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 0
+    |          ^ Replace this with e.g. null (as null)
+  3 | }"
 `;
 
 exports[`prettifications type 7/12: boolean to string 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mstring[23m[39m[31m[1m, e.g. [22m[39m[32m\\"false\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be string, e.g. \\"false\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mfalse[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [32m\\"false\\"[31m[31m[1m (as [1m[31m[34m[3mstring[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": false
+    |          ^^^^^ Replace this with e.g. \\"false\\" (as string)
+  3 | }"
 `;
 
 exports[`prettifications type 8/12: boolean to number 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mnumber[23m[39m[31m[1m, e.g. [22m[39m[35m0[39m[31m[1m (as [22m[39m[34m[3mnumber[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be number, e.g. 0 (as number)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mfalse[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [35m0[31m[31m[1m (as [1m[31m[34m[3mnumber[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": false
+    |          ^^^^^ Replace this with e.g. 0 (as number)
+  3 | }"
 `;
 
 exports[`prettifications type 9/12: boolean to null 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mnull[23m[39m[31m[1m, e.g. [22m[39m[33mnull[39m[31m[1m (as [22m[39m[34m[3mnull[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be null, e.g. null (as null)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [35m0[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m [31m[1mReplace this with e.g. [33mnull[31m[31m[1m (as [1m[31m[34m[3mnull[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": 0
+    |          ^ Replace this with e.g. null (as null)
+  3 | }"
 `;
 
 exports[`prettifications type 10/12: null to string 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mstring[23m[39m[31m[1m, e.g. [22m[39m[32m\\"null\\"[39m[31m[1m (as [22m[39m[34m[3mstring[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be string, e.g. \\"null\\" (as string)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mnull[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [32m\\"null\\"[31m[31m[1m (as [1m[31m[34m[3mstring[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ Replace this with e.g. \\"null\\" (as string)
+  3 | }"
 `;
 
 exports[`prettifications type 11/12: null to number 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mnumber[23m[39m[31m[1m, e.g. [22m[39m[35m0[39m[31m[1m (as [22m[39m[34m[3mnumber[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be number, e.g. 0 (as number)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mnull[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [35m0[31m[31m[1m (as [1m[31m[34m[3mnumber[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ Replace this with e.g. 0 (as number)
+  3 | }"
 `;
 
 exports[`prettifications type 12/12: null to boolean 1`] = `
-"[31m[1mThe type of the [22m[39m[37m.[39m[32mfoo[39m[31m[1m value should be [22m[39m[34m[3mboolean[23m[39m[31m[1m, e.g. [22m[39m[33mfalse[39m[31m[1m (as [22m[39m[34m[3mboolean[23m[39m[31m[1m)[22m[39m
+"The type of the .foo value should be boolean, e.g. false (as boolean)
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [36mnull[39m[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mReplace this with e.g. [33mfalse[31m[31m[1m (as [1m[31m[34m[3mboolean[23m[31m[31m[1m)[1m[31m[22m[39m[0m
-[0m [90m 3 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ Replace this with e.g. false (as boolean)
+  3 | }"
 `;
 
 exports[`prettifications unique 1/1 1`] = `
-"[31m[1mThe [22m[39m[37m.[39m[32mfoo[39m[31m[1m array should have unique items, but element [22m[39m[35m0[39m[31m[1m and [22m[39m[35m2[39m[31m[1m are identical: [22m[39m[32m\\"bar\\"[39m
+"The .foo array should have unique items, but element 0 and 2 are identical: \\"bar\\"
 
-[0m [90m 1 | [39m{[0m
-[0m[31m[1m>[22m[39m[90m 2 | [39m  [32m\\"foo\\"[39m[33m:[39m [[0m
-[0m [90m   | [39m         [31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 3 | [39m    [32m\\"bar\\"[39m[33m,[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 4 | [39m    [32m\\"baz\\"[39m[33m,[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 5 | [39m    [32m\\"bar\\"[39m[0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[0m
-[0m[31m[1m>[22m[39m[90m 6 | [39m  ][0m
-[0m [90m   | [39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m[31m[1m^[22m[39m [31m[1mRemove element [35m0[31m or [35m2[31m[22m[39m[0m
-[0m [90m 7 | [39m}[0m"
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     \\"bar\\",
+    | ^^^^^^^^^^
+> 4 |     \\"baz\\",
+    | ^^^^^^^^^^
+> 5 |     \\"bar\\"
+    | ^^^^^^^^^^
+> 6 |   ]
+    | ^^^^ Remove element 0 or 2
+  7 | }"
 `;
