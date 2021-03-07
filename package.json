@@ -20,7 +20,7 @@
   ],
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.prod.json",
-    "test": "jest",
+    "test": "FORCE_COLOR=3 FORCE_HYPERLINK=1 jest",
     "make-readme-examples": "ts-node scripts/make-readme-examples.ts",
     "prepack": "yarn build && yarn test",
     "cz": "git-cz"
