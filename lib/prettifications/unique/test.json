@@ -1,0 +1,20 @@
+[
+	{
+		"data": {
+			"foo": [
+				"bar",
+				"baz",
+				"bar"
+			]
+		},
+		"schema": {
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "array",
+					"uniqueItems": true
+				}
+			}
+		}
+	}
+]

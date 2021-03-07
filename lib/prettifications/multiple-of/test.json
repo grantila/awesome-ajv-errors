@@ -1,0 +1,18 @@
+{
+	"example": {
+		"title": "Multiple of"
+	},
+	"data": {
+		"foo": 17
+	},
+	"schema": {
+		"title": "Multiple of",
+		"type": "object",
+		"properties": {
+			"foo": {
+				"type": "number",
+				"multipleOf": 4
+			}
+		}
+	}
+}

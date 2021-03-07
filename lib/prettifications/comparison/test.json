@@ -1,0 +1,193 @@
+[
+	{
+		"example": {
+			"title": "Number too big"
+		},
+		"data": {
+			"foo": 42
+		},
+		"schema": {
+			"title": "Less than or equal to",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"maximum": 17
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 17
+		},
+		"schema": {
+			"title": "Strictly less than",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"exclusiveMaximum": 17
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 17
+		},
+		"schema": {
+			"title": "Greater than or equal to",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"minimum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 17
+		},
+		"schema": {
+			"title": "Strictly greater than",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"exclusiveMinimum": 17
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 2
+		},
+		"schema": {
+			"title": "Less than []",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"minimum": 17,
+					"maximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 2
+		},
+		"schema": {
+			"title": "Less than [)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"minimum": 17,
+					"exclusiveMaximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 2
+		},
+		"schema": {
+			"title": "Less than (]",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"exclusiveMinimum": 17,
+					"maximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 2
+		},
+		"schema": {
+			"title": "Less than ()",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"exclusiveMinimum": 17,
+					"exclusiveMaximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 314
+		},
+		"schema": {
+			"title": "Greater than []",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"minimum": 17,
+					"maximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 314
+		},
+		"schema": {
+			"title": "Greater than [)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"minimum": 17,
+					"exclusiveMaximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 314
+		},
+		"schema": {
+			"title": "Greater than (]",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"exclusiveMinimum": 17,
+					"maximum": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 314
+		},
+		"schema": {
+			"title": "Greater than ()",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number",
+					"exclusiveMinimum": 17,
+					"exclusiveMaximum": 42
+				}
+			}
+		}
+	}
+]

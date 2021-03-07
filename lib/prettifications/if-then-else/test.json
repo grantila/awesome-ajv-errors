@@ -1,0 +1,161 @@
+[
+	{
+		"data": {
+			"firstName": true
+		},
+		"schema": {
+			"title": "if-then on root object",
+			"if": {
+				"properties": {
+					"firstName": {
+						"const": true
+					}
+				}
+			},
+			"then": {
+				"required": [
+					"lastName"
+				]
+			}
+		}
+	},
+	{
+		"data": {
+			"fullName": false
+		},
+		"schema": {
+			"title": "if-else on root object",
+			"if": {
+				"properties": {
+					"fullName": {
+						"const": true
+					}
+				}
+			},
+			"else": {
+				"required": [
+					"alias"
+				]
+			}
+		}
+	},
+	{
+		"example": {
+			"title": "if-then not satisfied"
+		},
+		"data": {
+			"foo": {
+				"firstName": true
+			}
+		},
+		"schema": {
+			"title": "if-then on first-level object",
+			"properties": {
+				"foo": {
+					"if": {
+						"properties": {
+							"firstName": {
+								"const": true
+							}
+						}
+					},
+					"then": {
+						"required": [
+							"lastName"
+						]
+					}
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": {
+				"fullName": false
+			}
+		},
+		"schema": {
+			"title": "if-else on first-level object",
+			"properties": {
+				"foo": {
+					"if": {
+						"properties": {
+							"fullName": {
+								"const": true
+							}
+						}
+					},
+					"else": {
+						"required": [
+							"alias"
+						]
+					}
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": {
+				"bar": {
+					"firstName": true
+				}
+			}
+		},
+		"schema": {
+			"title": "if-then on second-level object",
+			"properties": {
+				"foo": {
+					"properties": {
+						"bar": {
+							"if": {
+								"properties": {
+									"firstName": {
+										"const": true
+									}
+								}
+							},
+							"then": {
+								"required": [
+									"lastName"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": {
+				"bar": {
+					"fullName": false
+				}
+			}
+		},
+		"schema": {
+			"title": "if-else on second-level object",
+			"properties": {
+				"foo": {
+					"properties": {
+						"bar": {
+							"if": {
+								"properties": {
+									"fullName": {
+										"const": true
+									}
+								}
+							},
+							"else": {
+								"required": [
+									"alias"
+								]
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+]

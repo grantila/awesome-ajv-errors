@@ -1,0 +1,17 @@
+[
+	{
+		"data": {
+			"foo": "bar baz"
+		},
+		"schema": {
+			"title": "Regex pattern",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"pattern": "^f[^ ]+z$"
+				}
+			}
+		}
+	}
+]

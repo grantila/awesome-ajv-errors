@@ -1,0 +1,117 @@
+[
+	{
+		"schema": {
+			"title": "Simple top-level",
+			"type": "object",
+			"properties": {
+				"foo": {}
+			},
+			"additionalProperties": false
+		},
+		"data": {
+			"foo": 42,
+			"bar": "42"
+		}
+	},
+	{
+		"fail": false,
+		"schema": {
+			"title": "Simple top-level with tricky name successful",
+			"type": "object",
+			"properties": {
+				"foo#bar/baz": {}
+			},
+			"additionalProperties": false
+		},
+		"data": {
+			"foo#bar/baz": {}
+		}
+	},
+	{
+		"schema": {
+			"title": "Simple top-level with tricky name",
+			"type": "object",
+			"properties": {
+				"foo#bar/bazz": {}
+			},
+			"additionalProperties": false
+		},
+		"data": {
+			"foo#bar/baz": {}
+		}
+	},
+	{
+		"schema": {
+			"title": "Second-level one similar property",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "object",
+					"properties": {
+						"bar": {}
+					},
+					"additionalProperties": false
+				}
+			}
+		},
+		"data": {
+			"foo": {
+				"bar": "42",
+				"baz": "33"
+			}
+		}
+	},
+	{
+		"example": {
+			"title": "Similar property name",
+			"description": "Suggest similar properties"
+		},
+		"schema": {
+			"title": "Second-level two similar properties",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "object",
+					"properties": {
+						"bar": {},
+						"bak": {}
+					},
+					"additionalProperties": false
+				}
+			}
+		},
+		"data": {
+			"foo": {
+				"bar": "42",
+				"baz": "33"
+			}
+		}
+	},
+	{
+		"example": {
+			"title": "Multiple similar property names",
+			"description": "Suggests multiple valid property names"
+		},
+		"schema": {
+			"title": "Second-level three similar properties",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "object",
+					"properties": {
+						"bar": {},
+						"bak": {},
+						"bam": {}
+					},
+					"additionalProperties": false
+				}
+			}
+		},
+		"data": {
+			"foo": {
+				"bar": "42",
+				"baz": "33"
+			}
+		}
+	}
+]

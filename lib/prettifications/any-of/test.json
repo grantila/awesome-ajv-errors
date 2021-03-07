@@ -1,0 +1,114 @@
+[
+	{
+		"example": {
+			"title": "Type typo",
+			"description": "Suggests the valid value type when mistaken"
+		},
+		"schema": {
+			"title": "One option (number to string)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"anyOf": [
+						{
+							"type": "string"
+						}
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"example": {
+			"title": "Type typo (reverse)",
+			"description": "Suggests the valid value type when mistaken"
+		},
+		"schema": {
+			"title": "One option (string to number)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"anyOf": [
+						{
+							"type": "number"
+						}
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "42"
+		}
+	},
+	{
+		"example": {
+			"title": "Type typo (one much better option)",
+			"description": "When the type mismatch, and one type is much \"better\" than the rest (as in probably the right solution), it will be suggested for conversion"
+		},
+		"schema": {
+			"title": "Two options",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "boolean"
+						}
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"example": {
+			"title": "Type typo (one much better option out of multiple)"
+		},
+		"schema": {
+			"title": "Three options",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"anyOf": [
+						{
+							"type": "string"
+						},
+						{
+							"type": "boolean"
+						},
+						{
+							"type": "null"
+						}
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"data": {
+			"foo": "bar"
+		},
+		"schema": {
+			"title": "Not",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"not": {
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+]

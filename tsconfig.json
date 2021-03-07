@@ -1,0 +1,27 @@
+{
+	"compilerOptions": {
+		"allowJs": false,
+		"declaration": true,
+		"sourceMap": true,
+		"lib": [ "ES2018" ],
+		"types": [
+			"node",
+			"jest"
+		],
+		"noEmit": true,
+		"target": "ES2018",
+		"module": "CommonJS",
+		"moduleResolution": "node",
+		"noImplicitAny": true,
+		"noUnusedLocals": true,
+		"pretty": true,
+		"strict": true,
+		"alwaysStrict": true,
+	},
+	"include": [
+		"examples",
+		"scripts",
+		"lib",
+		"external.d.ts"
+	]
+}

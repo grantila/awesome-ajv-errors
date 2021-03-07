@@ -1,0 +1,380 @@
+[
+	{
+		"fail": false,
+		"data": {
+			"foo": "2020-01-02T11:22:33Z"
+		},
+		"schema": {
+			"title": "date-time valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "date-time"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "2020-01-023T11:22:33Z"
+		},
+		"schema": {
+			"title": "date-time invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "date-time"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "11:22:33"
+		},
+		"schema": {
+			"title": "time valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "time"
+				}
+			}
+		}
+	},
+	{
+		"example": {
+			"title": "Invalid format (time)"
+		},
+		"data": {
+			"foo": "11:22:334"
+		},
+		"schema": {
+			"title": "time invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "time"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "2020-01-02"
+		},
+		"schema": {
+			"title": "date valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "date"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "2020-01-023"
+		},
+		"schema": {
+			"title": "date invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "date"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "a.valid@email.com"
+		},
+		"schema": {
+			"title": "email valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "email"
+				}
+			}
+		}
+	},
+	{
+		"example": {
+			"title": "Invalid format (e-mail)"
+		},
+		"data": {
+			"foo": "quite@invalid@email.com"
+		},
+		"schema": {
+			"title": "email invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "email"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "valid.host.com"
+		},
+		"schema": {
+			"title": "hostname valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "hostname"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "invalid..host.com"
+		},
+		"schema": {
+			"title": "hostname invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "hostname"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "1.2.3.4"
+		},
+		"schema": {
+			"title": "ipv4 valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "ipv4"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "1.2.345.6"
+		},
+		"schema": {
+			"title": "ipv4 invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "ipv4"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "2000:0000:1000::ABCD:EF01"
+		},
+		"schema": {
+			"title": "ipv6 valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "ipv6"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "2000:0000:10001::ABCD:EF01"
+		},
+		"schema": {
+			"title": "ipv6 invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "ipv6"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "//the/file.txt"
+		},
+		"schema": {
+			"title": "uri-reference valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "uri-reference"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "/ /the/file.txt"
+		},
+		"schema": {
+			"title": "uri-reference invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "uri-reference"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "http://example.com/~{username}/"
+		},
+		"schema": {
+			"title": "uri-template valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "uri-template"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "http://example.com/~{?}/"
+		},
+		"schema": {
+			"title": "uri-template invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "uri-template"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "/foo/bar"
+		},
+		"schema": {
+			"title": "json-pointer valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "json-pointer"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "\\foo/bar"
+		},
+		"schema": {
+			"title": "json-pointer invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "json-pointer"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": "1/foo/bar"
+		},
+		"schema": {
+			"title": "relative-json-pointer valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "relative-json-pointer"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "-/foo/bar"
+		},
+		"schema": {
+			"title": "relative-json-pointer invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "relative-json-pointer"
+				}
+			}
+		}
+	},
+	{
+		"fail": false,
+		"data": {
+			"foo": ".*foo\/bar"
+		},
+		"schema": {
+			"title": "regex valid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "regex"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "*foo\/bar"
+		},
+		"schema": {
+			"title": "regex invalid",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"format": "regex"
+				}
+			}
+		}
+	}
+]

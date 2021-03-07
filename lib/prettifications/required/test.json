@@ -1,0 +1,40 @@
+[
+	{
+		"example": {
+			"title": "Required property"
+		},
+		"data": {
+			"bar": 42
+		},
+		"schema": {
+			"title": "Root-level required",
+			"type": "object",
+			"properties": {
+				"foo": {}
+			},
+			"required": [
+				"foo"
+			]
+	}
+	},
+	{
+		"data": {
+			"foo": {}
+		},
+		"schema": {
+			"title": "Second-level required",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "object",
+					"properties": {
+						"bar": {}
+					},
+					"required": [
+						"bar"
+					]
+				}
+			}
+		}
+	}
+]

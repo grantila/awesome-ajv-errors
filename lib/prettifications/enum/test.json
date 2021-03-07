@@ -1,0 +1,283 @@
+[
+	{
+		"example": {
+			"title": "Not in enum set"
+		},
+		"schema": {
+			"title": "One value of same type",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						41
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (object to string)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						"42"
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": { "bar": 42 }
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (string, object)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						{ "bar": 42 }
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "42"
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (object to array)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						[ "42" ]
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": { "bar": 42 }
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (array to object)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						{ "foo": "42" }
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": [ 42 ]
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (number to string)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						"42"
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (string to number)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						42
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "42"
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (boolean to string)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						"false"
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": false
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (string to boolean)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						false
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "false"
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (null to string)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						"null"
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": null
+		}
+	},
+	{
+		"schema": {
+			"title": "One value of different type (string to null)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						null
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "null"
+		}
+	},
+	{
+		"example": {
+			"title": "Almost in enum set (wrong convertible type)"
+		},
+		"schema": {
+			"title": "Two options (one of different type)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						41,
+						"42"
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"schema": {
+			"title": "Two options (one similar, one not)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						41,
+						"bar"
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": 42
+		}
+	},
+	{
+		"example": {
+			"title": "Almost in enum set (wrong convertible type), multiple options"
+		},
+		"schema": {
+			"title": "Four options (one of different type)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						"falso",
+						"other",
+						"False",
+						false
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "false"
+		}
+	},
+	{
+		"schema": {
+			"title": "Many options (one of different type)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"enum": [
+						"falso",
+						"these",
+						"ones",
+						"should",
+						"be",
+						"listed",
+						"separately",
+						[ ],
+						{
+							"type": "object",
+							"properties": { "foo": { "type": "string" } }
+						},
+						"False",
+						false
+					]
+				}
+			}
+		},
+		"data": {
+			"foo": "false"
+		}
+	},
+	{
+		"schema": {
+			"title": "Const",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"const": "baz"
+				}
+			}
+		},
+		"data": {
+			"foo": "bar"
+		}
+	}
+]

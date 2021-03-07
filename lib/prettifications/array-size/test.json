@@ -1,0 +1,77 @@
+[
+	{
+		"data": {
+			"foo": [
+				1
+			]
+		},
+		"schema": {
+			"title": "1 too few",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "array",
+					"minItems": 2
+				}
+			}
+		}
+	},
+	{
+		"example": {
+			"title": "Array too small"
+		},
+		"data": {
+			"foo": [
+				1
+			]
+		},
+		"schema": {
+			"title": "2 too few",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "array",
+					"minItems": 3
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": [
+				1,
+				2,
+				3
+			]
+		},
+		"schema": {
+			"title": "1 too many",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "array",
+					"maxItems": 2
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": [
+				1,
+				2,
+				3
+			]
+		},
+		"schema": {
+			"title": "2 too many",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "array",
+					"maxItems": 1
+				}
+			}
+		}
+	}
+]

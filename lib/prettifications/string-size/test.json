@@ -1,0 +1,64 @@
+[
+	{
+		"data": {
+			"foo": "foobar"
+		},
+		"schema": {
+			"title": "maxLength",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"maxLength": 2
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "foobar"
+		},
+		"schema": {
+			"title": "minLength",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"minLength": 17
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "foobar"
+		},
+		"schema": {
+			"title": "minLength and maxLength (too short)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"minLength": 17,
+					"maxLength": 42
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "foobar"
+		},
+		"schema": {
+			"title": "minLength and maxLength (too long)",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string",
+					"minLength": 3,
+					"maxLength": 5
+				}
+			}
+		}
+	}
+]

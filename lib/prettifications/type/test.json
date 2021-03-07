@@ -1,0 +1,170 @@
+[
+	{
+		"data": {
+			"foo": "42"
+		},
+		"schema": {
+			"title": "string to number",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "true"
+		},
+		"schema": {
+			"title": "string to boolean",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": "null"
+		},
+		"schema": {
+			"title": "string to null",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "null"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 42
+		},
+		"schema": {
+			"title": "number to string",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 1
+		},
+		"schema": {
+			"title": "number to boolean",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "boolean"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 0
+		},
+		"schema": {
+			"title": "number to null",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "null"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": false
+		},
+		"schema": {
+			"title": "boolean to string",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": false
+		},
+		"schema": {
+			"title": "boolean to number",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": 0
+		},
+		"schema": {
+			"title": "boolean to null",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "null"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": null
+		},
+		"schema": {
+			"title": "null to string",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "string"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": null
+		},
+		"schema": {
+			"title": "null to number",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "number"
+				}
+			}
+		}
+	},
+	{
+		"data": {
+			"foo": null
+		},
+		"schema": {
+			"title": "null to boolean",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "boolean"
+				}
+			}
+		}
+	}
+]
