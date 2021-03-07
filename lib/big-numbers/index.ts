@@ -60,7 +60,6 @@ export function prepareText( arg?: PrepareTextArg ): PreparedText
 		? getWidth( arg.maxNumber )
 		: arg.maxWidth as number;
 
-		whiteSpacePerChar
 	const charWidth = numberWidth * font.width;
 	const emptyLine = ' '.repeat( charWidth );
 

@@ -44,7 +44,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 		:
 			style.title( 'Ensure the array has ', context ) +
 			style.number( `${limit - value.length}`, context ) +
-			style.title( plural( ' more item' ), context )
+			style.title( plural( ' more item' ), context );
 
 	const codeFrame = printCode(
 		shortMessage,
