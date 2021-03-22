@@ -743,6 +743,134 @@ exports[`prettifications required 2/2: Second-level required 1`] = `
   3 | }"
 `;
 
+exports[`prettifications simple types should handle boolean and data = [object Object] 1`] = `
+"The type of the root object should be boolean
+
+> 1 | {
+    | ^
+> 2 |   \\"foo\\": \\"bar\\"
+    | ^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ Replace this"
+`;
+
+exports[`prettifications simple types should handle boolean and data = 42 1`] = `
+"The type of the root object should be boolean
+
+> 1 | 42
+    | ^^ Replace this"
+`;
+
+exports[`prettifications simple types should handle boolean and data = false 1`] = `
+"The type of the root object should be boolean, e.g. false (as boolean)
+
+> 1 | \\"false\\"
+    | ^^^^^^^ Replace this with e.g. false (as boolean)"
+`;
+
+exports[`prettifications simple types should handle boolean and data = null 1`] = `
+"The type of the root object should be boolean, e.g. false (as boolean)
+
+> 1 | null
+    | ^^^^ Replace this with e.g. false (as boolean)"
+`;
+
+exports[`prettifications simple types should handle null and data = [object Object] 1`] = `
+"The type of the root object should be null
+
+> 1 | {
+    | ^
+> 2 |   \\"foo\\": \\"bar\\"
+    | ^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ Replace this"
+`;
+
+exports[`prettifications simple types should handle null and data = 42 1`] = `
+"The type of the root object should be null
+
+> 1 | 42
+    | ^^ Replace this"
+`;
+
+exports[`prettifications simple types should handle null and data = false 1`] = `
+"The type of the root object should be null, e.g. null (as null)
+
+> 1 | false
+    | ^^^^^ Replace this with e.g. null (as null)"
+`;
+
+exports[`prettifications simple types should handle null and data = null 1`] = `
+"The type of the root object should be null, e.g. null (as null)
+
+> 1 | \\"null\\"
+    | ^^^^^^ Replace this with e.g. null (as null)"
+`;
+
+exports[`prettifications simple types should handle number and data = [object Object] 1`] = `
+"The type of the root object should be number
+
+> 1 | {
+    | ^
+> 2 |   \\"foo\\": \\"bar\\"
+    | ^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ Replace this"
+`;
+
+exports[`prettifications simple types should handle number and data = 42 1`] = `
+"The type of the root object should be number, e.g. 42 (as number)
+
+> 1 | \\"42\\"
+    | ^^^^ Replace this with e.g. 42 (as number)"
+`;
+
+exports[`prettifications simple types should handle number and data = null 1`] = `
+"The type of the root object should be number, e.g. 0 (as number)
+
+> 1 | null
+    | ^^^^ Replace this with e.g. 0 (as number)"
+`;
+
+exports[`prettifications simple types should handle number and data = true 1`] = `
+"The type of the root object should be number, e.g. 1 (as number)
+
+> 1 | true
+    | ^^^^ Replace this with e.g. 1 (as number)"
+`;
+
+exports[`prettifications simple types should handle string and data = [object Object] 1`] = `
+"The type of the root object should be string
+
+> 1 | {
+    | ^
+> 2 |   \\"foo\\": \\"bar\\"
+    | ^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ Replace this"
+`;
+
+exports[`prettifications simple types should handle string and data = 42 1`] = `
+"The type of the root object should be string, e.g. \\"42\\" (as string)
+
+> 1 | 42
+    | ^^ Replace this with e.g. \\"42\\" (as string)"
+`;
+
+exports[`prettifications simple types should handle string and data = false 1`] = `
+"The type of the root object should be string, e.g. \\"false\\" (as string)
+
+> 1 | false
+    | ^^^^^ Replace this with e.g. \\"false\\" (as string)"
+`;
+
+exports[`prettifications simple types should handle string and data = null 1`] = `
+"The type of the root object should be string, e.g. \\"null\\" (as string)
+
+> 1 | null
+    | ^^^^ Replace this with e.g. \\"null\\" (as string)"
+`;
+
 exports[`prettifications string-size 1/4: maxLength 1`] = `
 "The .foo string should be at most 2 characters long
 

@@ -53,4 +53,36 @@ describe( "prettifications", ( ) =>
 				tests[ 0 ].fail
 			);
 	}
+
+	describe( "simple types", ( ) =>
+	{
+		const tests: Array<{ data: any; type: string }> = [
+			{ type: 'string', data: 42 },
+			{ type: 'string', data: false },
+			{ type: 'string', data: null },
+			{ type: 'string', data: { foo: 'bar' } },
+			{ type: 'number', data: "42" },
+			{ type: 'number', data: true },
+			{ type: 'number', data: null },
+			{ type: 'number', data: { foo: 'bar' } },
+			{ type: 'boolean', data: 42 },
+			{ type: 'boolean', data: "false" },
+			{ type: 'boolean', data: null },
+			{ type: 'boolean', data: { foo: 'bar' } },
+			{ type: 'null', data: 42 },
+			{ type: 'null', data: "null" },
+			{ type: 'null', data: false },
+			{ type: 'null', data: { foo: 'bar' } },
+		];
+
+		for ( const { type, data } of tests )
+			it( `should handle ${type} and data = ${data}`, ( ) =>
+			{
+				const validate = ajv.compile( { type } );
+				expect( validate( data ) ).toBe( false );
+
+				const prettyError = prettify( validate, { data } );
+				expect( prettyError ).toMatchSnapshot( );
+			} );
+	} );
 } );
