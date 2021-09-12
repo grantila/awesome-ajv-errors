@@ -28,6 +28,7 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: yarn
+    - run: yarn install:ajv:versions
     - run: yarn build
     - run: yarn test
       env:

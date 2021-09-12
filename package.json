@@ -21,6 +21,9 @@
     "dist"
   ],
   "scripts": {
+    "install:ajv-7": "cd ajv-versions/v-7 && yarn",
+    "install:ajv-8": "cd ajv-versions/v-8 && yarn",
+    "install:ajv:versions": "yarn install:ajv-7 && yarn install:ajv-8",
     "build": "rimraf dist && tsc -p tsconfig.prod.json",
     "test:all": "NODE_OPTIONS=--experimental-vm-modules FORCE_COLOR=0 FORCE_HYPERLINK=1 jest",
     "get:snapshot:sha": "shasum lib/__snap*/*.snap ajv-versions/v-*/__snap*/*.snap",
