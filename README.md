@@ -18,7 +18,11 @@ It has a gorgeous human-understandable output, predicts human errors and suggest
  * [Examples](#examples)
  * [Usage](#usage)
 
-Since version 2, this is a [pure ESM][pure-esm] package. It requires Node 12.20 and cannot be used from CommonJS.
+## Versions
+
+ * Since version 2;
+   * This is a [pure ESM][pure-esm] package. It requires Node 12.20 and cannot be used from CommonJS.
+   * Ajv 6, 7 and 8 are supported.
 
 # Examples
 

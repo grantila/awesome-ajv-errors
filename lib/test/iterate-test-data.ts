@@ -2,7 +2,7 @@ import { existsSync, promises as fs } from 'node:fs'
 import { fileURLToPath, URL } from 'node:url'
 import * as path from 'node:path'
 
-import Ajv from 'ajv'
+import type Ajv from 'ajv'
 
 import { prettify } from '../prettification'
 import { ensureArray } from '../util'
@@ -34,7 +34,7 @@ export interface TestData
 const prettificationsDir =
 	fileURLToPath( new URL( '../prettifications', import.meta.url ) );
 
-export async function getTestData( ): Promise< TestData >
+export async function getTestData( _Ajv: typeof Ajv ): Promise< TestData >
 {
 	const dirs =
 		( await fs.readdir( prettificationsDir, { withFileTypes: true } ) )
@@ -42,7 +42,7 @@ export async function getTestData( ): Promise< TestData >
 		.map( dirent => dirent.name )
 		.sort( );
 
-	const ajv = new Ajv( { allErrors: true, validateSchema: true } );
+	const ajv = new _Ajv( { allErrors: true, validateSchema: true } );
 
 	const validateTests = ajv.compile( {
 		definitions: {

@@ -71,7 +71,7 @@ export function _prettify( opts: PrettifyOptions ): string
 			data: opts.data,
 			colors: ensureColorUsage( opts.colors ),
 			error,
-			dataPath: parseDataPath( error.dataPath ),
+			dataPath: parseDataPath( error ),
 			parsedJson,
 		};
 

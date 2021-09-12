@@ -6,6 +6,7 @@
 		"schema": {
 			"title": "if-then on root object",
 			"if": {
+				"type": "object",
 				"properties": {
 					"firstName": {
 						"const": true
@@ -13,6 +14,7 @@
 				}
 			},
 			"then": {
+				"type": "object",
 				"required": [
 					"lastName"
 				]
@@ -26,6 +28,7 @@
 		"schema": {
 			"title": "if-else on root object",
 			"if": {
+				"type": "object",
 				"properties": {
 					"fullName": {
 						"const": true
@@ -33,6 +36,7 @@
 				}
 			},
 			"else": {
+				"type": "object",
 				"required": [
 					"alias"
 				]
@@ -50,9 +54,11 @@
 		},
 		"schema": {
 			"title": "if-then on first-level object",
+			"type": "object",
 			"properties": {
 				"foo": {
 					"if": {
+						"type": "object",
 						"properties": {
 							"firstName": {
 								"const": true
@@ -60,6 +66,7 @@
 						}
 					},
 					"then": {
+						"type": "object",
 						"required": [
 							"lastName"
 						]
@@ -76,9 +83,11 @@
 		},
 		"schema": {
 			"title": "if-else on first-level object",
+			"type": "object",
 			"properties": {
 				"foo": {
 					"if": {
+						"type": "object",
 						"properties": {
 							"fullName": {
 								"const": true
@@ -86,6 +95,7 @@
 						}
 					},
 					"else": {
+						"type": "object",
 						"required": [
 							"alias"
 						]
@@ -104,11 +114,14 @@
 		},
 		"schema": {
 			"title": "if-then on second-level object",
+			"type": "object",
 			"properties": {
 				"foo": {
+					"type": "object",
 					"properties": {
 						"bar": {
 							"if": {
+								"type": "object",
 								"properties": {
 									"firstName": {
 										"const": true
@@ -116,6 +129,7 @@
 								}
 							},
 							"then": {
+								"type": "object",
 								"required": [
 									"lastName"
 								]
@@ -136,11 +150,14 @@
 		},
 		"schema": {
 			"title": "if-else on second-level object",
+			"type": "object",
 			"properties": {
 				"foo": {
+					"type": "object",
 					"properties": {
 						"bar": {
 							"if": {
+								"type": "object",
 								"properties": {
 									"fullName": {
 										"const": true
@@ -148,6 +165,7 @@
 								}
 							},
 							"else": {
+								"type": "object",
 								"required": [
 									"alias"
 								]

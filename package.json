@@ -22,7 +22,9 @@
   ],
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.prod.json",
-    "test": "NODE_OPTIONS=--experimental-vm-modules FORCE_COLOR=0 FORCE_HYPERLINK=1 jest",
+    "test:all": "NODE_OPTIONS=--experimental-vm-modules FORCE_COLOR=0 FORCE_HYPERLINK=1 jest",
+    "get:snapshot:sha": "shasum lib/__snap*/*.snap ajv-versions/v-*/__snap*/*.snap",
+    "test": "yarn test:all && yarn get:snapshot:sha",
     "make-readme-examples": "ts-node scripts/make-readme-examples.ts",
     "prepack": "yarn build && yarn test",
     "cz": "git-cz"

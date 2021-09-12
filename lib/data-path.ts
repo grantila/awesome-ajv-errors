@@ -1,3 +1,5 @@
+import { ValidationError } from "./types"
+
 
 export interface DataPathItem
 {
@@ -12,11 +14,20 @@ export interface DataPath
 	path: Array< DataPathItem >;
 }
 
-export function parseDataPath( value: string ): DataPath
+export function parseDataPath( error: ValidationError ): DataPath
 {
+	// Since Ajv 8, it's called "instancePath"
+	const value: string = error.dataPath ?? ( error as any ).instancePath;
+
+	if ( value === '' )
+		return { orig: value, dotOnly: '.', path: [ ] };
+
+	// Ajv 6 and 7 differ. In 6 the path separator is `.`, in 7 it's `/`.
+	const sep = value.charAt( 0 );
+
 	const path = ( [ ] as Array< DataPathItem > ).concat(
 		...value
-		.split( '.' )
+		.split( sep )
 		.map( entry =>
 			entry
 				.split( /\[|\]/g )
