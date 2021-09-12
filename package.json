@@ -10,17 +10,19 @@
   "homepage": "https://github.com/grantila/awesome-ajv-errors#readme",
   "main": "./dist/index.js",
   "browser": "./dist/index.js",
+  "exports": "./dist/index.js",
   "types": "./dist/index.d.ts",
-  "directories": {},
+  "type": "module",
+  "sideEffects": false,
   "engines": {
-    "node": ">=10"
+    "node": "^12.20.0 || ^14.13.1 || >=16.0.0"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "rimraf dist && tsc -p tsconfig.prod.json",
-    "test": "FORCE_COLOR=0 FORCE_HYPERLINK=1 jest",
+    "test": "NODE_OPTIONS=--experimental-vm-modules FORCE_COLOR=0 FORCE_HYPERLINK=1 jest",
     "make-readme-examples": "ts-node scripts/make-readme-examples.ts",
     "prepack": "yarn build && yarn test",
     "cz": "git-cz"
@@ -36,28 +38,30 @@
     "pretty"
   ],
   "devDependencies": {
-    "@types/babel__code-frame": "^7.0.2",
-    "@types/hapi__joi": "^17.1.6",
-    "@types/jest": "^26.0.20",
-    "@types/node": "^14.14.31",
+    "@babel/preset-env": "^7.15.6",
+    "@babel/preset-typescript": "^7.15.0",
+    "@types/babel__code-frame": "^7.0.3",
+    "@types/hapi__joi": "^17.1.7",
+    "@types/jest": "^27.0.1",
+    "@types/node": "^16.9.1",
     "ajv": "^6.11.0",
     "cz-conventional-changelog": "^3.3.0",
-    "jest": "^26.6.3",
+    "jest": "^27.1.1",
     "rimraf": "^3.0.1",
-    "temp-write": "^4.0.0",
-    "ts-jest": "^26.5.2",
-    "ts-node": "^9.1.1",
-    "typescript": "^4.2.2"
+    "temp-write": "^5.0.0",
+    "ts-node": "^10.2.1",
+    "typescript": "^4.4.3"
   },
   "dependencies": {
-    "chalk": "^4.1.0",
+    "@babel/code-frame": "^7.14.5",
+    "chalk": "^4.1.2",
     "jsonpointer": "^4.1.0",
-    "jsonpos": "^1.1.0",
-    "leven": "^3.1.0",
-    "terminal-link": "^2.1.1"
+    "jsonpos": "^2.0.1",
+    "leven": "^4.0.0",
+    "terminal-link": "^3.0.0"
   },
   "peerDependencies": {
-    "ajv": "^6 || ^7"
+    "ajv": "^6 || ^7 || ^8"
   },
   "config": {
     "commitizen": {

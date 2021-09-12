@@ -1,4 +1,5 @@
 import { ValidateFunction } from "ajv"
+import { getAstByObject } from "jsonpos"
 
 import {
 	ValidationError,
@@ -9,7 +10,6 @@ import {
 import { ensureArray } from "./util"
 import { parseDataPath } from "./data-path"
 import { style, ensureColorUsage, printError } from "./style"
-import { getAstByObject } from "jsonpos"
 import { prepareText } from "./big-numbers"
 
 import { handlers } from "./prettifications"

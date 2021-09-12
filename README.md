@@ -18,6 +18,7 @@ It has a gorgeous human-understandable output, predicts human errors and suggest
  * [Examples](#examples)
  * [Usage](#usage)
 
+Since version 2, this is a [pure ESM][pure-esm] package. It requires Node 12.20 and cannot be used from CommonJS.
 
 # Examples
 
@@ -609,7 +610,7 @@ Import the `ajv` package, and `prettify` from `awesome-ajv-errors`:
 
 ```ts
 import * as Ajv from 'ajv'
-import { prettify } from '../'
+import { prettify } from 'awesome-ajv-errors'
 ```
 
 Create an ajv instance and validate objects:
@@ -641,3 +642,4 @@ console.log( prettify( validate, { data } ) );
 [lgtm-url]: https://lgtm.com/projects/g/grantila/awesome-ajv-errors/context:javascript
 [node-version]: https://img.shields.io/node/v/awesome-ajv-errors
 [node-url]: https://nodejs.org/en/
+[pure-esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c

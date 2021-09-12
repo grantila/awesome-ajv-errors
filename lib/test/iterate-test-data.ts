@@ -1,7 +1,8 @@
-import { readdirSync, existsSync } from 'fs'
-import * as path from 'path'
+import { existsSync, promises as fs } from 'node:fs'
+import { fileURLToPath, URL } from 'node:url'
+import * as path from 'node:path'
 
-import * as Ajv from 'ajv'
+import Ajv from 'ajv'
 
 import { prettify } from '../prettification'
 import { ensureArray } from '../util'
@@ -30,12 +31,13 @@ export interface TestData
 	ajv: Ajv.Ajv;
 }
 
-const prettificationsDir = path.join( __dirname, '..', 'prettifications' );
+const prettificationsDir =
+	fileURLToPath( new URL( '../prettifications', import.meta.url ) );
 
-export function getTestData( ): TestData
+export async function getTestData( ): Promise< TestData >
 {
 	const dirs =
-		readdirSync( prettificationsDir, { withFileTypes: true } )
+		( await fs.readdir( prettificationsDir, { withFileTypes: true } ) )
 		.filter( dirent => dirent.isDirectory( ) )
 		.map( dirent => dirent.name )
 		.sort( );
@@ -78,15 +80,18 @@ export function getTestData( ): TestData
 		]
 	} );
 
-	const files = dirs
-		.map( ( dir ): JsonTestFile | undefined =>
+	const files = ( await Promise.all(
+		dirs
+		.map( async ( dir ): Promise< JsonTestFile | undefined > =>
 		{
 			const fullDirname = path.join( prettificationsDir, dir );
 			const testFilename = path.join( fullDirname, 'test.json' );
 			if ( !existsSync( testFilename ) )
 				return;
 
-			const testData = ensureArray( require( testFilename ) );
+			const testData = ensureArray(
+				JSON.parse( await fs.readFile( testFilename, 'utf-8' ) )
+			);
 
 			const testsValid = validateTests( testData );
 			if ( !testsValid )
@@ -110,7 +115,8 @@ export function getTestData( ): TestData
 
 			return { tests, dir };
 		} )
-		.filter( < T >( t: T ): t is NonNullable< T > => !!t );
+	) )
+	.filter( < T >( t: T ): t is NonNullable< T > => !!t );
 
 	return { ajv, files };
 }

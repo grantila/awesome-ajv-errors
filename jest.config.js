@@ -1,5 +1,4 @@
-module.exports = {
-  preset: 'ts-jest',
+export default {
   testEnvironment: 'node',
   testMatch: ['<rootDir>/lib/**/*.test.ts'],
   modulePathIgnorePatterns: [],
@@ -7,4 +6,5 @@ module.exports = {
 	coveragePathIgnorePatterns: [ '/node_modules/', '/__snapshots__/', '/test/' ],
   coverageReporters: ['lcov', 'text', 'html'],
   collectCoverage: true,
-};
+  extensionsToTreatAsEsm: ['.ts'],
+}

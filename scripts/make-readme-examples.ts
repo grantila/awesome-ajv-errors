@@ -2,10 +2,12 @@ import { spawnSync } from 'child_process'
 import { readFileSync, writeFileSync } from 'fs'
 import * as path from 'path'
 
-import { sync as tempWriteSync } from 'temp-write'
+import tempWrite from 'temp-write'
 
 import { getTestData, JsonTest } from '../lib/test/iterate-test-data'
 
+
+const tempWriteSync = tempWrite.sync;
 
 const gitHubImageBaseUrl =
 	'https://raw.githubusercontent.com/grantila/awesome-ajv-errors/master/';
@@ -15,9 +17,9 @@ const relToRoot = ( ...paths: Array< string > ) =>
 
 const assetsExamplesDir = relToRoot( 'assets', 'examples' );
 
-function takeTerminalShots( )
+async function takeTerminalShots( )
 {
-	const { files } = getTestData( );
+	const { files } = await getTestData( );
 
 	let totMarkdown = '';
 
@@ -58,7 +60,7 @@ function takeTerminalShots( )
 	writeFileSync( "./README.md", markdownAfter, 'utf8' );
 }
 
-takeTerminalShots( );
+await takeTerminalShots( );
 
 function recordTerminal( schemaFile: string, dataFile: string, imageFile: string )
 {

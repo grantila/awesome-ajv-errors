@@ -2,10 +2,10 @@ import { prettify } from './prettification'
 import { getTestData } from './test/iterate-test-data'
 
 
+const { ajv, files } = await getTestData( );
+
 describe( "prettifications", ( ) =>
 {
-	const { ajv, files } = getTestData( );
-
 	for ( const { dir, tests } of files )
 	{
 		const test = ( name: string, data: any, schema: any, fail = true ) =>

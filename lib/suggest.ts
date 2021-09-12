@@ -9,7 +9,7 @@ import {
 	getTypedValue,
 } from './types'
 import { style, printEnum, formatTypedValue } from './style'
-import { uniq } from './util';
+import { uniq } from './util'
 
 
 export interface SuggestOptions

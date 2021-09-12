@@ -1,13 +1,5 @@
-import {
-	supportsColor,
-	dim,
-	red,
-	blue,
-	green,
-	yellow,
-	magenta,
-	white,
-} from "chalk"
+import chalk from "chalk"
+import terminalLink from "terminal-link"
 
 import {
 	PrettifyContext,
@@ -18,8 +10,19 @@ import {
 	getTypedValue,
 } from "./types"
 import { enquote } from "./util";
-import * as terminalLink from "terminal-link"
 import { DataPath } from "./data-path"
+
+
+const {
+	supportsColor,
+	dim,
+	red,
+	blue,
+	green,
+	yellow,
+	magenta,
+	white,
+} = chalk;
 
 const styles = {
 	title: red.bold,
