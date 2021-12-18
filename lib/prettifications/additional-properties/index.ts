@@ -1,10 +1,10 @@
 import { AdditionalPropertiesParams } from "ajv"
 
-import { PrettifyContext, PrettyResult, getTypedContext } from "../../types"
-import { style, pathDescription } from "../../style"
-import { printCode } from "../../code";
-import { suggest, formatSuggestions } from "../../suggest"
-import { getPossibleProperties } from "../../schema"
+import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
+import { style, pathDescription } from "../../style.js"
+import { printCode } from "../../code/index.js"
+import { suggest, formatSuggestions } from "../../suggest.js"
+import { getPossibleProperties } from "../../schema.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult

@@ -1,7 +1,7 @@
 import type Ajv from 'ajv'
 
-import { prettify } from '../prettification'
-import type { JsonTestFile } from './iterate-test-data'
+import { prettify } from '../prettification.js'
+import type { JsonTestFile } from './iterate-test-data.js'
 
 
 export function setupTests( ajv: Ajv.Ajv, files: JsonTestFile[ ] )

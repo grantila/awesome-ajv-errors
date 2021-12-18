@@ -1,2 +1,2 @@
-export type { CodeOptions } from './print'
-export { printCode } from './print'
+export type { CodeOptions } from './print.js'
+export { printCode } from './print.js'

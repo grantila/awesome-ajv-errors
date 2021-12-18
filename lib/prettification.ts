@@ -7,12 +7,12 @@ import {
 	PrettifyContext,
 	PrettyResult,
 } from "./types"
-import { ensureArray } from "./util"
-import { parseDataPath } from "./data-path"
-import { style, ensureColorUsage, printError } from "./style"
-import { prepareText } from "./big-numbers"
+import { ensureArray } from "./util.js"
+import { parseDataPath } from "./data-path.js"
+import { style, ensureColorUsage, printError } from "./style.js"
+import { prepareText } from "./big-numbers/index.js"
 
-import { handlers } from "./prettifications"
+import { handlers } from "./prettifications/index.js"
 
 
 export interface PrettifyOptions extends PrettificationCore

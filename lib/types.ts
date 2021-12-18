@@ -1,7 +1,7 @@
 import { ErrorObject, ErrorParameters, TypeParams } from "ajv"
 import { ParsedJson } from "jsonpos"
 
-import { DataPath } from "./data-path"
+import { DataPath } from "./data-path.js"
 
 
 export interface ErrorContext

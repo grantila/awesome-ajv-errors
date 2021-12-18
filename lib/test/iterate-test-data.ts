@@ -4,8 +4,8 @@ import * as path from 'node:path'
 
 import type Ajv from 'ajv'
 
-import { prettify } from '../prettification'
-import { ensureArray } from '../util'
+import { prettify } from '../prettification.js'
+import { ensureArray } from '../util.js'
 
 
 export interface JsonTest

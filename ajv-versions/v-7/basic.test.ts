@@ -1,8 +1,8 @@
 import _Ajv from 'ajv'
-import addFormats from "ajv-formats"
+import addFormats from 'ajv-formats'
 
-import { setupTests } from "../../lib/test/test-prettification"
-import { getTestData } from '../../lib/test/iterate-test-data'
+import { setupTests } from '../../lib/test/test-prettification.js'
+import { getTestData } from '../../lib/test/iterate-test-data.js'
 
 
 const Ajv = ( _Ajv as any ).default as typeof _Ajv;

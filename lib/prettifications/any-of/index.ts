@@ -5,11 +5,11 @@ import {
 	PrettyResult,
 	getTypedValue,
 	getTypedContext,
-} from "../../types"
-import { style, pathDescription } from "../../style"
-import { suggestTypedValue, formatSuggestions } from "../../suggest"
-import { printCode } from "../../code"
-import { getValueByPath } from "../../json"
+} from "../../types.js"
+import { style, pathDescription } from "../../style.js"
+import { suggestTypedValue, formatSuggestions } from "../../suggest.js"
+import { printCode } from "../../code/index.js"
+import { getValueByPath } from "../../json.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult

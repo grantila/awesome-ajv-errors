@@ -1,6 +1,6 @@
-import { PrettifyContext, PrettyResult } from "../../types"
-import { printCode } from "../../code"
-import { pathDescription, style } from "../../style"
+import { PrettifyContext, PrettyResult } from "../../types.js"
+import { printCode } from "../../code/index.js"
+import { pathDescription, style } from "../../style.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult

@@ -1,8 +1,8 @@
 import { FormatParams } from "ajv"
 
-import { PrettifyContext, PrettyResult, getTypedContext } from "../../types"
-import { style, pathDescription, link } from "../../style"
-import { printCode } from "../../code";
+import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
+import { style, pathDescription, link } from "../../style.js"
+import { printCode } from "../../code/index.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult

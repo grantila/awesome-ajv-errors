@@ -1,4 +1,5 @@
 export default {
+  resolver: 'ts-jest-resolver',
   testEnvironment: 'node',
   testMatch: [
     '<rootDir>/lib/**/*.test.ts',

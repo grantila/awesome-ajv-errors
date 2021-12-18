@@ -1,6 +1,6 @@
 import * as pointer from 'jsonpointer'
 
-import { PrettifyContext } from './types'
+import { PrettifyContext } from './types.js'
 
 
 export function getValueByPath(

@@ -7,9 +7,9 @@ import {
 	getValueType,
 	getTypedValueKey,
 	getTypedValue,
-} from './types'
-import { style, printEnum, formatTypedValue } from './style'
-import { uniq } from './util'
+} from './types.js'
+import { style, printEnum, formatTypedValue } from './style.js'
+import { uniq } from './util.js'
 
 
 export interface SuggestOptions

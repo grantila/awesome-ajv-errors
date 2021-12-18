@@ -8,9 +8,9 @@ import {
 	TypedValue,
 	SimpleValueType,
 	getTypedValue,
-} from "./types"
-import { enquote } from "./util";
-import { DataPath } from "./data-path"
+} from "./types.js"
+import { enquote } from "./util.js"
+import { DataPath } from "./data-path.js"
 
 
 const {

@@ -1,1 +1,1 @@
-export { prettify } from './prettification'
+export { prettify } from './prettification.js'

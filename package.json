@@ -43,25 +43,26 @@
     "pretty"
   ],
   "devDependencies": {
-    "@babel/preset-env": "^7.15.6",
-    "@babel/preset-typescript": "^7.15.0",
+    "@babel/preset-env": "^7.16.5",
+    "@babel/preset-typescript": "^7.16.5",
     "@types/babel__code-frame": "^7.0.3",
     "@types/hapi__joi": "^17.1.7",
-    "@types/jest": "^27.0.1",
+    "@types/jest": "^27.0.3",
     "@types/node": "^16.9.1",
     "ajv": "^6.11.0",
     "cz-conventional-changelog": "^3.3.0",
-    "jest": "^27.1.1",
+    "jest": "^27.4.5",
     "rimraf": "^3.0.1",
     "temp-write": "^5.0.0",
-    "ts-node": "^10.2.1",
-    "typescript": "^4.4.3"
+    "ts-jest-resolver": "^2.0.0",
+    "ts-node": "^10.4.0",
+    "typescript": "^4.5.4"
   },
   "dependencies": {
-    "@babel/code-frame": "^7.14.5",
+    "@babel/code-frame": "^7.16.0",
     "chalk": "^4.1.2",
-    "jsonpointer": "^4.1.0",
-    "jsonpos": "^2.0.1",
+    "jsonpointer": "^5.0.0",
+    "jsonpos": "^2.0.2",
     "leven": "^4.0.0",
     "terminal-link": "^3.0.0"
   },

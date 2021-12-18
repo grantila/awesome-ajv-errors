@@ -1,4 +1,4 @@
-import { Font } from './types'
+import { Font } from './types.js'
 
 export const font: Font = {
 	width: 8,

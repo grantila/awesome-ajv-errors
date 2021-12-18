@@ -1,9 +1,9 @@
 import { LimitParams } from "ajv"
 
-import { PrettifyContext, PrettyResult, getTypedContext } from "../../types"
-import { style, pathDescription } from "../../style"
-import { printCode } from "../../code"
-import { getValueByPath } from "../../json"
+import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
+import { style, pathDescription } from "../../style.js"
+import { printCode } from "../../code/index.js"
+import { getValueByPath } from "../../json.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult

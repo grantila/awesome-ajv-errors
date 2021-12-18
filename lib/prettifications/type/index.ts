@@ -6,10 +6,10 @@ import {
 	suggestAnotherType,
 	SimpleValueTypeName,
 	getTypedContext,
-} from "../../types"
-import { style, pathDescription, formatTypedValue } from "../../style"
-import { printCode } from "../../code"
-import { getValueByPath } from "../../json"
+} from "../../types.js"
+import { style, pathDescription, formatTypedValue } from "../../style.js"
+import { printCode } from "../../code/index.js"
+import { getValueByPath } from "../../json.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult

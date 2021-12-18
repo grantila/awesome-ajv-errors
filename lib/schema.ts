@@ -1,4 +1,4 @@
-import { DataPath } from "./data-path"
+import { DataPath } from "./data-path.js"
 
 export function getPossibleProperties( schema: any, identifiedPath: DataPath )
 : Array< string > | undefined

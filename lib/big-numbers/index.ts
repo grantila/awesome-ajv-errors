@@ -1,4 +1,4 @@
-import { font } from './font'
+import { font } from './font.js'
 
 
 export interface PrintAsPrefixOpts
