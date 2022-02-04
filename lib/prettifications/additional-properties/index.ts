@@ -1,15 +1,18 @@
 import { AdditionalPropertiesParams } from "ajv"
 
 import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
-import { style, pathDescription } from "../../style.js"
-import { printCode } from "../../code/index.js"
 import { suggest, formatSuggestions } from "../../suggest.js"
 import { getPossibleProperties } from "../../schema.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { params: { additionalProperty } } } =
+	const {
+		styleManager: { style, pathDescription },
+		printCode,
+		dataPath,
+		error: { params: { additionalProperty } },
+	} =
 		getTypedContext< AdditionalPropertiesParams >( context );
 
 	const [ prePath, pathExpr, postPath ] =
@@ -18,10 +21,10 @@ export function prettify( context: PrettifyContext ): PrettyResult
 	const possibles = getPossibleProperties( context.schema, dataPath );
 
 	const title =
-		style.title( `The ${prePath}`, context ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} should not have the property `, context ) +
-		style.pathDescription( additionalProperty, context ) +
+		style.title( `${postPath} should not have the property ` ) +
+		style.pathDescription( additionalProperty ) +
 		formatSuggestions(
 			suggest( additionalProperty, possibles ),
 			context,
@@ -30,7 +33,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 
 	const codeFrame = printCode(
 		'remove or rename ' +
-			style.pathDescription( `"${additionalProperty}"`, context ),
+			style.pathDescription( `"${additionalProperty}"` ),
 		context.parsedJson,
 		{
 			dataPath: dataPath.dotOnly + "." + additionalProperty,

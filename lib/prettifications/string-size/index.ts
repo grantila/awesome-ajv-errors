@@ -1,13 +1,16 @@
 import { LimitParams } from "ajv"
 
 import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
-import { style, pathDescription } from "../../style.js"
-import { printCode } from "../../code/index.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { keyword, params: { limit } } } =
+	const {
+		styleManager: { style, pathDescription },
+		printCode,
+		dataPath,
+		error: { keyword, params: { limit } },
+	} =
 		getTypedContext< LimitParams >( context );
 
 	const [ prePath, pathExpr, postPath ] =
@@ -15,20 +18,20 @@ export function prettify( context: PrettifyContext ): PrettyResult
 
 	const limitOperation =
 		keyword === 'maxLength'
-		? style.expr( 'at most', context )
+		? style.expr( 'at most' )
 		: keyword === 'minLength'
-		? style.expr( 'at least', context )
+		? style.expr( 'at least' )
 		: '{unknown}';
 
 	const validStatement =
 		`${limitOperation} ` +
-		style.number( `${limit}`, context ) +
-		style.expr( ' characters long', context );
+		style.number( `${limit}` ) +
+		style.expr( ' characters long' );
 
 	const title =
-		style.title( `The ${prePath}`, context ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} should be `, context ) +
+		style.title( `${postPath} should be ` ) +
 		validStatement;
 
 	const codeFrame = printCode(

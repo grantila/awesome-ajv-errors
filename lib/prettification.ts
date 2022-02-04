@@ -9,8 +9,12 @@ import {
 } from "./types"
 import { ensureArray } from "./util.js"
 import { parseDataPath } from "./data-path.js"
-import { style, ensureColorUsage, printError } from "./style.js"
 import { prepareText } from "./big-numbers/index.js"
+
+import { ManagerOptions, StyleManager } from "./style/interface.js"
+import { makeManager } from "./style/manager.js"
+import { managerOptions as plainOptions } from "./style/style-plain.js"
+import { makePrintCode, PrintCode } from "./code/types.js"
 
 import { handlers } from "./prettifications/index.js"
 
@@ -24,40 +28,74 @@ export interface PrettifyOptions extends PrettificationCore
 	colors?: boolean;
 }
 
-export function prettify( opts: PrettifyOptions ): string;
-export function prettify(
-	validate: ValidateFunction,
-	opts: Omit< PrettifyOptions, 'errors' | 'schema' >
-): string;
-
-export function prettify(
-	validate: ValidateFunction | PrettifyOptions,
-	opts?: Omit< PrettifyOptions, 'errors' | 'schema' >
-): string
+export interface Prettify< Ret >
 {
-	if ( typeof validate === 'function' )
-		return _prettify( {
-			errors: ensureArray( validate.errors ),
-			schema: validate.schema as object,
-			data: opts?.data,
-			colors: opts?.colors,
-		} );
-	else
-		return _prettify( validate as PrettifyOptions );
+	( opts: PrettifyOptions ): Ret;
+	(
+		validate: ValidateFunction,
+		opts: Omit< PrettifyOptions, 'errors' | 'schema' >
+	): Ret;
 }
 
-export function _prettify( opts: PrettifyOptions ): string
+export function makePrettify(
+	managerOptions: ManagerOptions,
+	printCode: PrintCode
+)
+: Prettify< string >
 {
+	const styleManager = makeManager( managerOptions );
+	const styleManagerPlain = makeManager( plainOptions );
+
+	const getManager = ( colors?: boolean ) =>
+		styleManager.ensureColorUsage( colors )
+		? styleManager
+		: styleManagerPlain;
+
+	return function prettify(
+		validate: ValidateFunction | PrettifyOptions,
+		opts?: Omit< PrettifyOptions, 'errors' | 'schema' >
+	): string
+	{
+		if ( typeof validate === 'function' )
+		{
+			const styleManager = getManager( opts?.colors );
+
+			return _prettify( {
+				errors: ensureArray( validate.errors ),
+				schema: validate.schema as object,
+				data: opts?.data,
+				styleManager,
+				printCode: makePrintCode( styleManager.support, printCode ),
+			} );
+		}
+		else
+		{
+			const styleManager =
+				getManager( ( validate as PrettifyOptions )?.colors );
+
+			return _prettify( {
+				...( validate as PrettifyOptions ),
+				styleManager,
+				printCode: makePrintCode( styleManager.support, printCode ),
+			} );
+		}
+	}
+}
+
+interface InternalPrettifyOptions extends Omit< PrettifyOptions, 'color' >
+{
+	styleManager: StyleManager;
+	printCode: PrintCode;
+}
+
+function _prettify( opts: InternalPrettifyOptions ): string
+{
+	const { styleManager, printCode } = opts;
+
 	const errors = mergeTypeErrors( ensureArray( opts.errors ) );
 
 	if ( errors.length === 0 )
-		return style.good(
-			"No errors",
-			{
-				colors: ensureColorUsage( opts.colors ),
-				dataPath: { orig: '', dotOnly: '', path: [ ] }
-			}
-		);
+		return styleManager.style.good( "No errors" );
 
 	const parsedJson = getAstByObject( opts.data, 2 );
 
@@ -69,7 +107,8 @@ export function _prettify( opts: PrettifyOptions ): string
 			errors: opts.errors,
 			schema: opts.schema,
 			data: opts.data,
-			colors: ensureColorUsage( opts.colors ),
+			styleManager,
+			printCode,
 			error,
 			dataPath: parseDataPath( error ),
 			parsedJson,
@@ -90,7 +129,7 @@ export function _prettify( opts: PrettifyOptions ): string
 	.join( "\n\n" );
 }
 
-export function getPrettyError( context: PrettifyContext ): PrettyResult
+function getPrettyError( context: PrettifyContext ): PrettyResult
 {
 	const handler = handlers[ context.error.keyword as keyof typeof handlers ];
 
@@ -99,9 +138,9 @@ export function getPrettyError( context: PrettifyContext ): PrettyResult
 		: handlers.unknownError( context );
 }
 
-export function prettifyOne( context: PrettifyContext ): string
+function prettifyOne( context: PrettifyContext ): string
 {
-	return printError( getPrettyError( context ) );
+	return context.styleManager.printError( getPrettyError( context ) );
 }
 
 function mergeTypeErrors( errors: Array< ValidationError > )

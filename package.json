@@ -8,10 +8,27 @@
     "url": "https://github.com/grantila/awesome-ajv-errors/issues"
   },
   "homepage": "https://github.com/grantila/awesome-ajv-errors#readme",
-  "main": "./dist/index.js",
-  "browser": "./dist/index.js",
-  "exports": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "browser": "./dist/index-browser.js",
+  "exports": {
+    ".": "./dist/index-node.js",
+    "./node": "./dist/index-node.js",
+    "./browser": "./dist/index-browser.js",
+    "./try-styled": "./dist/index-try-styled.js"
+  },
+  "typesVersions": {
+    "*": {
+      "node": [
+        "./dist/index-node.d.ts"
+      ],
+      "browser": [
+        "./dist/index-browser.d.ts"
+      ],
+      "try-styled": [
+        "./dist/index-try-styled.d.ts"
+      ]
+    }
+  },
+  "types": "./dist/index-node.d.ts",
   "type": "module",
   "sideEffects": false,
   "engines": {
@@ -25,7 +42,7 @@
     "install:ajv-8": "cd ajv-versions/v-8 && yarn",
     "install:ajv:versions": "yarn install:ajv-7 && yarn install:ajv-8",
     "build": "rimraf dist && tsc -p tsconfig.prod.json",
-    "test:all": "NODE_OPTIONS=--experimental-vm-modules FORCE_COLOR=0 FORCE_HYPERLINK=1 jest",
+    "test:all": "NODE_OPTIONS=--experimental-vm-modules FORCE_COLOR=0 jest",
     "get:snapshot:sha": "shasum lib/__snap*/*.snap ajv-versions/v-*/__snap*/*.snap",
     "test": "yarn test:all && yarn get:snapshot:sha",
     "make-readme-examples": "ts-node scripts/make-readme-examples.ts",
@@ -56,7 +73,7 @@
     "temp-write": "^5.0.0",
     "ts-jest-resolver": "^2.0.0",
     "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+    "typescript": "^4.5.5"
   },
   "dependencies": {
     "@babel/code-frame": "^7.16.0",

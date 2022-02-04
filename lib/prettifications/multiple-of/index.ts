@@ -1,35 +1,38 @@
 import { MultipleOfParams } from "ajv"
 
 import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
-import { style, pathDescription } from "../../style.js"
-import { printCode } from "../../code/index.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { params: { multipleOf } }  } =
+	const {
+		styleManager: { style, pathDescription },
+		printCode,
+		dataPath,
+		error: { params: { multipleOf } },
+	} =
 		getTypedContext< MultipleOfParams >( context );
 
 	const [ prePath, pathExpr, postPath ] =
 		pathDescription( context, 'value' );
 
 	const validStatement =
-		style.title( `multiple of `, context ) +
-		style.number( `${multipleOf}`, context );
+		style.title( `multiple of ` ) +
+		style.number( `${multipleOf}` );
 
 	const title =
-		style.title( `The ${prePath}`, context ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} should be a `, context ) +
+		style.title( `${postPath} should be a ` ) +
 		validStatement + ' ' +
-		style.title( '(e.g. ', context ) +
+		style.title( '(e.g. ' ) +
 		[ 0, 1, 2, 3 ]
 			.map( mul =>
-				style.number( `${mul * multipleOf}`, context )
+				style.number( `${mul * multipleOf}` )
 			)
-			.concat( [ style.title( 'etc', context ) ] )
-			.join( style.operator( ', ', context ) ) +
-		style.title( ')', context );
+			.concat( [ style.title( 'etc' ) ] )
+			.join( style.operator( ', ' ) ) +
+		style.title( ')' );
 
 	const codeFrame = printCode(
 		'Ensure this is a ' + validStatement,

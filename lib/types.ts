@@ -1,7 +1,9 @@
-import { ErrorObject, ErrorParameters, TypeParams } from "ajv"
-import { ParsedJson } from "jsonpos"
+import type { ErrorObject, ErrorParameters, TypeParams } from "ajv"
+import type { ParsedJson } from "jsonpos"
 
-import { DataPath } from "./data-path.js"
+import type { DataPath } from "./data-path.js"
+import type { StyleManager } from "./style/interface.js"
+import type { PrintCode } from "./code/types.js"
 
 
 export interface ErrorContext
@@ -23,7 +25,8 @@ export interface PrettificationCore
 
 export interface PrettifyContext< Params = any > extends PrettificationCore
 {
-	colors: boolean;
+	styleManager: StyleManager;
+	printCode: PrintCode;
 	error: SpecificAjvError< Params >;
 	dataPath: DataPath;
 	parsedJson: ParsedJson;

@@ -448,110 +448,110 @@ exports[`prettifications enum 16/16: Const 1`] = `
 `;
 
 exports[`prettifications format 2/24: date-time invalid 1`] = `
-"The .foo value is not valid date-time according to ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;; 📄
+"The .foo value is not valid date-time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"2020-01-023T11:22:33Z\\"
-    |          ^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;;
+    |          ^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6)
   3 | }"
 `;
 
 exports[`prettifications format 4/24: time invalid 1`] = `
-"The .foo value is not valid time according to ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;; 📄
+"The .foo value is not valid time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"11:22:334\\"
-    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;;
+    |          ^^^^^^^^^^^ ensure this is valid RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6)
   3 | }"
 `;
 
 exports[`prettifications format 6/24: date invalid 1`] = `
-"The .foo value is not valid date according to ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;; 📄
+"The .foo value is not valid date according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"2020-01-023\\"
-    |          ^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3339#section-5.6RFC3339 Section 5.6]8;;
+    |          ^^^^^^^^^^^^^ ensure this is valid RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6)
   3 | }"
 `;
 
 exports[`prettifications format 8/24: email invalid 1`] = `
-"The .foo value is not valid email according to ]8;;https://tools.ietf.org/html/rfc5322#section-3.4.1RFC5322 Section 3.4.1]8;; 📄
+"The .foo value is not valid email according to RFC5322 Section 3.4.1 (https://tools.ietf.org/html/rfc5322#section-3.4.1) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"quite@invalid@email.com\\"
-    |          ^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc5322#section-3.4.1RFC5322 Section 3.4.1]8;;
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC5322 Section 3.4.1 (https://tools.ietf.org/html/rfc5322#section-3.4.1)
   3 | }"
 `;
 
 exports[`prettifications format 10/24: hostname invalid 1`] = `
-"The .foo value is not valid hostname according to ]8;;https://tools.ietf.org/html/rfc1034#section-3.1RFC1034 Section 3.1]8;; 📄
+"The .foo value is not valid hostname according to RFC1034 Section 3.1 (https://tools.ietf.org/html/rfc1034#section-3.1) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"invalid..host.com\\"
-    |          ^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc1034#section-3.1RFC1034 Section 3.1]8;;
+    |          ^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC1034 Section 3.1 (https://tools.ietf.org/html/rfc1034#section-3.1)
   3 | }"
 `;
 
 exports[`prettifications format 12/24: ipv4 invalid 1`] = `
-"The .foo value is not valid ipv4 according to ]8;;https://tools.ietf.org/html/rfc2673#section-3.2RFC2673 Section 3.2]8;; 📄
+"The .foo value is not valid ipv4 according to RFC2673 Section 3.2 (https://tools.ietf.org/html/rfc2673#section-3.2) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"1.2.345.6\\"
-    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc2673#section-3.2RFC2673 Section 3.2]8;;
+    |          ^^^^^^^^^^^ ensure this is valid RFC2673 Section 3.2 (https://tools.ietf.org/html/rfc2673#section-3.2)
   3 | }"
 `;
 
 exports[`prettifications format 14/24: ipv6 invalid 1`] = `
-"The .foo value is not valid ipv6 according to ]8;;https://tools.ietf.org/html/rfc2373#section-2.2RFC2373 Section 2.2]8;; 📄
+"The .foo value is not valid ipv6 according to RFC2373 Section 2.2 (https://tools.ietf.org/html/rfc2373#section-2.2) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"2000:0000:10001::ABCD:EF01\\"
-    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc2373#section-2.2RFC2373 Section 2.2]8;;
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC2373 Section 2.2 (https://tools.ietf.org/html/rfc2373#section-2.2)
   3 | }"
 `;
 
 exports[`prettifications format 16/24: uri-reference invalid 1`] = `
-"The .foo value is not valid uri-reference according to ]8;;https://tools.ietf.org/html/rfc3986#section-4.1RFC3986 Section 4.1]8;; 📄
+"The .foo value is not valid uri-reference according to RFC3986 Section 4.1 (https://tools.ietf.org/html/rfc3986#section-4.1) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"/ /the/file.txt\\"
-    |          ^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc3986#section-4.1RFC3986 Section 4.1]8;;
+    |          ^^^^^^^^^^^^^^^^^ ensure this is valid RFC3986 Section 4.1 (https://tools.ietf.org/html/rfc3986#section-4.1)
   3 | }"
 `;
 
 exports[`prettifications format 18/24: uri-template invalid 1`] = `
-"The .foo value is not valid uri-template according to ]8;;https://tools.ietf.org/html/rfc6570RFC6570]8;; 📄
+"The .foo value is not valid uri-template according to RFC6570 (https://tools.ietf.org/html/rfc6570) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"http://example.com/~{?}/\\"
-    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc6570RFC6570]8;;
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC6570 (https://tools.ietf.org/html/rfc6570)
   3 | }"
 `;
 
 exports[`prettifications format 20/24: json-pointer invalid 1`] = `
-"The .foo value is not valid json-pointer according to ]8;;https://tools.ietf.org/html/rfc6901RFC6901]8;; 📄
+"The .foo value is not valid json-pointer according to RFC6901 (https://tools.ietf.org/html/rfc6901) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"\\\\\\\\foo/bar\\"
-    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/rfc6901RFC6901]8;;
+    |          ^^^^^^^^^^^ ensure this is valid RFC6901 (https://tools.ietf.org/html/rfc6901)
   3 | }"
 `;
 
 exports[`prettifications format 22/24: relative-json-pointer invalid 1`] = `
-"The .foo value is not valid relative-json-pointer according to ]8;;https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01Relative JSON Pointers]8;; 📄
+"The .foo value is not valid relative-json-pointer according to Relative JSON Pointers (https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"-/foo/bar\\"
-    |          ^^^^^^^^^^^ ensure this is valid ]8;;https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01Relative JSON Pointers]8;;
+    |          ^^^^^^^^^^^ ensure this is valid Relative JSON Pointers (https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01)
   3 | }"
 `;
 
 exports[`prettifications format 24/24: regex invalid 1`] = `
-"The .foo value is not valid regex according to ]8;;https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdfECMA 262]8;; 📄
+"The .foo value is not valid regex according to ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf) 📄
 
   1 | {
 > 2 |   \\"foo\\": \\"*foo/bar\\"
-    |          ^^^^^^^^^^ ensure this is valid ]8;;https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdfECMA 262]8;;
+    |          ^^^^^^^^^^ ensure this is valid ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf)
   3 | }"
 `;
 

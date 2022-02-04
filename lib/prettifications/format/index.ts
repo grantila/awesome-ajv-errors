@@ -1,13 +1,16 @@
 import { FormatParams } from "ajv"
 
 import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
-import { style, pathDescription, link } from "../../style.js"
-import { printCode } from "../../code/index.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { params: { format } } } =
+	const {
+		styleManager: { style, pathDescription, link },
+		printCode,
+		dataPath,
+		error: { params: { format } },
+	} =
 		getTypedContext< FormatParams >( context );
 
 	const [ prePath, pathExpr, postPath ] =
@@ -17,26 +20,26 @@ export function prettify( context: PrettifyContext ): PrettyResult
 	const linkDescriptions =
 		!linkInfo
 			?
-				style.title( `, check the `, context ) +
-				link( 'JSON Schema specification', formatUrl, context )
+				style.title( `, check the ` ) +
+				link( 'JSON Schema specification', formatUrl )
 			:
-				style.title( ' according to ', context ) +
-				link( linkInfo.title, linkInfo.url, context ) +
+				style.title( ' according to ' ) +
+				link( linkInfo.title, linkInfo.url ) +
 				" 📄";
 
 	const title =
-		style.title( `The ${prePath}`, context ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} is not valid `, context ) +
-		style.pathDescription( format, context ) +
+		style.title( `${postPath} is not valid ` ) +
+		style.pathDescription( format ) +
 		linkDescriptions;
 
 	const codeFrame = printCode(
 		'ensure this is ' +
 		(
 			linkInfo
-			? 'valid ' + link( linkInfo.title, linkInfo.url, context )
-			: 'a valid ' + style.pathDescription( format, context )
+			? 'valid ' + link( linkInfo.title, linkInfo.url )
+			: 'a valid ' + style.pathDescription( format )
 		),
 		context.parsedJson,
 		{ dataPath: dataPath.dotOnly, markIdentifier: false }
