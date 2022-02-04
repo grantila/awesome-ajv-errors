@@ -6,15 +6,18 @@ import {
 	getTypedValue,
 	getTypedContext,
 } from "../../types.js"
-import { style, pathDescription } from "../../style.js"
 import { suggestTypedValue, formatSuggestions } from "../../suggest.js"
-import { printCode } from "../../code/index.js"
 import { getValueByPath } from "../../json.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { keyword, typeErrors = [ ] } } =
+	const {
+		styleManager: { style, pathDescription },
+		printCode,
+		dataPath,
+		error: { keyword, typeErrors = [ ] },
+	} =
 		getTypedContext< TypeParams & NoParams >( context );
 
 	const [ prePath, pathExpr, postPath ] =
@@ -39,17 +42,16 @@ export function prettify( context: PrettifyContext ): PrettyResult
 		);
 
 	const title =
-		style.title( `The type of the ${prePath}`, context ) +
+		style.title( `The type of the ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} should `, context ) +
+		style.title( `${postPath} should ` ) +
 		(
 			keyword === 'not'
 			?
-				style.title( 'NOT be ', context ) +
-				style.pathDescription( getTypedValue( value ).type, context )
+				style.title( 'NOT be ' ) +
+				style.pathDescription( getTypedValue( value ).type )
 			:
-				style.title( `be `, context ) +
-				instead
+				style.title( `be ` ) + instead
 		);
 
 	const codeFrame = printCode(
@@ -59,7 +61,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 			(
 				!suggestion ? '' :
 				' to ' + suggestion.value +
-				' (as ' + style.pathDescription( suggestion.type, context ) +
+				' (as ' + style.pathDescription( suggestion.type ) +
 				') perhaps?'
 			),
 		context.parsedJson,

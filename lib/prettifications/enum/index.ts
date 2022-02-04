@@ -7,13 +7,6 @@ import {
 	getTypedContext,
 } from "../../types.js"
 import {
-	style,
-	pathDescription,
-	formatValue,
-	formatTypedValue,
-} from "../../style.js"
-import { printCode } from "../../code/index.js"
-import {
 	suggest,
 	formatSuggestions,
 	formatBestSuggestion,
@@ -29,7 +22,17 @@ interface ConstParams
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { params: { allowedValue, allowedValues } } } =
+	const {
+		styleManager: {
+			style,
+			pathDescription,
+			formatValue,
+			formatTypedValue,
+		},
+		printCode,
+		dataPath,
+		error: { params: { allowedValue, allowedValues } },
+	} =
 		getTypedContext< EnumParams & ConstParams >( context );
 
 	const options = allowedValues ?? [ allowedValue ];
@@ -50,10 +53,10 @@ export function prettify( context: PrettifyContext ): PrettyResult
 		( options[ 0 ] === null || typeof options[ 0 ] !== 'object' );
 
 	const title =
-		style.title( `The ${prePath}`, context ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} cannot be `, context ) +
-		formatValue( value, context ) +
+		style.title( `${postPath} cannot be ` ) +
+		formatValue( value ) +
 		formatSuggestions(
 			suggestionResult,
 			context,
@@ -63,7 +66,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 	const codeFrame = printCode(
 		'replace this with ' +
 		( isConst
-		? formatTypedValue( getTypedValue( options[ 0 ] ), context )
+		? formatTypedValue( getTypedValue( options[ 0 ] ) )
 		: (
 			'an allowed value' +
 			(

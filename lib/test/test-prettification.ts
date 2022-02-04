@@ -1,8 +1,9 @@
 import type Ajv from 'ajv'
 
-import { prettify } from '../prettification.js'
-import type { JsonTestFile } from './iterate-test-data.js'
+process.env.FORCE_HYPERLINK = '1';
 
+import { prettify } from '../index-node.js'
+import type { JsonTestFile } from './iterate-test-data.js'
 
 export function setupTests( ajv: Ajv.Ajv, files: JsonTestFile[ ] )
 {

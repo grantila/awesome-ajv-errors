@@ -1,20 +1,23 @@
 import { PrettifyContext, PrettyResult } from "../../types.js"
-import { printCode } from "../../code/index.js"
-import { pathDescription, style } from "../../style.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { message, keyword } } = context;
+	const {
+		styleManager: { style, pathDescription },
+		printCode,
+		dataPath,
+		error: { message, keyword },
+	} = context;
 
 	const [ prePath, pathExpr, postPath ] =
 		pathDescription( context, 'property' );
 
 	const title =
-		style.expr( `[${keyword}] `, context ) +
-		style.title( `The ${prePath}`, context ) +
+		style.expr( `[${keyword}] ` ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} ${message}`, context );
+		style.title( `${postPath} ${message}` );
 
 	const codeFrame = printCode(
 		message,

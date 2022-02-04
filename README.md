@@ -23,6 +23,11 @@ It has a gorgeous human-understandable output, predicts human errors and suggest
  * Since version 2;
    * This is a [pure ESM][pure-esm] package. It requires Node 12.20 and cannot be used from CommonJS.
    * Ajv 6, 7 and 8 are supported.
+ * Since version 3;
+   * This package can be used in browsers without special hacks. It will by default not pretty-print codeframes or use colors. If you want this, you have two options:
+     * Either import from `awesome-ajv-errors/node` explicitly (if you have e.g. webpack DefinePlugin configured to hack around missing things like `process is not defined`), or
+     * Import from `awesome-ajv-errors/try-styled` which has a promise-based `prettify` function (`prettifyTryStyled`) or a promise which will eventually resolve to a synchronous function (`styledPrettify`).
+     * Both of these will fallback to non-colored non-codeframe output if e.g. loading `@babel/code-frame` failed. This will likely be entirely resolved once Babel 8 is released; then awesome output will by default work in browsers too.
 
 # Examples
 

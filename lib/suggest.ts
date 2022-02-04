@@ -8,7 +8,6 @@ import {
 	getTypedValueKey,
 	getTypedValue,
 } from './types.js'
-import { style, printEnum, formatTypedValue } from './style.js'
 import { uniq } from './util.js'
 
 
@@ -101,6 +100,8 @@ export function formatSuggestions(
 	if ( !list )
 		return '';
 
+	const { styleManager: { style, formatTypedValue, printEnum } } = context;
+
 	const ifSuggestResult =
 		Array.isArray( ( list as SuggestResult )?.rest )
 		? list as SuggestResult
@@ -133,7 +134,6 @@ export function formatSuggestions(
 	const formatUntyped = ( suggestion: TypedValue ) =>
 		formatTypedValue(
 			suggestion,
-			context,
 			{
 				untyped: useUntyped( ),
 				includeType: useType( suggestion ),
@@ -149,10 +149,10 @@ export function formatSuggestions(
 		: allSuggestions.length === 2
 		?
 			formatUntyped( allSuggestions[ 0 ] ) +
-			style.title( " or ", context ) +
+			style.title( " or " ) +
 			formatUntyped( allSuggestions[ 1 ] )
 		:
-			style.title( "any of:", context ) + "\n" +
+			style.title( "any of:" ) + "\n" +
 			printEnum(
 				[
 					...uniqSuggestions.map( suggestion =>
@@ -175,15 +175,12 @@ export function formatSuggestions(
 
 	return (
 		!isSuggestion ? '' :
-			style.title(
-				`, ${isQuestion ? 'did you mean' : 'it must be'} `,
-				context
-			)
+			style.title( `, ${isQuestion ? 'did you mean' : 'it must be'} ` )
 		) +
 		styledSuggestion +
 		(
 			isQuestion && isSuggestion && uniqSuggestions.length < 3
-			? style.title( '?', context )
+			? style.title( '?' )
 			: ''
 		);
 }
@@ -200,7 +197,9 @@ export function formatBestSuggestion(
 		? false
 		: getValueType( referenceValue ) !== best.type;
 
-	return formatTypedValue( best, context, { untyped: false, includeType } );
+	return context.styleManager.formatTypedValue(
+		best, { untyped: false, includeType }
+	);
 }
 
 export interface SuggestedType
@@ -218,17 +217,15 @@ export function suggestTypedValue< T extends string | number >(
 	if ( typeof value === 'string' && types.includes( "number" ) )
 		return {
 			type: "number",
-			value: formatTypedValue(
-				{ value, type: 'number', isSimple: true },
-				context
+			value: context.styleManager.formatTypedValue(
+				{ value, type: 'number', isSimple: true }
 			),
 		};
 	else if ( typeof value === 'number' && types.includes( "string" ) )
 		return {
 			type: "string",
-			value: formatTypedValue(
-				{ value: `${value}`, type: 'string', isSimple: true },
-				context
+			value: context.styleManager.formatTypedValue(
+				{ value: `${value}`, type: 'string', isSimple: true }
 			),
 		};
 	else

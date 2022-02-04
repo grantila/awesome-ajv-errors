@@ -1,14 +1,17 @@
 import { LimitParams } from "ajv"
 
 import { PrettifyContext, PrettyResult, getTypedContext } from "../../types.js"
-import { style, pathDescription } from "../../style.js"
-import { printCode } from "../../code/index.js"
 import { getValueByPath } from "../../json.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { keyword, params: { limit } } } =
+	const {
+		styleManager: { style, pathDescription },
+		printCode,
+		dataPath,
+		error: { keyword, params: { limit } },
+	} =
 		getTypedContext< LimitParams >( context );
 
 	const [ prePath, pathExpr, postPath ] =
@@ -21,30 +24,30 @@ export function prettify( context: PrettifyContext ): PrettyResult
 
 	const limitOperation =
 		keyword === 'maxItems'
-		? style.expr( 'should NOT have more than ', context )
-		: style.expr( 'should have at least ', context );
+		? style.expr( 'should NOT have more than ' )
+		: style.expr( 'should have at least ' );
 
 	const validStatement =
 		limitOperation +
-		style.number( `${limit}`, context ) +
-		style.expr( plural( ' item', limit ), context );
+		style.number( `${limit}` ) +
+		style.expr( plural( ' item', limit ) );
 
 	const title =
-		style.title( `The ${prePath}`, context ) +
+		style.title( `The ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} should be `, context ) +
+		style.title( `${postPath} should be ` ) +
 		validStatement;
 
 	const shortMessage =
 		keyword === 'maxItems'
 		?
-			style.title( 'Remove ', context ) +
-			style.number( `${value.length - limit}`, context ) +
-			style.title( plural( ' item' ), context )
+			style.title( 'Remove ' ) +
+			style.number( `${value.length - limit}` ) +
+			style.title( plural( ' item' ) )
 		:
-			style.title( 'Ensure the array has ', context ) +
-			style.number( `${limit - value.length}`, context ) +
-			style.title( plural( ' more item' ), context );
+			style.title( 'Ensure the array has ' ) +
+			style.number( `${limit - value.length}` ) +
+			style.title( plural( ' more item' ) );
 
 	const codeFrame = printCode(
 		shortMessage,

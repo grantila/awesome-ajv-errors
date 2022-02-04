@@ -7,14 +7,17 @@ import {
 	SimpleValueTypeName,
 	getTypedContext,
 } from "../../types.js"
-import { style, pathDescription, formatTypedValue } from "../../style.js"
-import { printCode } from "../../code/index.js"
 import { getValueByPath } from "../../json.js"
 
 
 export function prettify( context: PrettifyContext ): PrettyResult
 {
-	const { dataPath, error: { params: { type } } } =
+	const {
+		styleManager: { style, pathDescription, formatTypedValue },
+		printCode,
+		dataPath,
+		error: { params: { type } },
+	} =
 		getTypedContext< TypeParams >( context );
 
 	const value = getValueByPath( context );
@@ -27,14 +30,14 @@ export function prettify( context: PrettifyContext ): PrettyResult
 	const suggestion =
 		suggestionValue === undefined
 		? ''
-		: formatTypedValue( suggestionValue, context, { includeType: true } );
+		: formatTypedValue( suggestionValue, { includeType: true } );
 
 	const title =
-		style.title( `The type of the ${prePath}`, context ) +
+		style.title( `The type of the ${prePath}` ) +
 		pathExpr +
-		style.title( `${postPath} should be `, context ) +
-		style.pathDescription( type, context ) +
-		( suggestion ? style.title( ', e.g. ', context ) + suggestion : '' );
+		style.title( `${postPath} should be ` ) +
+		style.pathDescription( type ) +
+		( suggestion ? style.title( ', e.g. ' ) + suggestion : '' );
 
 	const codeFrame = printCode(
 		'Replace this' +
