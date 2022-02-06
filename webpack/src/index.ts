@@ -52,7 +52,10 @@ async function printResult( )
 
 
 	const prettyOutputStyled =
-		await prettifyTryStyled( validate, { data, colors: true } );
+		await prettifyTryStyled(
+			validate,
+			{ data, colors: true, location: true }
+		);
 
 	console.log( 'START styled' );
 	console.log( prettyOutputStyled );
