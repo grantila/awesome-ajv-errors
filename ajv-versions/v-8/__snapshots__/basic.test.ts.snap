@@ -1,5 +1,129 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`prettifications additional-properties (w/o big numbers) 1/6: Simple top-level 1`] = `
+"The root object should not have the property bar, it must be foo
+
+  1 | {
+  2 |   \\"foo\\": 42,
+> 3 |   \\"bar\\": \\"42\\"
+    |   ^^^^^ remove or rename \\"bar\\"
+  4 | }"
+`;
+
+exports[`prettifications additional-properties (w/o big numbers) 3/6: Simple top-level with tricky name 1`] = `
+"The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
+
+  1 | {
+> 2 |   \\"foo#bar/baz\\": {}
+    |   ^^^^^^^^^^^^^ remove or rename \\"foo#bar/baz\\"
+  3 | }"
+`;
+
+exports[`prettifications additional-properties (w/o big numbers) 4/6: Second-level one similar property 1`] = `
+"The .foo object should not have the property baz, it must be bar
+
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"42\\",
+> 4 |     \\"baz\\": \\"33\\"
+    |     ^^^^^ remove or rename \\"baz\\"
+  5 |   }
+  6 | }"
+`;
+
+exports[`prettifications additional-properties (w/o big numbers) 5/6: Second-level two similar properties 1`] = `
+"The .foo object should not have the property baz, did you mean bar or bak?
+
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"42\\",
+> 4 |     \\"baz\\": \\"33\\"
+    |     ^^^^^ remove or rename \\"baz\\"
+  5 |   }
+  6 | }"
+`;
+
+exports[`prettifications additional-properties (w/o big numbers) 6/6: Second-level three similar properties 1`] = `
+"The .foo object should not have the property baz, did you mean any of:
+    ∙ bar
+    ∙ bak
+    ∙ bam
+
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"42\\",
+> 4 |     \\"baz\\": \\"33\\"
+    |     ^^^^^ remove or rename \\"baz\\"
+  5 |   }
+  6 | }"
+`;
+
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 1/6: Simple top-level 1`] = `
+"The root object should not have the property bar, it must be foo
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 3/6: Simple top-level with tricky name 1`] = `
+"The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 4/6: Second-level one similar property 1`] = `
+"The .foo object should not have the property baz, it must be bar
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 5/6: Second-level two similar properties 1`] = `
+"The .foo object should not have the property baz, did you mean bar or bak?
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 6/6: Second-level three similar properties 1`] = `
+"The .foo object should not have the property baz, did you mean any of:
+    ∙ bar
+    ∙ bak
+    ∙ bam
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) 1/6: Simple top-level 1`] = `
+"The root object should not have the property bar, it must be foo
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) 3/6: Simple top-level with tricky name 1`] = `
+"The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) 4/6: Second-level one similar property 1`] = `
+"The .foo object should not have the property baz, it must be bar
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) 5/6: Second-level two similar properties 1`] = `
+"The .foo object should not have the property baz, did you mean bar or bak?
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) 6/6: Second-level three similar properties 1`] = `
+"The .foo object should not have the property baz, did you mean any of:
+    ∙ bar
+    ∙ bak
+    ∙ bam
+
+"
+`;
+
 exports[`prettifications additional-properties 1/6: Simple top-level 1`] = `
 "The root object should not have the property bar, it must be foo
 
@@ -58,6 +182,120 @@ exports[`prettifications additional-properties 6/6: Second-level three similar p
   6 | }"
 `;
 
+exports[`prettifications any-of (w/o big numbers) 1/5: One option (number to string) 1`] = `
+"The type of the .foo value should be string
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ change this value to \\"42\\" (as string) perhaps?
+  3 | }"
+`;
+
+exports[`prettifications any-of (w/o big numbers) 2/5: One option (string to number) 1`] = `
+"The type of the .foo value should be number
+
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ change this value to 42 (as number) perhaps?
+  3 | }"
+`;
+
+exports[`prettifications any-of (w/o big numbers) 3/5: Two options 1`] = `
+"The type of the .foo value should be string or boolean
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ change this value to \\"42\\" (as string) perhaps?
+  3 | }"
+`;
+
+exports[`prettifications any-of (w/o big numbers) 4/5: Three options 1`] = `
+"The type of the .foo value should be any of:
+    ∙ string
+    ∙ boolean
+    ∙ null
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ change this value to \\"42\\" (as string) perhaps?
+  3 | }"
+`;
+
+exports[`prettifications any-of (w/o big numbers) 5/5: Not 1`] = `
+"The type of the .foo value should NOT be string
+
+  1 | {
+> 2 |   \\"foo\\": \\"bar\\"
+    |          ^^^^^ change this type
+  3 | }"
+`;
+
+exports[`prettifications any-of (w/o location) (w/o big numbers) 1/5: One option (number to string) 1`] = `
+"The type of the .foo value should be string
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) (w/o big numbers) 2/5: One option (string to number) 1`] = `
+"The type of the .foo value should be number
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) (w/o big numbers) 3/5: Two options 1`] = `
+"The type of the .foo value should be string or boolean
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) (w/o big numbers) 4/5: Three options 1`] = `
+"The type of the .foo value should be any of:
+    ∙ string
+    ∙ boolean
+    ∙ null
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) (w/o big numbers) 5/5: Not 1`] = `
+"The type of the .foo value should NOT be string
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) 1/5: One option (number to string) 1`] = `
+"The type of the .foo value should be string
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) 2/5: One option (string to number) 1`] = `
+"The type of the .foo value should be number
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) 3/5: Two options 1`] = `
+"The type of the .foo value should be string or boolean
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) 4/5: Three options 1`] = `
+"The type of the .foo value should be any of:
+    ∙ string
+    ∙ boolean
+    ∙ null
+
+"
+`;
+
+exports[`prettifications any-of (w/o location) 5/5: Not 1`] = `
+"The type of the .foo value should NOT be string
+
+"
+`;
+
 exports[`prettifications any-of 1/5: One option (number to string) 1`] = `
 "The type of the .foo value should be string
 
@@ -104,6 +342,114 @@ exports[`prettifications any-of 5/5: Not 1`] = `
 > 2 |   \\"foo\\": \\"bar\\"
     |          ^^^^^ change this type
   3 | }"
+`;
+
+exports[`prettifications array-size (w/o big numbers) 1/4: 1 too few 1`] = `
+"The .foo array should be should have at least 2 items
+
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1
+    | ^^^^^
+> 4 |   ]
+    | ^^^^ Ensure the array has 1 more item
+  5 | }"
+`;
+
+exports[`prettifications array-size (w/o big numbers) 2/4: 2 too few 1`] = `
+"The .foo array should be should have at least 3 items
+
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1
+    | ^^^^^
+> 4 |   ]
+    | ^^^^ Ensure the array has 2 more items
+  5 | }"
+`;
+
+exports[`prettifications array-size (w/o big numbers) 3/4: 1 too many 1`] = `
+"The .foo array should be should NOT have more than 2 items
+
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1,
+    | ^^^^^^
+> 4 |     2,
+    | ^^^^^^
+> 5 |     3
+    | ^^^^^^
+> 6 |   ]
+    | ^^^^ Remove 1 item
+  7 | }"
+`;
+
+exports[`prettifications array-size (w/o big numbers) 4/4: 2 too many 1`] = `
+"The .foo array should be should NOT have more than 1 item
+
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     1,
+    | ^^^^^^
+> 4 |     2,
+    | ^^^^^^
+> 5 |     3
+    | ^^^^^^
+> 6 |   ]
+    | ^^^^ Remove 2 items
+  7 | }"
+`;
+
+exports[`prettifications array-size (w/o location) (w/o big numbers) 1/4: 1 too few 1`] = `
+"The .foo array should be should have at least 2 items
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) (w/o big numbers) 2/4: 2 too few 1`] = `
+"The .foo array should be should have at least 3 items
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) (w/o big numbers) 3/4: 1 too many 1`] = `
+"The .foo array should be should NOT have more than 2 items
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) (w/o big numbers) 4/4: 2 too many 1`] = `
+"The .foo array should be should NOT have more than 1 item
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) 1/4: 1 too few 1`] = `
+"The .foo array should be should have at least 2 items
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) 2/4: 2 too few 1`] = `
+"The .foo array should be should have at least 3 items
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) 3/4: 1 too many 1`] = `
+"The .foo array should be should NOT have more than 2 items
+
+"
+`;
+
+exports[`prettifications array-size (w/o location) 4/4: 2 too many 1`] = `
+"The .foo array should be should NOT have more than 1 item
+
+"
 `;
 
 exports[`prettifications array-size 1/4: 1 too few 1`] = `
@@ -164,6 +510,258 @@ exports[`prettifications array-size 4/4: 2 too many 1`] = `
 > 6 |   ]
     | ^^^^ Remove 2 items
   7 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 1/12: Less than or equal to 1`] = `
+"The .foo value should be less than or equal to 17
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ Ensure this is less than or equal to 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 2/12: Strictly less than 1`] = `
+"The .foo value should be strictly less than 17
+
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is strictly less than 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 3/12: Greater than or equal to 1`] = `
+"The .foo value should be greater than or equal to 42
+
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is greater than or equal to 42
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 4/12: Strictly greater than 1`] = `
+"The .foo value should be strictly greater than 17
+
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is strictly greater than 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 5/12: Less than [] 1`] = `
+"The .foo value should be greater than or equal to 17
+
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is greater than or equal to 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 6/12: Less than [) 1`] = `
+"The .foo value should be greater than or equal to 17
+
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is greater than or equal to 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 7/12: Less than (] 1`] = `
+"The .foo value should be strictly greater than 17
+
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is strictly greater than 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 8/12: Less than () 1`] = `
+"The .foo value should be strictly greater than 17
+
+  1 | {
+> 2 |   \\"foo\\": 2
+    |          ^ Ensure this is strictly greater than 17
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 9/12: Greater than [] 1`] = `
+"The .foo value should be less than or equal to 42
+
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is less than or equal to 42
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 10/12: Greater than [) 1`] = `
+"The .foo value should be strictly less than 42
+
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is strictly less than 42
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 11/12: Greater than (] 1`] = `
+"The .foo value should be less than or equal to 42
+
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is less than or equal to 42
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o big numbers) 12/12: Greater than () 1`] = `
+"The .foo value should be strictly less than 42
+
+  1 | {
+> 2 |   \\"foo\\": 314
+    |          ^^^ Ensure this is strictly less than 42
+  3 | }"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 1/12: Less than or equal to 1`] = `
+"The .foo value should be less than or equal to 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 2/12: Strictly less than 1`] = `
+"The .foo value should be strictly less than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 3/12: Greater than or equal to 1`] = `
+"The .foo value should be greater than or equal to 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 4/12: Strictly greater than 1`] = `
+"The .foo value should be strictly greater than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 5/12: Less than [] 1`] = `
+"The .foo value should be greater than or equal to 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 6/12: Less than [) 1`] = `
+"The .foo value should be greater than or equal to 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 7/12: Less than (] 1`] = `
+"The .foo value should be strictly greater than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 8/12: Less than () 1`] = `
+"The .foo value should be strictly greater than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 9/12: Greater than [] 1`] = `
+"The .foo value should be less than or equal to 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 10/12: Greater than [) 1`] = `
+"The .foo value should be strictly less than 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 11/12: Greater than (] 1`] = `
+"The .foo value should be less than or equal to 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) (w/o big numbers) 12/12: Greater than () 1`] = `
+"The .foo value should be strictly less than 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 1/12: Less than or equal to 1`] = `
+"The .foo value should be less than or equal to 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 2/12: Strictly less than 1`] = `
+"The .foo value should be strictly less than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 3/12: Greater than or equal to 1`] = `
+"The .foo value should be greater than or equal to 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 4/12: Strictly greater than 1`] = `
+"The .foo value should be strictly greater than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 5/12: Less than [] 1`] = `
+"The .foo value should be greater than or equal to 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 6/12: Less than [) 1`] = `
+"The .foo value should be greater than or equal to 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 7/12: Less than (] 1`] = `
+"The .foo value should be strictly greater than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 8/12: Less than () 1`] = `
+"The .foo value should be strictly greater than 17
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 9/12: Greater than [] 1`] = `
+"The .foo value should be less than or equal to 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 10/12: Greater than [) 1`] = `
+"The .foo value should be strictly less than 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 11/12: Greater than (] 1`] = `
+"The .foo value should be less than or equal to 42
+
+"
+`;
+
+exports[`prettifications comparison (w/o location) 12/12: Greater than () 1`] = `
+"The .foo value should be strictly less than 42
+
+"
 `;
 
 exports[`prettifications comparison 1/12: Less than or equal to 1`] = `
@@ -272,6 +870,405 @@ exports[`prettifications comparison 12/12: Greater than () 1`] = `
 > 2 |   \\"foo\\": 314
     |          ^^^ Ensure this is strictly less than 42
   3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 1/16: One value of same type 1`] = `
+"The .foo value cannot be 42, it must be 41
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with 41
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 2/16: One value of different type (object to string) 1`] = `
+"The .foo value cannot be {...} (as object), it must be \\"42\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"bar\\": 42
+    | ^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ replace this with \\"42\\"
+  5 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 3/16: One value of different type (string, object) 1`] = `
+"The .foo value cannot be \\"42\\", it must be {...} (as object)
+
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ replace this with an allowed value
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 4/16: One value of different type (object to array) 1`] = `
+"The .foo value cannot be {...} (as object), it must be [...] (as array)
+
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"bar\\": 42
+    | ^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ replace this with an allowed value
+  5 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 5/16: One value of different type (array to object) 1`] = `
+"The .foo value cannot be [...] (as array), it must be {...} (as object)
+
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     42
+    | ^^^^^^
+> 4 |   ]
+    | ^^^^ replace this with an allowed value
+  5 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 6/16: One value of different type (number to string) 1`] = `
+"The .foo value cannot be 42, it must be \\"42\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with \\"42\\"
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 7/16: One value of different type (string to number) 1`] = `
+"The .foo value cannot be \\"42\\", it must be 42 (as number)
+
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ replace this with 42
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 8/16: One value of different type (boolean to string) 1`] = `
+"The .foo value cannot be false, it must be \\"false\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": false
+    |          ^^^^^ replace this with \\"false\\"
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 9/16: One value of different type (string to boolean) 1`] = `
+"The .foo value cannot be \\"false\\", it must be false (as boolean)
+
+  1 | {
+> 2 |   \\"foo\\": \\"false\\"
+    |          ^^^^^^^ replace this with false
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 10/16: One value of different type (null to string) 1`] = `
+"The .foo value cannot be null, it must be \\"null\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ replace this with \\"null\\"
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 11/16: One value of different type (string to null) 1`] = `
+"The .foo value cannot be \\"null\\", it must be null (as null)
+
+  1 | {
+> 2 |   \\"foo\\": \\"null\\"
+    |          ^^^^^^ replace this with null
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 12/16: Two options (one of different type) 1`] = `
+"The .foo value cannot be 42, did you mean \\"42\\" (as string) or 41?
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with an allowed value e.g. \\"42\\" (as string)
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 13/16: Two options (one similar, one not) 1`] = `
+"The .foo value cannot be 42, did you mean 41 or \\"bar\\" (as string)?
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ replace this with an allowed value e.g. 41
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 14/16: Four options (one of different type) 1`] = `
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ other available values:
+    ∙       \\"other\\"
+
+  1 | {
+> 2 |   \\"foo\\": \\"false\\"
+    |          ^^^^^^^ replace this with an allowed value e.g. false (as boolean)
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 15/16: Many options (one of different type) 1`] = `
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ \\"these\\"
+    ∙ other available values:
+    ∙       [...] (as array)
+    ∙       {...} (as object)
+    ∙       \\"be\\"
+    ∙       \\"listed\\"
+    ∙       \\"ones\\"
+    ∙       \\"separately\\"
+    ∙       \\"should\\"
+
+  1 | {
+> 2 |   \\"foo\\": \\"false\\"
+    |          ^^^^^^^ replace this with an allowed value e.g. false (as boolean)
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o big numbers) 16/16: Const 1`] = `
+"The .foo value cannot be \\"bar\\", it must be \\"baz\\"
+
+  1 | {
+> 2 |   \\"foo\\": \\"bar\\"
+    |          ^^^^^ replace this with \\"baz\\"
+  3 | }"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 1/16: One value of same type 1`] = `
+"The .foo value cannot be 42, it must be 41
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 2/16: One value of different type (object to string) 1`] = `
+"The .foo value cannot be {...} (as object), it must be \\"42\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 3/16: One value of different type (string, object) 1`] = `
+"The .foo value cannot be \\"42\\", it must be {...} (as object)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 4/16: One value of different type (object to array) 1`] = `
+"The .foo value cannot be {...} (as object), it must be [...] (as array)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 5/16: One value of different type (array to object) 1`] = `
+"The .foo value cannot be [...] (as array), it must be {...} (as object)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 6/16: One value of different type (number to string) 1`] = `
+"The .foo value cannot be 42, it must be \\"42\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 7/16: One value of different type (string to number) 1`] = `
+"The .foo value cannot be \\"42\\", it must be 42 (as number)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 8/16: One value of different type (boolean to string) 1`] = `
+"The .foo value cannot be false, it must be \\"false\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 9/16: One value of different type (string to boolean) 1`] = `
+"The .foo value cannot be \\"false\\", it must be false (as boolean)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 10/16: One value of different type (null to string) 1`] = `
+"The .foo value cannot be null, it must be \\"null\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 11/16: One value of different type (string to null) 1`] = `
+"The .foo value cannot be \\"null\\", it must be null (as null)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 12/16: Two options (one of different type) 1`] = `
+"The .foo value cannot be 42, did you mean \\"42\\" (as string) or 41?
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 13/16: Two options (one similar, one not) 1`] = `
+"The .foo value cannot be 42, did you mean 41 or \\"bar\\" (as string)?
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 14/16: Four options (one of different type) 1`] = `
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ other available values:
+    ∙       \\"other\\"
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 15/16: Many options (one of different type) 1`] = `
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ \\"these\\"
+    ∙ other available values:
+    ∙       [...] (as array)
+    ∙       {...} (as object)
+    ∙       \\"be\\"
+    ∙       \\"listed\\"
+    ∙       \\"ones\\"
+    ∙       \\"separately\\"
+    ∙       \\"should\\"
+
+"
+`;
+
+exports[`prettifications enum (w/o location) (w/o big numbers) 16/16: Const 1`] = `
+"The .foo value cannot be \\"bar\\", it must be \\"baz\\"
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 1/16: One value of same type 1`] = `
+"The .foo value cannot be 42, it must be 41
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 2/16: One value of different type (object to string) 1`] = `
+"The .foo value cannot be {...} (as object), it must be \\"42\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 3/16: One value of different type (string, object) 1`] = `
+"The .foo value cannot be \\"42\\", it must be {...} (as object)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 4/16: One value of different type (object to array) 1`] = `
+"The .foo value cannot be {...} (as object), it must be [...] (as array)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 5/16: One value of different type (array to object) 1`] = `
+"The .foo value cannot be [...] (as array), it must be {...} (as object)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 6/16: One value of different type (number to string) 1`] = `
+"The .foo value cannot be 42, it must be \\"42\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 7/16: One value of different type (string to number) 1`] = `
+"The .foo value cannot be \\"42\\", it must be 42 (as number)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 8/16: One value of different type (boolean to string) 1`] = `
+"The .foo value cannot be false, it must be \\"false\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 9/16: One value of different type (string to boolean) 1`] = `
+"The .foo value cannot be \\"false\\", it must be false (as boolean)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 10/16: One value of different type (null to string) 1`] = `
+"The .foo value cannot be null, it must be \\"null\\" (as string)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 11/16: One value of different type (string to null) 1`] = `
+"The .foo value cannot be \\"null\\", it must be null (as null)
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 12/16: Two options (one of different type) 1`] = `
+"The .foo value cannot be 42, did you mean \\"42\\" (as string) or 41?
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 13/16: Two options (one similar, one not) 1`] = `
+"The .foo value cannot be 42, did you mean 41 or \\"bar\\" (as string)?
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 14/16: Four options (one of different type) 1`] = `
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ other available values:
+    ∙       \\"other\\"
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 15/16: Many options (one of different type) 1`] = `
+"The .foo value cannot be \\"false\\", did you mean any of:
+    ∙ false (as boolean)
+    ∙ \\"falso\\"
+    ∙ \\"False\\"
+    ∙ \\"these\\"
+    ∙ other available values:
+    ∙       [...] (as array)
+    ∙       {...} (as object)
+    ∙       \\"be\\"
+    ∙       \\"listed\\"
+    ∙       \\"ones\\"
+    ∙       \\"separately\\"
+    ∙       \\"should\\"
+
+"
+`;
+
+exports[`prettifications enum (w/o location) 16/16: Const 1`] = `
+"The .foo value cannot be \\"bar\\", it must be \\"baz\\"
+
+"
 `;
 
 exports[`prettifications enum 1/16: One value of same type 1`] = `
@@ -447,6 +1444,258 @@ exports[`prettifications enum 16/16: Const 1`] = `
   3 | }"
 `;
 
+exports[`prettifications format (w/o big numbers) 2/24: date-time invalid 1`] = `
+"The .foo value is not valid date-time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"2020-01-023T11:22:33Z\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 4/24: time invalid 1`] = `
+"The .foo value is not valid time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"11:22:334\\"
+    |          ^^^^^^^^^^^ ensure this is valid RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 6/24: date invalid 1`] = `
+"The .foo value is not valid date according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"2020-01-023\\"
+    |          ^^^^^^^^^^^^^ ensure this is valid RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 8/24: email invalid 1`] = `
+"The .foo value is not valid email according to RFC5322 Section 3.4.1 (https://tools.ietf.org/html/rfc5322#section-3.4.1) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"quite@invalid@email.com\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC5322 Section 3.4.1 (https://tools.ietf.org/html/rfc5322#section-3.4.1)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 10/24: hostname invalid 1`] = `
+"The .foo value is not valid hostname according to RFC1034 Section 3.1 (https://tools.ietf.org/html/rfc1034#section-3.1) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"invalid..host.com\\"
+    |          ^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC1034 Section 3.1 (https://tools.ietf.org/html/rfc1034#section-3.1)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 12/24: ipv4 invalid 1`] = `
+"The .foo value is not valid ipv4 according to RFC2673 Section 3.2 (https://tools.ietf.org/html/rfc2673#section-3.2) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"1.2.345.6\\"
+    |          ^^^^^^^^^^^ ensure this is valid RFC2673 Section 3.2 (https://tools.ietf.org/html/rfc2673#section-3.2)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 14/24: ipv6 invalid 1`] = `
+"The .foo value is not valid ipv6 according to RFC2373 Section 2.2 (https://tools.ietf.org/html/rfc2373#section-2.2) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"2000:0000:10001::ABCD:EF01\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC2373 Section 2.2 (https://tools.ietf.org/html/rfc2373#section-2.2)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 16/24: uri-reference invalid 1`] = `
+"The .foo value is not valid uri-reference according to RFC3986 Section 4.1 (https://tools.ietf.org/html/rfc3986#section-4.1) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"/ /the/file.txt\\"
+    |          ^^^^^^^^^^^^^^^^^ ensure this is valid RFC3986 Section 4.1 (https://tools.ietf.org/html/rfc3986#section-4.1)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 18/24: uri-template invalid 1`] = `
+"The .foo value is not valid uri-template according to RFC6570 (https://tools.ietf.org/html/rfc6570) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"http://example.com/~{?}/\\"
+    |          ^^^^^^^^^^^^^^^^^^^^^^^^^^ ensure this is valid RFC6570 (https://tools.ietf.org/html/rfc6570)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 20/24: json-pointer invalid 1`] = `
+"The .foo value is not valid json-pointer according to RFC6901 (https://tools.ietf.org/html/rfc6901) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"\\\\\\\\foo/bar\\"
+    |          ^^^^^^^^^^^ ensure this is valid RFC6901 (https://tools.ietf.org/html/rfc6901)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 22/24: relative-json-pointer invalid 1`] = `
+"The .foo value is not valid relative-json-pointer according to Relative JSON Pointers (https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"-/foo/bar\\"
+    |          ^^^^^^^^^^^ ensure this is valid Relative JSON Pointers (https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o big numbers) 24/24: regex invalid 1`] = `
+"The .foo value is not valid regex according to ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf) 📄
+
+  1 | {
+> 2 |   \\"foo\\": \\"*foo/bar\\"
+    |          ^^^^^^^^^^ ensure this is valid ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf)
+  3 | }"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 2/24: date-time invalid 1`] = `
+"The .foo value is not valid date-time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 4/24: time invalid 1`] = `
+"The .foo value is not valid time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 6/24: date invalid 1`] = `
+"The .foo value is not valid date according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 8/24: email invalid 1`] = `
+"The .foo value is not valid email according to RFC5322 Section 3.4.1 (https://tools.ietf.org/html/rfc5322#section-3.4.1) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 10/24: hostname invalid 1`] = `
+"The .foo value is not valid hostname according to RFC1034 Section 3.1 (https://tools.ietf.org/html/rfc1034#section-3.1) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 12/24: ipv4 invalid 1`] = `
+"The .foo value is not valid ipv4 according to RFC2673 Section 3.2 (https://tools.ietf.org/html/rfc2673#section-3.2) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 14/24: ipv6 invalid 1`] = `
+"The .foo value is not valid ipv6 according to RFC2373 Section 2.2 (https://tools.ietf.org/html/rfc2373#section-2.2) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 16/24: uri-reference invalid 1`] = `
+"The .foo value is not valid uri-reference according to RFC3986 Section 4.1 (https://tools.ietf.org/html/rfc3986#section-4.1) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 18/24: uri-template invalid 1`] = `
+"The .foo value is not valid uri-template according to RFC6570 (https://tools.ietf.org/html/rfc6570) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 20/24: json-pointer invalid 1`] = `
+"The .foo value is not valid json-pointer according to RFC6901 (https://tools.ietf.org/html/rfc6901) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 22/24: relative-json-pointer invalid 1`] = `
+"The .foo value is not valid relative-json-pointer according to Relative JSON Pointers (https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) (w/o big numbers) 24/24: regex invalid 1`] = `
+"The .foo value is not valid regex according to ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 2/24: date-time invalid 1`] = `
+"The .foo value is not valid date-time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 4/24: time invalid 1`] = `
+"The .foo value is not valid time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 6/24: date invalid 1`] = `
+"The .foo value is not valid date according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 8/24: email invalid 1`] = `
+"The .foo value is not valid email according to RFC5322 Section 3.4.1 (https://tools.ietf.org/html/rfc5322#section-3.4.1) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 10/24: hostname invalid 1`] = `
+"The .foo value is not valid hostname according to RFC1034 Section 3.1 (https://tools.ietf.org/html/rfc1034#section-3.1) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 12/24: ipv4 invalid 1`] = `
+"The .foo value is not valid ipv4 according to RFC2673 Section 3.2 (https://tools.ietf.org/html/rfc2673#section-3.2) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 14/24: ipv6 invalid 1`] = `
+"The .foo value is not valid ipv6 according to RFC2373 Section 2.2 (https://tools.ietf.org/html/rfc2373#section-2.2) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 16/24: uri-reference invalid 1`] = `
+"The .foo value is not valid uri-reference according to RFC3986 Section 4.1 (https://tools.ietf.org/html/rfc3986#section-4.1) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 18/24: uri-template invalid 1`] = `
+"The .foo value is not valid uri-template according to RFC6570 (https://tools.ietf.org/html/rfc6570) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 20/24: json-pointer invalid 1`] = `
+"The .foo value is not valid json-pointer according to RFC6901 (https://tools.ietf.org/html/rfc6901) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 22/24: relative-json-pointer invalid 1`] = `
+"The .foo value is not valid relative-json-pointer according to Relative JSON Pointers (https://tools.ietf.org/html/draft-handrews-relative-json-pointer-01) 📄
+
+"
+`;
+
+exports[`prettifications format (w/o location) 24/24: regex invalid 1`] = `
+"The .foo value is not valid regex according to ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf) 📄
+
+"
+`;
+
 exports[`prettifications format 2/24: date-time invalid 1`] = `
 "The .foo value is not valid date-time according to RFC3339 Section 5.6 (https://tools.ietf.org/html/rfc3339#section-5.6) 📄
 
@@ -553,6 +1802,288 @@ exports[`prettifications format 24/24: regex invalid 1`] = `
 > 2 |   \\"foo\\": \\"*foo/bar\\"
     |          ^^^^^^^^^^ ensure this is valid ECMA 262 (https://www.ecma-international.org/publications/files/ECMA-ST/Ecma-262.pdf)
   3 | }"
+`;
+
+exports[`prettifications if-then-else (w/o big numbers) 1/6: if-then on root object 1`] = `
+"The root object is missing required property lastName
+
+> 1 | {
+    | ^
+> 2 |   \\"firstName\\": true
+    | ^^^^^^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ add missing property lastName
+
+The conditional if/then on root object is not satisfied (showed in separate error)
+The if clause references:
+
+> 1 | {
+    | ^
+> 2 |   \\"firstName\\": true
+    | ^^^^^^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ Ensure the corresponding then clause is satisfied"
+`;
+
+exports[`prettifications if-then-else (w/o big numbers) 2/6: if-else on root object 1`] = `
+"The root object is missing required property alias
+
+> 1 | {
+    | ^
+> 2 |   \\"fullName\\": false
+    | ^^^^^^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ add missing property alias
+
+The conditional if/else on root object is not satisfied (showed in separate error)
+The if clause references:
+
+> 1 | {
+    | ^
+> 2 |   \\"fullName\\": false
+    | ^^^^^^^^^^^^^^^^^^^
+> 3 | }
+    | ^^ Ensure the corresponding else clause is satisfied"
+`;
+
+exports[`prettifications if-then-else (w/o big numbers) 3/6: if-then on first-level object 1`] = `
+"The .foo value is missing required property lastName
+
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"firstName\\": true
+    | ^^^^^^^^^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ add missing property lastName
+  5 | }
+
+The conditional if/then on .foo value is not satisfied (showed in separate error)
+The if clause references:
+
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"firstName\\": true
+    | ^^^^^^^^^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ Ensure the corresponding then clause is satisfied
+  5 | }"
+`;
+
+exports[`prettifications if-then-else (w/o big numbers) 4/6: if-else on first-level object 1`] = `
+"The .foo value is missing required property alias
+
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"fullName\\": false
+    | ^^^^^^^^^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ add missing property alias
+  5 | }
+
+The conditional if/else on .foo value is not satisfied (showed in separate error)
+The if clause references:
+
+  1 | {
+> 2 |   \\"foo\\": {
+    |          ^
+> 3 |     \\"fullName\\": false
+    | ^^^^^^^^^^^^^^^^^^^^^
+> 4 |   }
+    | ^^^^ Ensure the corresponding else clause is satisfied
+  5 | }"
+`;
+
+exports[`prettifications if-then-else (w/o big numbers) 5/6: if-then on second-level object 1`] = `
+"The value at .foo.bar is missing required property lastName
+
+  1 | {
+  2 |   \\"foo\\": {
+> 3 |     \\"bar\\": {
+    |            ^
+> 4 |       \\"firstName\\": true
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+> 5 |     }
+    | ^^^^^^ add missing property lastName
+  6 |   }
+  7 | }
+
+The conditional if/then on value at .foo.bar is not satisfied (showed in separate error)
+The if clause references:
+
+  1 | {
+  2 |   \\"foo\\": {
+> 3 |     \\"bar\\": {
+    |            ^
+> 4 |       \\"firstName\\": true
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+> 5 |     }
+    | ^^^^^^ Ensure the corresponding then clause is satisfied
+  6 |   }
+  7 | }"
+`;
+
+exports[`prettifications if-then-else (w/o big numbers) 6/6: if-else on second-level object 1`] = `
+"The value at .foo.bar is missing required property alias
+
+  1 | {
+  2 |   \\"foo\\": {
+> 3 |     \\"bar\\": {
+    |            ^
+> 4 |       \\"fullName\\": false
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+> 5 |     }
+    | ^^^^^^ add missing property alias
+  6 |   }
+  7 | }
+
+The conditional if/else on value at .foo.bar is not satisfied (showed in separate error)
+The if clause references:
+
+  1 | {
+  2 |   \\"foo\\": {
+> 3 |     \\"bar\\": {
+    |            ^
+> 4 |       \\"fullName\\": false
+    | ^^^^^^^^^^^^^^^^^^^^^^^
+> 5 |     }
+    | ^^^^^^ Ensure the corresponding else clause is satisfied
+  6 |   }
+  7 | }"
+`;
+
+exports[`prettifications if-then-else (w/o location) (w/o big numbers) 1/6: if-then on root object 1`] = `
+"The root object is missing required property lastName
+
+
+
+The conditional if/then on root object is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) (w/o big numbers) 2/6: if-else on root object 1`] = `
+"The root object is missing required property alias
+
+
+
+The conditional if/else on root object is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) (w/o big numbers) 3/6: if-then on first-level object 1`] = `
+"The .foo value is missing required property lastName
+
+
+
+The conditional if/then on .foo value is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) (w/o big numbers) 4/6: if-else on first-level object 1`] = `
+"The .foo value is missing required property alias
+
+
+
+The conditional if/else on .foo value is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) (w/o big numbers) 5/6: if-then on second-level object 1`] = `
+"The value at .foo.bar is missing required property lastName
+
+
+
+The conditional if/then on value at .foo.bar is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) (w/o big numbers) 6/6: if-else on second-level object 1`] = `
+"The value at .foo.bar is missing required property alias
+
+
+
+The conditional if/else on value at .foo.bar is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) 1/6: if-then on root object 1`] = `
+"The root object is missing required property lastName
+
+
+
+The conditional if/then on root object is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) 2/6: if-else on root object 1`] = `
+"The root object is missing required property alias
+
+
+
+The conditional if/else on root object is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) 3/6: if-then on first-level object 1`] = `
+"The .foo value is missing required property lastName
+
+
+
+The conditional if/then on .foo value is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) 4/6: if-else on first-level object 1`] = `
+"The .foo value is missing required property alias
+
+
+
+The conditional if/else on .foo value is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) 5/6: if-then on second-level object 1`] = `
+"The value at .foo.bar is missing required property lastName
+
+
+
+The conditional if/then on value at .foo.bar is not satisfied (showed in separate error)
+The if clause references:
+
+"
+`;
+
+exports[`prettifications if-then-else (w/o location) 6/6: if-else on second-level object 1`] = `
+"The value at .foo.bar is missing required property alias
+
+
+
+The conditional if/else on value at .foo.bar is not satisfied (showed in separate error)
+The if clause references:
+
+"
 `;
 
 exports[`prettifications if-then-else 1/6: if-then on root object 1`] = `
@@ -705,6 +2236,27 @@ exports[`prettifications if-then-else 6/6: if-else on second-level object 1`] = 
             7 | }"
 `;
 
+exports[`prettifications multiple-of (w/o big numbers) 1/1: Multiple of 1`] = `
+"The .foo value should be a multiple of 4 (e.g. 0, 4, 8, 12, etc)
+
+  1 | {
+> 2 |   \\"foo\\": 17
+    |          ^^ Ensure this is a multiple of 4
+  3 | }"
+`;
+
+exports[`prettifications multiple-of (w/o location) (w/o big numbers) 1/1: Multiple of 1`] = `
+"The .foo value should be a multiple of 4 (e.g. 0, 4, 8, 12, etc)
+
+"
+`;
+
+exports[`prettifications multiple-of (w/o location) 1/1: Multiple of 1`] = `
+"The .foo value should be a multiple of 4 (e.g. 0, 4, 8, 12, etc)
+
+"
+`;
+
 exports[`prettifications multiple-of 1/1: Multiple of 1`] = `
 "The .foo value should be a multiple of 4 (e.g. 0, 4, 8, 12, etc)
 
@@ -714,6 +2266,27 @@ exports[`prettifications multiple-of 1/1: Multiple of 1`] = `
   3 | }"
 `;
 
+exports[`prettifications pattern (w/o big numbers) 1/1: Regex pattern 1`] = `
+"The .foo string must match ^f[^ ]+z$
+
+  1 | {
+> 2 |   \\"foo\\": \\"bar baz\\"
+    |          ^^^^^^^^^ Ensure this matches the regex pattern
+  3 | }"
+`;
+
+exports[`prettifications pattern (w/o location) (w/o big numbers) 1/1: Regex pattern 1`] = `
+"The .foo string must match ^f[^ ]+z$
+
+"
+`;
+
+exports[`prettifications pattern (w/o location) 1/1: Regex pattern 1`] = `
+"The .foo string must match ^f[^ ]+z$
+
+"
+`;
+
 exports[`prettifications pattern 1/1: Regex pattern 1`] = `
 "The .foo string must match ^f[^ ]+z$
 
@@ -721,6 +2294,50 @@ exports[`prettifications pattern 1/1: Regex pattern 1`] = `
 > 2 |   \\"foo\\": \\"bar baz\\"
     |          ^^^^^^^^^ Ensure this matches the regex pattern
   3 | }"
+`;
+
+exports[`prettifications required (w/o big numbers) 1/2: Root-level required 1`] = `
+"The root object is missing required property foo
+
+> 1 | {
+    | ^
+> 2 |   \\"bar\\": 42
+    | ^^^^^^^^^^^
+> 3 | }
+    | ^^ add missing property foo"
+`;
+
+exports[`prettifications required (w/o big numbers) 2/2: Second-level required 1`] = `
+"The .foo value is missing required property bar
+
+  1 | {
+> 2 |   \\"foo\\": {}
+    |          ^^ add missing property bar
+  3 | }"
+`;
+
+exports[`prettifications required (w/o location) (w/o big numbers) 1/2: Root-level required 1`] = `
+"The root object is missing required property foo
+
+"
+`;
+
+exports[`prettifications required (w/o location) (w/o big numbers) 2/2: Second-level required 1`] = `
+"The .foo value is missing required property bar
+
+"
+`;
+
+exports[`prettifications required (w/o location) 1/2: Root-level required 1`] = `
+"The root object is missing required property foo
+
+"
+`;
+
+exports[`prettifications required (w/o location) 2/2: Second-level required 1`] = `
+"The .foo value is missing required property bar
+
+"
 `;
 
 exports[`prettifications required 1/2: Root-level required 1`] = `
@@ -871,6 +2488,90 @@ exports[`prettifications simple types should handle string and data = null 1`] =
     | ^^^^ Replace this with e.g. \\"null\\" (as string)"
 `;
 
+exports[`prettifications string-size (w/o big numbers) 1/4: maxLength 1`] = `
+"The .foo string should be at most 2 characters long
+
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at most 2 characters long
+  3 | }"
+`;
+
+exports[`prettifications string-size (w/o big numbers) 2/4: minLength 1`] = `
+"The .foo string should be at least 17 characters long
+
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at least 17 characters long
+  3 | }"
+`;
+
+exports[`prettifications string-size (w/o big numbers) 3/4: minLength and maxLength (too short) 1`] = `
+"The .foo string should be at least 17 characters long
+
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at least 17 characters long
+  3 | }"
+`;
+
+exports[`prettifications string-size (w/o big numbers) 4/4: minLength and maxLength (too long) 1`] = `
+"The .foo string should be at most 5 characters long
+
+  1 | {
+> 2 |   \\"foo\\": \\"foobar\\"
+    |          ^^^^^^^^ Ensure this is at most 5 characters long
+  3 | }"
+`;
+
+exports[`prettifications string-size (w/o location) (w/o big numbers) 1/4: maxLength 1`] = `
+"The .foo string should be at most 2 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) (w/o big numbers) 2/4: minLength 1`] = `
+"The .foo string should be at least 17 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) (w/o big numbers) 3/4: minLength and maxLength (too short) 1`] = `
+"The .foo string should be at least 17 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) (w/o big numbers) 4/4: minLength and maxLength (too long) 1`] = `
+"The .foo string should be at most 5 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) 1/4: maxLength 1`] = `
+"The .foo string should be at most 2 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) 2/4: minLength 1`] = `
+"The .foo string should be at least 17 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) 3/4: minLength and maxLength (too short) 1`] = `
+"The .foo string should be at least 17 characters long
+
+"
+`;
+
+exports[`prettifications string-size (w/o location) 4/4: minLength and maxLength (too long) 1`] = `
+"The .foo string should be at most 5 characters long
+
+"
+`;
+
 exports[`prettifications string-size 1/4: maxLength 1`] = `
 "The .foo string should be at most 2 characters long
 
@@ -905,6 +2606,258 @@ exports[`prettifications string-size 4/4: minLength and maxLength (too long) 1`]
 > 2 |   \\"foo\\": \\"foobar\\"
     |          ^^^^^^^^ Ensure this is at most 5 characters long
   3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 1/12: string to number 1`] = `
+"The type of the .foo value should be number, e.g. 42 (as number)
+
+  1 | {
+> 2 |   \\"foo\\": \\"42\\"
+    |          ^^^^ Replace this with e.g. 42 (as number)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 2/12: string to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. true (as boolean)
+
+  1 | {
+> 2 |   \\"foo\\": \\"true\\"
+    |          ^^^^^^ Replace this with e.g. true (as boolean)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 3/12: string to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+  1 | {
+> 2 |   \\"foo\\": \\"null\\"
+    |          ^^^^^^ Replace this with e.g. null (as null)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 4/12: number to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"42\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": 42
+    |          ^^ Replace this with e.g. \\"42\\" (as string)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 5/12: number to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. true (as boolean)
+
+  1 | {
+> 2 |   \\"foo\\": 1
+    |          ^ Replace this with e.g. true (as boolean)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 6/12: number to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+  1 | {
+> 2 |   \\"foo\\": 0
+    |          ^ Replace this with e.g. null (as null)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 7/12: boolean to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"false\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": false
+    |          ^^^^^ Replace this with e.g. \\"false\\" (as string)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 8/12: boolean to number 1`] = `
+"The type of the .foo value should be number, e.g. 0 (as number)
+
+  1 | {
+> 2 |   \\"foo\\": false
+    |          ^^^^^ Replace this with e.g. 0 (as number)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 9/12: boolean to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+  1 | {
+> 2 |   \\"foo\\": 0
+    |          ^ Replace this with e.g. null (as null)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 10/12: null to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"null\\" (as string)
+
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ Replace this with e.g. \\"null\\" (as string)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 11/12: null to number 1`] = `
+"The type of the .foo value should be number, e.g. 0 (as number)
+
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ Replace this with e.g. 0 (as number)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o big numbers) 12/12: null to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. false (as boolean)
+
+  1 | {
+> 2 |   \\"foo\\": null
+    |          ^^^^ Replace this with e.g. false (as boolean)
+  3 | }"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 1/12: string to number 1`] = `
+"The type of the .foo value should be number, e.g. 42 (as number)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 2/12: string to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. true (as boolean)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 3/12: string to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 4/12: number to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"42\\" (as string)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 5/12: number to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. true (as boolean)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 6/12: number to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 7/12: boolean to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"false\\" (as string)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 8/12: boolean to number 1`] = `
+"The type of the .foo value should be number, e.g. 0 (as number)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 9/12: boolean to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 10/12: null to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"null\\" (as string)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 11/12: null to number 1`] = `
+"The type of the .foo value should be number, e.g. 0 (as number)
+
+"
+`;
+
+exports[`prettifications type (w/o location) (w/o big numbers) 12/12: null to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. false (as boolean)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 1/12: string to number 1`] = `
+"The type of the .foo value should be number, e.g. 42 (as number)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 2/12: string to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. true (as boolean)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 3/12: string to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 4/12: number to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"42\\" (as string)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 5/12: number to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. true (as boolean)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 6/12: number to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 7/12: boolean to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"false\\" (as string)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 8/12: boolean to number 1`] = `
+"The type of the .foo value should be number, e.g. 0 (as number)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 9/12: boolean to null 1`] = `
+"The type of the .foo value should be null, e.g. null (as null)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 10/12: null to string 1`] = `
+"The type of the .foo value should be string, e.g. \\"null\\" (as string)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 11/12: null to number 1`] = `
+"The type of the .foo value should be number, e.g. 0 (as number)
+
+"
+`;
+
+exports[`prettifications type (w/o location) 12/12: null to boolean 1`] = `
+"The type of the .foo value should be boolean, e.g. false (as boolean)
+
+"
 `;
 
 exports[`prettifications type 1/12: string to number 1`] = `
@@ -1013,6 +2966,35 @@ exports[`prettifications type 12/12: null to boolean 1`] = `
 > 2 |   \\"foo\\": null
     |          ^^^^ Replace this with e.g. false (as boolean)
   3 | }"
+`;
+
+exports[`prettifications unique (w/o big numbers) 1/1 1`] = `
+"The .foo array should have unique items, but element 0 and 2 are identical: \\"bar\\"
+
+  1 | {
+> 2 |   \\"foo\\": [
+    |          ^
+> 3 |     \\"bar\\",
+    | ^^^^^^^^^^
+> 4 |     \\"baz\\",
+    | ^^^^^^^^^^
+> 5 |     \\"bar\\"
+    | ^^^^^^^^^^
+> 6 |   ]
+    | ^^^^ Remove element 0 or 2
+  7 | }"
+`;
+
+exports[`prettifications unique (w/o location) (w/o big numbers) 1/1 1`] = `
+"The .foo array should have unique items, but element 0 and 2 are identical: \\"bar\\"
+
+"
+`;
+
+exports[`prettifications unique (w/o location) 1/1 1`] = `
+"The .foo array should have unique items, but element 0 and 2 are identical: \\"bar\\"
+
+"
 `;
 
 exports[`prettifications unique 1/1 1`] = `

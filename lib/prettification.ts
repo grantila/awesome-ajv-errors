@@ -26,6 +26,23 @@ export interface PrettifyOptions extends PrettificationCore
 	 * true or false.
 	 */
 	colors?: boolean;
+
+	/**
+	 * Include (if possible) the location of the error using a pretty-printed
+	 * code-frame.
+	 *
+	 * Defaults to `true`
+	 */
+	location?: boolean;
+
+	/**
+	 * When pretty-printing (if `location` is enabled), print big numbers
+	 * before each error if there are multiple errors.
+	 *
+	 * Defaults to `true` in Node.js (if location is enabled) and `false`
+	 * otherwise.
+	 */
+	bigNumbers?: boolean;
 }
 
 export interface Prettify< Ret >
@@ -37,9 +54,12 @@ export interface Prettify< Ret >
 	): Ret;
 }
 
+type Environment = 'node' | 'browser';
+
 export function makePrettify(
 	managerOptions: ManagerOptions,
-	printCode: PrintCode
+	printCode: PrintCode,
+	environment: Environment
 )
 : Prettify< string >
 {
@@ -65,7 +85,10 @@ export function makePrettify(
 				schema: validate.schema as object,
 				data: opts?.data,
 				styleManager,
-				printCode: makePrintCode( styleManager.support, printCode ),
+				printCode,
+				location: opts?.location,
+				bigNumbers: opts?.bigNumbers,
+				environment,
 			} );
 		}
 		else
@@ -76,21 +99,48 @@ export function makePrettify(
 			return _prettify( {
 				...( validate as PrettifyOptions ),
 				styleManager,
-				printCode: makePrintCode( styleManager.support, printCode ),
+				printCode,
+				location: undefined,
+				bigNumbers: undefined,
+				environment,
 			} );
 		}
 	}
 }
 
-interface InternalPrettifyOptions extends Omit< PrettifyOptions, 'color' >
+interface InternalPrettifyOptions extends Omit< PrettifyOptions, 'colors' >
 {
 	styleManager: StyleManager;
 	printCode: PrintCode;
+	environment: Environment;
 }
 
-function _prettify( opts: InternalPrettifyOptions ): string
+type InitializedPrettifyOptions = Required< InternalPrettifyOptions >;
+
+function initOptionsWithDefaults(
+	options: InternalPrettifyOptions
+)
+: InitializedPrettifyOptions
 {
-	const { styleManager, printCode } = opts;
+	const location = options.location ?? ( options.environment === 'node' );
+	const bigNumbers =
+		location &&
+		( options.bigNumbers ?? ( options.environment === 'node' ) );
+
+	const printCode = makePrintCode(
+		location,
+		options.styleManager.support,
+		options.printCode
+	);
+
+	return { ...options, location, bigNumbers, printCode };
+}
+
+function _prettify( _opts: InternalPrettifyOptions ): string
+{
+	const opts = initOptionsWithDefaults( _opts );
+
+	const { styleManager, printCode, bigNumbers } = opts;
 
 	const errors = mergeTypeErrors( ensureArray( opts.errors ) );
 
@@ -116,7 +166,7 @@ function _prettify( opts: InternalPrettifyOptions ): string
 
 		const errorLines = prettifyOne( context ).split( "\n" );
 
-		if ( errors.length === 1 )
+		if ( !bigNumbers || errors.length === 1 )
 			return errorLines.join( "\n" );
 
 		return preparedText.printAsPrefix(
