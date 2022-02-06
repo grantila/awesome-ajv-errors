@@ -14,11 +14,14 @@ export type PrintCode =
 	) => string;
 
 export function makePrintCode(
+	enabled: boolean,
 	colors: boolean | undefined,
 	printCode: PrintCode
 )
 : PrintCode
 {
 	return ( message, parsedJson, options ) =>
-		printCode( message, parsedJson, { colors, ...options } );
+		!enabled
+		? ''
+		: printCode( message, parsedJson, { colors, ...options } );
 }

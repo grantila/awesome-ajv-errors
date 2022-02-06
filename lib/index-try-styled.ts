@@ -15,7 +15,7 @@ export const styledPrettify = ( async ( ) =>
 			.catch( err => ( { printCode } ) ),
 	] );
 
-	return makePrettify( style.managerOptions, code.printCode );
+	return makePrettify( style.managerOptions, code.printCode, 'browser' );
 } )( );
 
 export const prettifyTryStyled: Prettify< Promise< string > > =

@@ -29,7 +29,7 @@ It has a gorgeous human-understandable output, predicts human errors and suggest
      * Import from `awesome-ajv-errors/try-styled` which has a promise-based `prettify` function (`prettifyTryStyled`) or a promise which will eventually resolve to a synchronous function (`styledPrettify`).
      * Both of these will fallback to non-colored non-codeframe output if e.g. loading `@babel/code-frame` failed. This will likely be entirely resolved once Babel 8 is released; then awesome output will by default work in browsers too.
  * Since version 4;
-   * package.json exports field is not support well by e.g. Jest, so v4 reverts v3 exports.
+   * package.json exports field is not support well by e.g. Jest, so v4 reverts the v3 exports.
    * Until the exports field get better support, the official way to import will now be from:
      * `awesome-ajv-errors` for auto-detecting node vs browser
      * `awesome-ajv-errors/dist/index-node.js` or `awesome-ajv-errors/dist/index-browser.js` for explicit importing depending on environment
@@ -645,6 +645,27 @@ Now, the validation error is stored on the `validate` function. Use `prettify` t
 ```ts
 console.log( prettify( validate, { data } ) );
 ```
+
+
+## Configure styling
+
+Instead of auto-detecting based on the platform (Node.js or a browser), you can turn on/off colors, location printing (the json-snippet of the error) and whether to print big ascii numbers to the left of each error, if there are more than one error.
+
+With the options object containing `data` provided to `prettify` you can include `colors`, `location` and `bigNumbers` as booleans, to override the defaults.
+
+Turning colors explicitly on will only enable colors if it's detected to be supported by the platform, but turning them off will always output non-colored text.
+
+Turning location on will also only enable the location printing if *colors* are detected to be supported by the underlying platform (this is a limitation in the current `@babel/code-frame` and will likely be resolved in Babel 8).
+
+`bigNumbers` will only be enabled if location printing is enabled, but can be explicitly turned off.
+
+Example:
+```ts
+const colors = false;
+const location = false;
+const explanation = prettify( validate, { data, colors, location } );
+```
+
 
 
 [npm-image]: https://img.shields.io/npm/v/awesome-ajv-errors.svg

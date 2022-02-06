@@ -1,6 +1,6 @@
 import * as Ajv from 'ajv'
 import { prettify } from '../../'
-import { prettifyTryStyled } from 'awesome-ajv-errors/try-styled'
+import { prettifyTryStyled } from 'awesome-ajv-errors/dist/index-try-styled.js'
 
 
 const div1 = document.createElement( 'div' );
