@@ -28,6 +28,13 @@ It has a gorgeous human-understandable output, predicts human errors and suggest
      * Either import from `awesome-ajv-errors/node` explicitly (if you have e.g. webpack DefinePlugin configured to hack around missing things like `process is not defined`), or
      * Import from `awesome-ajv-errors/try-styled` which has a promise-based `prettify` function (`prettifyTryStyled`) or a promise which will eventually resolve to a synchronous function (`styledPrettify`).
      * Both of these will fallback to non-colored non-codeframe output if e.g. loading `@babel/code-frame` failed. This will likely be entirely resolved once Babel 8 is released; then awesome output will by default work in browsers too.
+ * Since version 4;
+   * package.json exports field is not support well by e.g. Jest, so v4 reverts v3 exports.
+   * Until the exports field get better support, the official way to import will now be from:
+     * `awesome-ajv-errors` for auto-detecting node vs browser
+     * `awesome-ajv-errors/dist/index-node.js` or `awesome-ajv-errors/dist/index-browser.js` for explicit importing depending on environment
+     * `awesome-ajv-errors/dist/index-try-styled.js` for dynamic trying to load color support (e.g. in browsers)
+
 
 # Examples
 
