@@ -21,10 +21,11 @@ const expectedStyled = `
   5 |   }
   6 | }`;
 
-const expectSame = ( got, expected ) =>
+const expectSame = ( testName, got, expected ) =>
 {
 	if ( got.trim( ) !== expected )
 	{
+		console.error( `Test "${testName}" failed!` );
 		console.error( `text = [${got}]` );
 		console.error( `expected = [${expected}]` );
 		throw new Error( 'webpack test failed' );
@@ -53,8 +54,9 @@ const expectSame = ( got, expected ) =>
 
 	await browser.close( );
 
-	expectSame( text1.trim( ), `Result:\n${expectedText}` );
+	expectSame( 'unstyled html', text1.trim( ), `Result:\n${expectedText}` );
 	expectSame(
+		'styled html',
 		text2.trim( ),
 		`Result:\n${expectedText}\n${htmlify(expectedStyled)}`
 	);
@@ -62,8 +64,12 @@ const expectSame = ( got, expected ) =>
 	const unstyled = between( consoleLogs, 'START unstyled', 'END unstyled' );
 	const styled = between( consoleLogs, 'START styled', 'END styled' );
 
-	expectSame( unstyled.join( '' ), expectedText );
-	expectSame( styled.join( '' ), `${expectedText}\n${expectedStyled}` );
+	expectSame( 'unstyled console', unstyled.join( '' ), expectedText );
+	expectSame(
+		'styled console',
+		styled.join( '' ),
+		`${expectedText}\n${expectedStyled}`
+	);
 } )( );
 
 function between( arr, start, end )
