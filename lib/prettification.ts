@@ -97,11 +97,11 @@ export function makePrettify(
 				getManager( ( validate as PrettifyOptions )?.colors );
 
 			return _prettify( {
+				location: undefined,
+				bigNumbers: undefined,
 				...( validate as PrettifyOptions ),
 				styleManager,
 				printCode,
-				location: undefined,
-				bigNumbers: undefined,
 				environment,
 			} );
 		}
