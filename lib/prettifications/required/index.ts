@@ -27,7 +27,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 			style.pathDescription( missingProperty )
 		,
 		context.parsedJson,
-		{ dataPath: dataPath.dotOnly, markIdentifier: false }
+		{ path: dataPath.simplePath, markIdentifier: false }
 	);
 
 	return { title, codeFrame };

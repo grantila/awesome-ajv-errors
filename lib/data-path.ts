@@ -1,3 +1,5 @@
+import { parsePath } from 'jsonpos'
+
 import { ValidationError } from "./types.js"
 
 
@@ -9,37 +11,35 @@ export interface DataPathItem
 
 export interface DataPath
 {
-	orig: string;
-	dotOnly: string;
 	path: Array< DataPathItem >;
+	simplePath: Array< string >;
 }
 
 export function parseDataPath( error: ValidationError ): DataPath
 {
+	// Ajv 6 and 7 differ. In 6 the dataPath separator is `.`, in 7 it's `/`.
 	// Since Ajv 8, it's called "instancePath"
-	const value: string = error.dataPath ?? ( error as any ).instancePath;
 
-	if ( value === '' )
-		return { orig: value, dotOnly: '.', path: [ ] };
+	if ( !( error.dataPath ?? ( error as any ).instancePath ) )
+		return { path: [ ], simplePath: [ ] };
 
-	// Ajv 6 and 7 differ. In 6 the path separator is `.`, in 7 it's `/`.
-	const sep = value.charAt( 0 );
+	const value =
+		!!( error as any ).instancePath
+		? parsePath( { pointerPath: ( error as any ).instancePath } )
+		: error.dataPath?.charAt( 0 ) === '.'
+		? parsePath( { dotPath: error.dataPath } )
+		: parsePath( { pointerPath: error.dataPath } );
 
-	const path = ( [ ] as Array< DataPathItem > ).concat(
-		...value
-		.split( sep )
-		.map( entry =>
-			entry
-				.split( /\[|\]/g )
-				.map( ( key, index ): DataPathItem => ( {
-					key,
-					type: index === 0 ? 'string' : 'number'
-				} ) )
+	const path =
+		value
+		.map( ( entry ): DataPathItem =>
+			typeof entry === 'number'
+			? ( { key: `${entry}`, type: 'number' } )
+			: ( { key: entry, type: 'string' } )
 		)
-	)
-	.filter( val => val.key !== '' );
+		.filter( val => val.key !== '' );
 
-	const dotOnly = '.' + path.map( ( { key } ) => key ).join( '.' );
+	const simplePath = path.map( ( { key } ) => key );
 
-	return { orig: value, dotOnly, path };
+	return { path, simplePath };
 }

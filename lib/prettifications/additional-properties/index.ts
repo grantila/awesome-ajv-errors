@@ -36,7 +36,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 			style.pathDescription( `"${additionalProperty}"` ),
 		context.parsedJson,
 		{
-			dataPath: dataPath.dotOnly + "." + additionalProperty,
+			path: [ ...dataPath.simplePath, additionalProperty ],
 			markIdentifier: true,
 		}
 	);

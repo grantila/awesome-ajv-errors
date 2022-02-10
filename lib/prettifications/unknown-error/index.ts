@@ -22,7 +22,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 	const codeFrame = printCode(
 		message,
 		context.parsedJson,
-		{ dataPath: dataPath.dotOnly, markIdentifier: false }
+		{ path: dataPath.simplePath, markIdentifier: false }
 	);
 
 	return { title, codeFrame };

@@ -9,7 +9,7 @@ export const printCode: PrintCode =
 		message,
 		parsedJson,
 		{
-			dataPath,
+			path,
 			markIdentifier,
 			linesAbove = 5,
 			linesBelow = 3,
@@ -17,11 +17,10 @@ export const printCode: PrintCode =
 		}
 	) =>
 {
-	const { start, end } =
-		getLocation( parsedJson, { dataPath, markIdentifier } );
+	const { start, end } = getLocation( parsedJson, { path, markIdentifier } );
 
 	if ( !start )
-		return `{The path ${dataPath} cannot be found in json}`;
+		return `{The path ${path} cannot be found in json}`;
 
 	return codeFrameColumns(
 		parsedJson.jsonString,

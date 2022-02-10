@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`prettifications additional-properties (w/o big numbers) 1/6: Simple top-level 1`] = `
+exports[`prettifications additional-properties (w/o big numbers) 1/7: Simple top-level 1`] = `
 "The root object should not have the property bar, it must be foo
 
   1 | {
@@ -10,7 +10,7 @@ exports[`prettifications additional-properties (w/o big numbers) 1/6: Simple top
   4 | }"
 `;
 
-exports[`prettifications additional-properties (w/o big numbers) 3/6: Simple top-level with tricky name 1`] = `
+exports[`prettifications additional-properties (w/o big numbers) 3/7: Simple top-level with tricky name 1`] = `
 "The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
 
   1 | {
@@ -19,7 +19,7 @@ exports[`prettifications additional-properties (w/o big numbers) 3/6: Simple top
   3 | }"
 `;
 
-exports[`prettifications additional-properties (w/o big numbers) 4/6: Second-level one similar property 1`] = `
+exports[`prettifications additional-properties (w/o big numbers) 4/7: Second-level one similar property 1`] = `
 "The .foo object should not have the property baz, it must be bar
 
   1 | {
@@ -31,7 +31,7 @@ exports[`prettifications additional-properties (w/o big numbers) 4/6: Second-lev
   6 | }"
 `;
 
-exports[`prettifications additional-properties (w/o big numbers) 5/6: Second-level two similar properties 1`] = `
+exports[`prettifications additional-properties (w/o big numbers) 5/7: Second-level two similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean bar or bak?
 
   1 | {
@@ -43,7 +43,7 @@ exports[`prettifications additional-properties (w/o big numbers) 5/6: Second-lev
   6 | }"
 `;
 
-exports[`prettifications additional-properties (w/o big numbers) 6/6: Second-level three similar properties 1`] = `
+exports[`prettifications additional-properties (w/o big numbers) 6/7: Second-level three similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean any of:
     ∙ bar
     ∙ bak
@@ -58,31 +58,46 @@ exports[`prettifications additional-properties (w/o big numbers) 6/6: Second-lev
   6 | }"
 `;
 
-exports[`prettifications additional-properties (w/o location) (w/o big numbers) 1/6: Simple top-level 1`] = `
+exports[`prettifications additional-properties (w/o big numbers) 7/7: Only allow numbers as additional properties 1`] = `
+"The type of the value at .foo.b\\"a'z/z[z]z./ should be number, e.g. 1 (as number)
+
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"a string\\",
+  4 |     \\"bak\\": 42,
+  5 |     \\"b\\\\\\"a'z/z[z]z\\": {
+> 6 |       \\"/\\": true
+    |            ^^^^ Replace this with e.g. 1 (as number)
+  7 |     }
+  8 |   }
+  9 | }"
+`;
+
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 1/7: Simple top-level 1`] = `
 "The root object should not have the property bar, it must be foo
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) (w/o big numbers) 3/6: Simple top-level with tricky name 1`] = `
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 3/7: Simple top-level with tricky name 1`] = `
 "The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) (w/o big numbers) 4/6: Second-level one similar property 1`] = `
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 4/7: Second-level one similar property 1`] = `
 "The .foo object should not have the property baz, it must be bar
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) (w/o big numbers) 5/6: Second-level two similar properties 1`] = `
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 5/7: Second-level two similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean bar or bak?
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) (w/o big numbers) 6/6: Second-level three similar properties 1`] = `
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 6/7: Second-level three similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean any of:
     ∙ bar
     ∙ bak
@@ -91,31 +106,37 @@ exports[`prettifications additional-properties (w/o location) (w/o big numbers) 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) 1/6: Simple top-level 1`] = `
+exports[`prettifications additional-properties (w/o location) (w/o big numbers) 7/7: Only allow numbers as additional properties 1`] = `
+"The type of the value at .foo.b\\"a'z/z[z]z./ should be number, e.g. 1 (as number)
+
+"
+`;
+
+exports[`prettifications additional-properties (w/o location) 1/7: Simple top-level 1`] = `
 "The root object should not have the property bar, it must be foo
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) 3/6: Simple top-level with tricky name 1`] = `
+exports[`prettifications additional-properties (w/o location) 3/7: Simple top-level with tricky name 1`] = `
 "The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) 4/6: Second-level one similar property 1`] = `
+exports[`prettifications additional-properties (w/o location) 4/7: Second-level one similar property 1`] = `
 "The .foo object should not have the property baz, it must be bar
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) 5/6: Second-level two similar properties 1`] = `
+exports[`prettifications additional-properties (w/o location) 5/7: Second-level two similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean bar or bak?
 
 "
 `;
 
-exports[`prettifications additional-properties (w/o location) 6/6: Second-level three similar properties 1`] = `
+exports[`prettifications additional-properties (w/o location) 6/7: Second-level three similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean any of:
     ∙ bar
     ∙ bak
@@ -124,7 +145,13 @@ exports[`prettifications additional-properties (w/o location) 6/6: Second-level 
 "
 `;
 
-exports[`prettifications additional-properties 1/6: Simple top-level 1`] = `
+exports[`prettifications additional-properties (w/o location) 7/7: Only allow numbers as additional properties 1`] = `
+"The type of the value at .foo.b\\"a'z/z[z]z./ should be number, e.g. 1 (as number)
+
+"
+`;
+
+exports[`prettifications additional-properties 1/7: Simple top-level 1`] = `
 "The root object should not have the property bar, it must be foo
 
   1 | {
@@ -134,7 +161,7 @@ exports[`prettifications additional-properties 1/6: Simple top-level 1`] = `
   4 | }"
 `;
 
-exports[`prettifications additional-properties 3/6: Simple top-level with tricky name 1`] = `
+exports[`prettifications additional-properties 3/7: Simple top-level with tricky name 1`] = `
 "The root object should not have the property foo#bar/baz, it must be foo#bar/bazz
 
   1 | {
@@ -143,7 +170,7 @@ exports[`prettifications additional-properties 3/6: Simple top-level with tricky
   3 | }"
 `;
 
-exports[`prettifications additional-properties 4/6: Second-level one similar property 1`] = `
+exports[`prettifications additional-properties 4/7: Second-level one similar property 1`] = `
 "The .foo object should not have the property baz, it must be bar
 
   1 | {
@@ -155,7 +182,7 @@ exports[`prettifications additional-properties 4/6: Second-level one similar pro
   6 | }"
 `;
 
-exports[`prettifications additional-properties 5/6: Second-level two similar properties 1`] = `
+exports[`prettifications additional-properties 5/7: Second-level two similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean bar or bak?
 
   1 | {
@@ -167,7 +194,7 @@ exports[`prettifications additional-properties 5/6: Second-level two similar pro
   6 | }"
 `;
 
-exports[`prettifications additional-properties 6/6: Second-level three similar properties 1`] = `
+exports[`prettifications additional-properties 6/7: Second-level three similar properties 1`] = `
 "The .foo object should not have the property baz, did you mean any of:
     ∙ bar
     ∙ bak
@@ -180,6 +207,21 @@ exports[`prettifications additional-properties 6/6: Second-level three similar p
     |     ^^^^^ remove or rename \\"baz\\"
   5 |   }
   6 | }"
+`;
+
+exports[`prettifications additional-properties 7/7: Only allow numbers as additional properties 1`] = `
+"The type of the value at .foo.b\\"a'z/z[z]z./ should be number, e.g. 1 (as number)
+
+  1 | {
+  2 |   \\"foo\\": {
+  3 |     \\"bar\\": \\"a string\\",
+  4 |     \\"bak\\": 42,
+  5 |     \\"b\\\\\\"a'z/z[z]z\\": {
+> 6 |       \\"/\\": true
+    |            ^^^^ Replace this with e.g. 1 (as number)
+  7 |     }
+  8 |   }
+  9 | }"
 `;
 
 exports[`prettifications any-of (w/o big numbers) 1/5: One option (number to string) 1`] = `

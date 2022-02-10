@@ -113,5 +113,43 @@
 				"baz": "33"
 			}
 		}
+	},
+	{
+		"example": {
+			"title": "Additional property of invalid type",
+			"description": "Suggests to remove the property"
+		},
+		"schema": {
+			"title": "Only allow numbers as additional properties",
+			"type": "object",
+			"properties": {
+				"foo": {
+					"type": "object",
+					"properties": {
+						"bar": {
+							"type": "string"
+						},
+						"bak": {
+							"type": "number"
+						}
+					},
+					"additionalProperties": {
+						"type": "object",
+						"additionalProperties": {
+							"type": "number"
+						}
+					}
+				}
+			}
+		},
+		"data": {
+			"foo": {
+				"bar": "a string",
+				"bak": 42,
+				"b\"a'z/z[z]z": {
+					"/": true
+				}
+			}
+		}
 	}
 ]

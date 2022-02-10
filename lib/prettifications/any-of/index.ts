@@ -65,7 +65,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 				') perhaps?'
 			),
 		context.parsedJson,
-		{ dataPath: dataPath.dotOnly, markIdentifier: false }
+		{ path: dataPath.simplePath, markIdentifier: false }
 	);
 
 	return { title, codeFrame };

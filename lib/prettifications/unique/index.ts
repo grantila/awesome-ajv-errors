@@ -16,7 +16,8 @@ export function prettify( context: PrettifyContext ): PrettyResult
 
 	const [ a, b ] = [ i, j ].sort( );
 
-	const valueA = getValueByPath( context, dataPath.dotOnly + `.${a}` );
+	const valueA =
+		getValueByPath( context, [ ...dataPath.simplePath, `${a}` ] );
 
 	const [ prePath, pathExpr, postPath ] =
 		pathDescription( context, 'array' );
@@ -37,7 +38,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 		' or ' +
 		style.number( `${b}` ),
 		context.parsedJson,
-		{ dataPath: dataPath.dotOnly, markIdentifier: false }
+		{ path: dataPath.simplePath, markIdentifier: false }
 	);
 
 	return { title, codeFrame };

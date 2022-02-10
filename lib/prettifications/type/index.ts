@@ -47,7 +47,7 @@ export function prettify( context: PrettifyContext ): PrettyResult
 			: ''
 		),
 		context.parsedJson,
-		{ dataPath: dataPath.dotOnly, markIdentifier: false }
+		{ path: dataPath.simplePath, markIdentifier: false }
 	);
 
 	return { title, codeFrame };

@@ -1,6 +1,12 @@
 import type { LocationOptions, ParsedJson } from 'jsonpos'
 
-export interface CodeOptions extends LocationOptions {
+export interface CodeLocationOptions
+	extends Pick< LocationOptions, 'markIdentifier' >,
+	Required< Pick< LocationOptions, 'path' > >
+{}
+
+export interface CodeOptions extends CodeLocationOptions
+{
 	linesAbove?: number;
 	linesBelow?: number;
 	colors?: boolean;
