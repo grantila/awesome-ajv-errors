@@ -1,9 +1,10 @@
-import type { ErrorObject, ErrorParameters, TypeParams } from "ajv"
+import type { ErrorObject } from "ajv"
 import type { ParsedJson } from "jsonpos"
 
 import type { DataPath } from "./data-path.js"
 import type { StyleManager } from "./style/interface.js"
 import type { PrintCode } from "./code/types.js"
+import type { ErrorParameters, TypeParams } from "./ajv-types.js"
 
 
 export interface ErrorContext
