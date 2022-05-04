@@ -2,7 +2,7 @@ import type Ajv from 'ajv'
 
 process.env.FORCE_HYPERLINK = '1';
 
-import { prettify } from '../index-node.js'
+import { prettify } from '../index-default.js'
 import type { JsonTestFile } from './iterate-test-data.js'
 
 

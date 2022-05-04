@@ -11,7 +11,7 @@ export const styledPrettify = ( async ( ) =>
 	] = await Promise.all( [
 		import( './style/style-ansi.js' )
 			.catch( err => ( { managerOptions } ) ),
-		import( './code/impl-babel.js' )
+		import( './code/impl-code-frame.js' )
 			.catch( err => ( { printCode } ) ),
 	] );
 

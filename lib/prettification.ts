@@ -1,5 +1,5 @@
 import type { ValidateFunction } from "ajv"
-import { getAstByObject } from "jsonpos"
+import { getParsedByObject } from "jsonpos"
 
 import {
 	ValidationError,
@@ -147,7 +147,7 @@ function _prettify( _opts: InternalPrettifyOptions ): string
 	if ( errors.length === 0 )
 		return styleManager.style.good( "No errors" );
 
-	const parsedJson = getAstByObject( opts.data, 2 );
+	const parsedJson = getParsedByObject( opts.data, 2 );
 
 	const preparedText = prepareText( { maxNumber: errors.length + 1 } );
 

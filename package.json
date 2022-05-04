@@ -8,9 +8,25 @@
     "url": "https://github.com/grantila/awesome-ajv-errors/issues"
   },
   "homepage": "https://github.com/grantila/awesome-ajv-errors#readme",
-  "main": "./dist/index-node.js",
-  "browser": "./dist/index-browser.js",
-  "types": "./dist/index-node.d.ts",
+  "main": "./dist/index-default.js",
+  "browser": "./dist/index-default.js",
+  "exports": {
+    ".": "./dist/index-default.js",
+    "./plain": "./dist/index-plain.js",
+    "./try-styled": "./dist/index-try-styled.js",
+    "./package.json": "./package.json"
+  },
+  "typesVersions": {
+    "*": {
+      "plain": [
+        "./dist/index-plain.d.ts"
+      ],
+      "try-styled": [
+        "./dist/index-try-styled.d.ts"
+      ]
+    }
+  },
+  "types": "./dist/index-default.d.ts",
   "type": "module",
   "sideEffects": false,
   "engines": {
@@ -44,7 +60,6 @@
   "devDependencies": {
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
-    "@types/babel__code-frame": "^7.0.3",
     "@types/hapi__joi": "^17.1.7",
     "@types/jest": "^27.0.3",
     "@types/node": "^16.9.1",
@@ -58,10 +73,10 @@
     "typescript": "^4.5.5"
   },
   "dependencies": {
-    "@babel/code-frame": "^7.16.7",
-    "chalk": "^4.1.2",
+    "awesome-code-frame": "^1.0.1",
+    "chalk": "^5.0.1",
     "jsonpointer": "^5.0.0",
-    "jsonpos": "^3.1.0",
+    "jsonpos": "^4.1.1",
     "leven": "^4.0.0",
     "terminal-link": "^3.0.0"
   },

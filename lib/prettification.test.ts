@@ -1,6 +1,6 @@
 import Ajv from 'ajv'
 
-import { prettify } from './index-node.js'
+import { prettify } from './index-default.js'
 import { setupTests } from './test/test-prettification.js'
 import { getTestData } from './test/iterate-test-data.js'
 

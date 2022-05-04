@@ -11,4 +11,7 @@ export default {
   coverageReporters: ['lcov', 'text', 'html'],
   collectCoverage: true,
   extensionsToTreatAsEsm: ['.ts'],
+	moduleNameMapper: {
+		'#(.*)': '<rootDir>/node_modules/$1',
+	},
 }

@@ -4,7 +4,7 @@ import * as path from 'node:path'
 
 import type Ajv from 'ajv'
 
-import { prettify } from '../index-node.js'
+import { prettify } from '../index-default.js'
 import { ensureArray } from '../util.js'
 
 

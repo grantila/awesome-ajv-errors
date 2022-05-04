@@ -1,6 +1,5 @@
 import * as Ajv from 'ajv'
 import { prettify } from '../../'
-import { prettifyTryStyled } from 'awesome-ajv-errors/dist/index-try-styled.js'
 
 
 const div1 = document.createElement( 'div' );
@@ -42,7 +41,10 @@ validate( data );
 
 async function printResult( )
 {
-	const prettyOutput = prettify( validate, { data, colors: true } );
+	const prettyOutput = prettify(
+		validate,
+		{ data, colors: false, location: false }
+	);
 
 	console.log( 'START unstyled' );
 	console.log( prettyOutput );
@@ -51,11 +53,10 @@ async function printResult( )
 	div1.innerHTML = `Result:\n${prettyOutput}`;
 
 
-	const prettyOutputStyled =
-		await prettifyTryStyled(
-			validate,
-			{ data, colors: true, location: true }
-		);
+	const prettyOutputStyled = prettify(
+		validate,
+		{ data, colors: true, location: true }
+	);
 
 	console.log( 'START styled' );
 	console.log( prettyOutputStyled );

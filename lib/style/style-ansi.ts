@@ -1,11 +1,10 @@
-import chalk from "chalk"
+import chalk, { supportsColor } from "chalk"
 import terminalLink from "terminal-link"
 
 import type { StyleContext, ManagerOptions, Style } from "./interface.js"
 
 
 const {
-	supportsColor,
 	dim,
 	red,
 	blue,
