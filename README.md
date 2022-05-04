@@ -34,6 +34,12 @@ It has a gorgeous human-understandable output, predicts human errors and suggest
      * `awesome-ajv-errors` for auto-detecting node vs browser
      * `awesome-ajv-errors/dist/index-node.js` or `awesome-ajv-errors/dist/index-browser.js` for explicit importing depending on environment
      * `awesome-ajv-errors/dist/index-try-styled.js` for dynamic trying to load color support (e.g. in browsers)
+ * Since version 5;
+   * Re-introduced package exports.
+   * Replaced [`@babel/code-frame`](https://www.npmjs.com/package/@babel/code-frame) with [`awesome-code-frame`](https://www.npmjs.com/package/awesome-code-frame) which uses later versions of upstream dependencies - works out-of-the-box in browsers now.
+   * It will by default pretty-print codeframes and use colors, including in browsers that supports it. This will look bad in the browser window, but good in the developer tools.
+     * Import from `awesome-ajv-errors/plain` explicitly to have colors and code frame output disabled, or use the options to `prettify()` to disable per call.
+   * Now using the latest chalk, which means it requires support for *package imports*. If this causes problems in Jest for you, see [this issue](https://github.com/chalk/chalk/issues/532) for help.
 
 
 # Examples
