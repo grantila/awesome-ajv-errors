@@ -2,7 +2,6 @@
 [![downloads][downloads-image]][npm-url]
 [![build status][build-image]][build-url]
 [![coverage status][coverage-image]][coverage-url]
-[![Language grade: JavaScript][lgtm-image]][lgtm-url]
 [![Node.JS version][node-version]][node-url]
 
 
@@ -677,12 +676,10 @@ const explanation = prettify( validate, { data, colors, location } );
 [npm-image]: https://img.shields.io/npm/v/awesome-ajv-errors.svg
 [npm-url]: https://npmjs.org/package/awesome-ajv-errors
 [downloads-image]: https://img.shields.io/npm/dm/awesome-ajv-errors.svg
-[build-image]: https://img.shields.io/github/workflow/status/grantila/awesome-ajv-errors/Master.svg
+[build-image]: https://img.shields.io/github/actions/workflow/status/grantila/awesome-ajv-errors/master.yml?branch=master
 [build-url]: https://github.com/grantila/awesome-ajv-errors/actions?query=workflow%3AMaster
 [coverage-image]: https://coveralls.io/repos/github/grantila/awesome-ajv-errors/badge.svg?branch=master
 [coverage-url]: https://coveralls.io/github/grantila/awesome-ajv-errors?branch=master
-[lgtm-image]: https://img.shields.io/lgtm/grade/javascript/g/grantila/awesome-ajv-errors.svg?logo=lgtm&logoWidth=18
-[lgtm-url]: https://lgtm.com/projects/g/grantila/awesome-ajv-errors/context:javascript
 [node-version]: https://img.shields.io/node/v/awesome-ajv-errors
 [node-url]: https://nodejs.org/en/
 [pure-esm]: https://gist.github.com/sindresorhus/a39789f98801d908bbc7ff3ecc99d99c
