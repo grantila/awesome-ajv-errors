@@ -1,4 +1,5 @@
 {
+  "name": "awesome-ajv-errors-ajv8-test",
   "dependencies": {
     "ajv": "^8.6.2",
     "ajv-formats": "^2.1.1"

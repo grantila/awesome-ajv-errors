@@ -57,6 +57,10 @@
     "errors",
     "pretty"
   ],
+  "workspaces": [
+    "ajv-versions/*",
+    "webpack"
+  ],
   "devDependencies": {
     "@babel/preset-env": "^7.16.5",
     "@babel/preset-typescript": "^7.16.5",
@@ -87,5 +91,6 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  }
+  },
+  "packageManager": "yarn@3.2.4"
 }

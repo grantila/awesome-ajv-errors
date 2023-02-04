@@ -2,4 +2,5 @@ dist/
 coverage/
 node_modules/
 .node-version
-yarn.lock
+yarn-*
+.yarn/

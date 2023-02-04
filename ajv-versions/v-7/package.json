@@ -1,4 +1,5 @@
 {
+  "name": "awesome-ajv-errors-ajv7-test",
   "dependencies": {
     "ajv": "7",
     "ajv-formats": "1"
